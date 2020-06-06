@@ -19,15 +19,15 @@
 		8196A6BD2489FD690055FC49 /* RowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6BC2489FD690055FC49 /* RowFormer.swift */; };
 		8196A6BF2489FDA70055FC49 /* ViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6BE2489FDA70055FC49 /* ViewFormer.swift */; };
 		8196A6C12489FDD10055FC49 /* FormerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6C02489FDD10055FC49 /* FormerProtocol.swift */; };
-		8196A6C4248A187D0055FC49 /* FormHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6C3248A187D0055FC49 /* FormHeaderFooterView.swift */; };
+		8196A6C4248A187D0055FC49 /* BaseHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6C3248A187D0055FC49 /* BaseHeaderFooterView.swift */; };
 		8196A6CA248A1EEE0055FC49 /* BaseHeaderFooterFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6C9248A1EEE0055FC49 /* BaseHeaderFooterFormer.swift */; };
 		8196A6CC248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6CB248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift */; };
-		8196A6CE248A20C30055FC49 /* FormLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6CD248A20C30055FC49 /* FormLabelHeaderView.swift */; };
-		8196A6D0248A20DA0055FC49 /* FormLabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6CF248A20DA0055FC49 /* FormLabelFooterView.swift */; };
+		8196A6CE248A20C30055FC49 /* LabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6CD248A20C30055FC49 /* LabelHeaderView.swift */; };
+		8196A6D0248A20DA0055FC49 /* LabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6CF248A20DA0055FC49 /* LabelFooterView.swift */; };
 		8196A6D2248A22690055FC49 /* BaseRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6D1248A22690055FC49 /* BaseRowFormer.swift */; };
 		8196A6D4248A245D0055FC49 /* CustomHeaderFooterFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6D3248A245D0055FC49 /* CustomHeaderFooterFormer.swift */; };
 		8196A6D6248A24DD0055FC49 /* CustomRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6D5248A24DD0055FC49 /* CustomRowFormer.swift */; };
-		8196A6D8248A29440055FC49 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6D7248A29440055FC49 /* FormCell.swift */; };
+		8196A6D8248A29440055FC49 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6D7248A29440055FC49 /* BaseCell.swift */; };
 		8196A6DA248A2F0F0055FC49 /* LabelRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6D9248A2F0F0055FC49 /* LabelRowFormer.swift */; };
 		8196A6DC248A2F370055FC49 /* TextFieldRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6DB248A2F370055FC49 /* TextFieldRowFormer.swift */; };
 		8196A6E9248A2FE30055FC49 /* InlinePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6DD248A2FE20055FC49 /* InlinePickerRowFormer.swift */; };
@@ -38,17 +38,17 @@
 		8196A6F2248A2FE30055FC49 /* InlineDatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6E6248A2FE30055FC49 /* InlineDatePickerRowFormer.swift */; };
 		8196A6F3248A2FE30055FC49 /* DatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6E7248A2FE30055FC49 /* DatePickerRowFormer.swift */; };
 		8196A6F4248A2FE30055FC49 /* PickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6E8248A2FE30055FC49 /* PickerRowFormer.swift */; };
-		8196A703248A31400055FC49 /* FormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F5248A313F0055FC49 /* FormTextViewCell.swift */; };
-		8196A704248A31400055FC49 /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F6248A313F0055FC49 /* FormTextFieldCell.swift */; };
-		8196A705248A31400055FC49 /* FormPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F7248A313F0055FC49 /* FormPickerCell.swift */; };
-		8196A706248A31400055FC49 /* FormDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F8248A313F0055FC49 /* FormDatePickerCell.swift */; };
-		8196A708248A31400055FC49 /* FormInlineDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FA248A313F0055FC49 /* FormInlineDatePickerCell.swift */; };
-		8196A70A248A31400055FC49 /* FormCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FC248A313F0055FC49 /* FormCheckCell.swift */; };
-		8196A70C248A31400055FC49 /* FormInlinePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FE248A313F0055FC49 /* FormInlinePickerCell.swift */; };
-		8196A70D248A31400055FC49 /* FormLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FF248A31400055FC49 /* FormLabelCell.swift */; };
-		8196A70E248A31400055FC49 /* FormSegmentedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A700248A31400055FC49 /* FormSegmentedCell.swift */; };
-		8196A70F248A31400055FC49 /* FormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A701248A31400055FC49 /* FormSwitchCell.swift */; };
-		8196A713248A5ADD0055FC49 /* FormAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A712248A5ADD0055FC49 /* FormAvatarCell.swift */; };
+		8196A703248A31400055FC49 /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F5248A313F0055FC49 /* TextViewCell.swift */; };
+		8196A704248A31400055FC49 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F6248A313F0055FC49 /* TextFieldCell.swift */; };
+		8196A705248A31400055FC49 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F7248A313F0055FC49 /* PickerCell.swift */; };
+		8196A706248A31400055FC49 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6F8248A313F0055FC49 /* DatePickerCell.swift */; };
+		8196A708248A31400055FC49 /* InlineDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FA248A313F0055FC49 /* InlineDatePickerCell.swift */; };
+		8196A70A248A31400055FC49 /* CheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FC248A313F0055FC49 /* CheckCell.swift */; };
+		8196A70C248A31400055FC49 /* InlinePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FE248A313F0055FC49 /* InlinePickerCell.swift */; };
+		8196A70D248A31400055FC49 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6FF248A31400055FC49 /* LabelCell.swift */; };
+		8196A70E248A31400055FC49 /* SegmentedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A700248A31400055FC49 /* SegmentedCell.swift */; };
+		8196A70F248A31400055FC49 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A701248A31400055FC49 /* SwitchCell.swift */; };
+		8196A713248A5ADD0055FC49 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A712248A5ADD0055FC49 /* AvatarCell.swift */; };
 		8196A715248A5BF90055FC49 /* AvatarRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A714248A5BF90055FC49 /* AvatarRowFormer.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,15 +67,15 @@
 		8196A6BC2489FD690055FC49 /* RowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowFormer.swift; sourceTree = "<group>"; };
 		8196A6BE2489FDA70055FC49 /* ViewFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFormer.swift; sourceTree = "<group>"; };
 		8196A6C02489FDD10055FC49 /* FormerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerProtocol.swift; sourceTree = "<group>"; };
-		8196A6C3248A187D0055FC49 /* FormHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHeaderFooterView.swift; sourceTree = "<group>"; };
+		8196A6C3248A187D0055FC49 /* BaseHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterView.swift; sourceTree = "<group>"; };
 		8196A6C9248A1EEE0055FC49 /* BaseHeaderFooterFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterFormer.swift; sourceTree = "<group>"; };
 		8196A6CB248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelHeaderFooterFormer.swift; sourceTree = "<group>"; };
-		8196A6CD248A20C30055FC49 /* FormLabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelHeaderView.swift; sourceTree = "<group>"; };
-		8196A6CF248A20DA0055FC49 /* FormLabelFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelFooterView.swift; sourceTree = "<group>"; };
+		8196A6CD248A20C30055FC49 /* LabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelHeaderView.swift; sourceTree = "<group>"; };
+		8196A6CF248A20DA0055FC49 /* LabelFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFooterView.swift; sourceTree = "<group>"; };
 		8196A6D1248A22690055FC49 /* BaseRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRowFormer.swift; sourceTree = "<group>"; };
 		8196A6D3248A245D0055FC49 /* CustomHeaderFooterFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderFooterFormer.swift; sourceTree = "<group>"; };
 		8196A6D5248A24DD0055FC49 /* CustomRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRowFormer.swift; sourceTree = "<group>"; };
-		8196A6D7248A29440055FC49 /* FormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
+		8196A6D7248A29440055FC49 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		8196A6D9248A2F0F0055FC49 /* LabelRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelRowFormer.swift; sourceTree = "<group>"; };
 		8196A6DB248A2F370055FC49 /* TextFieldRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRowFormer.swift; sourceTree = "<group>"; };
 		8196A6DD248A2FE20055FC49 /* InlinePickerRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlinePickerRowFormer.swift; sourceTree = "<group>"; };
@@ -86,17 +86,17 @@
 		8196A6E6248A2FE30055FC49 /* InlineDatePickerRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineDatePickerRowFormer.swift; sourceTree = "<group>"; };
 		8196A6E7248A2FE30055FC49 /* DatePickerRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerRowFormer.swift; sourceTree = "<group>"; };
 		8196A6E8248A2FE30055FC49 /* PickerRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerRowFormer.swift; sourceTree = "<group>"; };
-		8196A6F5248A313F0055FC49 /* FormTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextViewCell.swift; sourceTree = "<group>"; };
-		8196A6F6248A313F0055FC49 /* FormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldCell.swift; sourceTree = "<group>"; };
-		8196A6F7248A313F0055FC49 /* FormPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormPickerCell.swift; sourceTree = "<group>"; };
-		8196A6F8248A313F0055FC49 /* FormDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDatePickerCell.swift; sourceTree = "<group>"; };
-		8196A6FA248A313F0055FC49 /* FormInlineDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInlineDatePickerCell.swift; sourceTree = "<group>"; };
-		8196A6FC248A313F0055FC49 /* FormCheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCheckCell.swift; sourceTree = "<group>"; };
-		8196A6FE248A313F0055FC49 /* FormInlinePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInlinePickerCell.swift; sourceTree = "<group>"; };
-		8196A6FF248A31400055FC49 /* FormLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabelCell.swift; sourceTree = "<group>"; };
-		8196A700248A31400055FC49 /* FormSegmentedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSegmentedCell.swift; sourceTree = "<group>"; };
-		8196A701248A31400055FC49 /* FormSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSwitchCell.swift; sourceTree = "<group>"; };
-		8196A712248A5ADD0055FC49 /* FormAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAvatarCell.swift; sourceTree = "<group>"; };
+		8196A6F5248A313F0055FC49 /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewCell.swift; sourceTree = "<group>"; };
+		8196A6F6248A313F0055FC49 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		8196A6F7248A313F0055FC49 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		8196A6F8248A313F0055FC49 /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
+		8196A6FA248A313F0055FC49 /* InlineDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineDatePickerCell.swift; sourceTree = "<group>"; };
+		8196A6FC248A313F0055FC49 /* CheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCell.swift; sourceTree = "<group>"; };
+		8196A6FE248A313F0055FC49 /* InlinePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlinePickerCell.swift; sourceTree = "<group>"; };
+		8196A6FF248A31400055FC49 /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		8196A700248A31400055FC49 /* SegmentedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedCell.swift; sourceTree = "<group>"; };
+		8196A701248A31400055FC49 /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		8196A712248A5ADD0055FC49 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		8196A714248A5BF90055FC49 /* AvatarRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRowFormer.swift; sourceTree = "<group>"; };
 		C74FFE71B75DB0870F24908B /* Pods-SwiftyForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyForm.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm.debug.xcconfig"; sourceTree = "<group>"; };
 		C9C4070DD8FFA4C70F3A8D2E /* Pods-SwiftyForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyForm.release.xcconfig"; path = "Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,16 +150,15 @@
 		8196A6B62489FB680055FC49 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				8196A6B72489FBB80055FC49 /* Formers */,
-				8196A6C8248A1DFE0055FC49 /* CellFormers */,
-				8196A6C7248A1DE30055FC49 /* HederFooterFormers */,
+				8196A6B72489FBB80055FC49 /* Core */,
+				8196A6C8248A1DFE0055FC49 /* Formers */,
 				8196A6C5248A1CA40055FC49 /* Cells */,
 				8196A6C2248A18540055FC49 /* HeaderFooters */,
 			);
 			path = Class;
 			sourceTree = "<group>";
 		};
-		8196A6B72489FBB80055FC49 /* Formers */ = {
+		8196A6B72489FBB80055FC49 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				8196A6C02489FDD10055FC49 /* FormerProtocol.swift */,
@@ -168,15 +167,15 @@
 				8196A6BC2489FD690055FC49 /* RowFormer.swift */,
 				8196A6BE2489FDA70055FC49 /* ViewFormer.swift */,
 			);
-			path = Formers;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		8196A6C2248A18540055FC49 /* HeaderFooters */ = {
 			isa = PBXGroup;
 			children = (
-				8196A6C3248A187D0055FC49 /* FormHeaderFooterView.swift */,
-				8196A6CD248A20C30055FC49 /* FormLabelHeaderView.swift */,
-				8196A6CF248A20DA0055FC49 /* FormLabelFooterView.swift */,
+				8196A6C3248A187D0055FC49 /* BaseHeaderFooterView.swift */,
+				8196A6CD248A20C30055FC49 /* LabelHeaderView.swift */,
+				8196A6CF248A20DA0055FC49 /* LabelFooterView.swift */,
 			);
 			path = HeaderFooters;
 			sourceTree = "<group>";
@@ -184,37 +183,29 @@
 		8196A6C5248A1CA40055FC49 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8196A6D7248A29440055FC49 /* FormCell.swift */,
-				8196A6FC248A313F0055FC49 /* FormCheckCell.swift */,
-				8196A6FF248A31400055FC49 /* FormLabelCell.swift */,
-				8196A712248A5ADD0055FC49 /* FormAvatarCell.swift */,
-				8196A6F6248A313F0055FC49 /* FormTextFieldCell.swift */,
-				8196A6F5248A313F0055FC49 /* FormTextViewCell.swift */,
-				8196A701248A31400055FC49 /* FormSwitchCell.swift */,
-				8196A700248A31400055FC49 /* FormSegmentedCell.swift */,
-				8196A6F8248A313F0055FC49 /* FormDatePickerCell.swift */,
-				8196A6F7248A313F0055FC49 /* FormPickerCell.swift */,
-				8196A6FA248A313F0055FC49 /* FormInlineDatePickerCell.swift */,
-				8196A6FE248A313F0055FC49 /* FormInlinePickerCell.swift */,
+				8196A6D7248A29440055FC49 /* BaseCell.swift */,
+				8196A6FC248A313F0055FC49 /* CheckCell.swift */,
+				8196A6FF248A31400055FC49 /* LabelCell.swift */,
+				8196A712248A5ADD0055FC49 /* AvatarCell.swift */,
+				8196A6F6248A313F0055FC49 /* TextFieldCell.swift */,
+				8196A6F5248A313F0055FC49 /* TextViewCell.swift */,
+				8196A701248A31400055FC49 /* SwitchCell.swift */,
+				8196A700248A31400055FC49 /* SegmentedCell.swift */,
+				8196A6F8248A313F0055FC49 /* DatePickerCell.swift */,
+				8196A6F7248A313F0055FC49 /* PickerCell.swift */,
+				8196A6FA248A313F0055FC49 /* InlineDatePickerCell.swift */,
+				8196A6FE248A313F0055FC49 /* InlinePickerCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		8196A6C7248A1DE30055FC49 /* HederFooterFormers */ = {
-			isa = PBXGroup;
-			children = (
-				8196A6C9248A1EEE0055FC49 /* BaseHeaderFooterFormer.swift */,
-				8196A6D3248A245D0055FC49 /* CustomHeaderFooterFormer.swift */,
-				8196A6CB248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift */,
-			);
-			path = HederFooterFormers;
-			sourceTree = "<group>";
-		};
-		8196A6C8248A1DFE0055FC49 /* CellFormers */ = {
+		8196A6C8248A1DFE0055FC49 /* Formers */ = {
 			isa = PBXGroup;
 			children = (
 				8196A6D1248A22690055FC49 /* BaseRowFormer.swift */,
+				8196A6C9248A1EEE0055FC49 /* BaseHeaderFooterFormer.swift */,
 				8196A6D5248A24DD0055FC49 /* CustomRowFormer.swift */,
+				8196A6D3248A245D0055FC49 /* CustomHeaderFooterFormer.swift */,
 				8196A6E5248A2FE30055FC49 /* CheckRowFormer.swift */,
 				8196A6D9248A2F0F0055FC49 /* LabelRowFormer.swift */,
 				8196A714248A5BF90055FC49 /* AvatarRowFormer.swift */,
@@ -226,8 +217,9 @@
 				8196A6E8248A2FE30055FC49 /* PickerRowFormer.swift */,
 				8196A6E6248A2FE30055FC49 /* InlineDatePickerRowFormer.swift */,
 				8196A6DD248A2FE20055FC49 /* InlinePickerRowFormer.swift */,
+				8196A6CB248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift */,
 			);
-			path = CellFormers;
+			path = Formers;
 			sourceTree = "<group>";
 		};
 		B5B0F511AA06B0D71C63D3A0 /* Pods */ = {
@@ -362,35 +354,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8196A6CE248A20C30055FC49 /* FormLabelHeaderView.swift in Sources */,
-				8196A704248A31400055FC49 /* FormTextFieldCell.swift in Sources */,
+				8196A6CE248A20C30055FC49 /* LabelHeaderView.swift in Sources */,
+				8196A704248A31400055FC49 /* TextFieldCell.swift in Sources */,
 				8196A6DC248A2F370055FC49 /* TextFieldRowFormer.swift in Sources */,
-				8196A70E248A31400055FC49 /* FormSegmentedCell.swift in Sources */,
+				8196A70E248A31400055FC49 /* SegmentedCell.swift in Sources */,
 				8196A6A72489F9120055FC49 /* ViewController.swift in Sources */,
 				8196A6A32489F9120055FC49 /* AppDelegate.swift in Sources */,
-				8196A713248A5ADD0055FC49 /* FormAvatarCell.swift in Sources */,
-				8196A706248A31400055FC49 /* FormDatePickerCell.swift in Sources */,
-				8196A703248A31400055FC49 /* FormTextViewCell.swift in Sources */,
+				8196A713248A5ADD0055FC49 /* AvatarCell.swift in Sources */,
+				8196A706248A31400055FC49 /* DatePickerCell.swift in Sources */,
+				8196A703248A31400055FC49 /* TextViewCell.swift in Sources */,
 				8196A6BB2489FD320055FC49 /* SectionFormer.swift in Sources */,
 				8196A6F4248A2FE30055FC49 /* PickerRowFormer.swift in Sources */,
-				8196A6D0248A20DA0055FC49 /* FormLabelFooterView.swift in Sources */,
+				8196A6D0248A20DA0055FC49 /* LabelFooterView.swift in Sources */,
 				8196A6F1248A2FE30055FC49 /* CheckRowFormer.swift in Sources */,
 				8196A6CA248A1EEE0055FC49 /* BaseHeaderFooterFormer.swift in Sources */,
-				8196A708248A31400055FC49 /* FormInlineDatePickerCell.swift in Sources */,
-				8196A6D8248A29440055FC49 /* FormCell.swift in Sources */,
+				8196A708248A31400055FC49 /* InlineDatePickerCell.swift in Sources */,
+				8196A6D8248A29440055FC49 /* BaseCell.swift in Sources */,
 				8196A6F2248A2FE30055FC49 /* InlineDatePickerRowFormer.swift in Sources */,
-				8196A70A248A31400055FC49 /* FormCheckCell.swift in Sources */,
+				8196A70A248A31400055FC49 /* CheckCell.swift in Sources */,
 				8196A6BF2489FDA70055FC49 /* ViewFormer.swift in Sources */,
-				8196A6C4248A187D0055FC49 /* FormHeaderFooterView.swift in Sources */,
+				8196A6C4248A187D0055FC49 /* BaseHeaderFooterView.swift in Sources */,
 				8196A6DA248A2F0F0055FC49 /* LabelRowFormer.swift in Sources */,
 				8196A715248A5BF90055FC49 /* AvatarRowFormer.swift in Sources */,
-				8196A70D248A31400055FC49 /* FormLabelCell.swift in Sources */,
-				8196A70C248A31400055FC49 /* FormInlinePickerCell.swift in Sources */,
+				8196A70D248A31400055FC49 /* LabelCell.swift in Sources */,
+				8196A70C248A31400055FC49 /* InlinePickerCell.swift in Sources */,
 				8196A6C12489FDD10055FC49 /* FormerProtocol.swift in Sources */,
 				8196A6ED248A2FE30055FC49 /* TextViewRowFormer.swift in Sources */,
 				8196A6CC248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift in Sources */,
 				8196A6EC248A2FE30055FC49 /* SwitchRowFormer.swift in Sources */,
-				8196A70F248A31400055FC49 /* FormSwitchCell.swift in Sources */,
+				8196A70F248A31400055FC49 /* SwitchCell.swift in Sources */,
 				8196A6D4248A245D0055FC49 /* CustomHeaderFooterFormer.swift in Sources */,
 				8196A6BD2489FD690055FC49 /* RowFormer.swift in Sources */,
 				8196A6F3248A2FE30055FC49 /* DatePickerRowFormer.swift in Sources */,
@@ -400,7 +392,7 @@
 				8196A6E9248A2FE30055FC49 /* InlinePickerRowFormer.swift in Sources */,
 				8196A6EF248A2FE30055FC49 /* SegmentedRowFormer.swift in Sources */,
 				8196A6A52489F9120055FC49 /* SceneDelegate.swift in Sources */,
-				8196A705248A31400055FC49 /* FormPickerCell.swift in Sources */,
+				8196A705248A31400055FC49 /* PickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

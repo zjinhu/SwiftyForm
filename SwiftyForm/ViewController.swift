@@ -15,14 +15,14 @@ class ViewController: JHTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        let check = CheckRowFormer<FormCheckCell>()
+
+        let check = CheckRow()
         check.configure { (cell) in
             cell.title = "asdfas"
             cell.checkColor = .orange
         }
         
-        let avatarRow = AvatarRowFormer<FormAvatarCell>()
+        let avatarRow = AvatarRow()
         avatarRow.configure { (cell) in
             cell.title = "头像"
             cell.avatarImage = UIImage.init(named: "icon")
@@ -31,7 +31,7 @@ class ViewController: JHTableViewController {
             print("dianjile")
         }
         
-        let labelRow = LabelRowFormer<FormLabelCell>()
+        let labelRow = LabelRow()
         labelRow.configure { (cell) in
             cell.title = "asdfas"
             cell.subText = "qwqweqwe"
@@ -41,7 +41,7 @@ class ViewController: JHTableViewController {
         }
         
         
-        let textFieldRow = TextFieldRowFormer<FormTextFieldCell>()
+        let textFieldRow = TextFieldRow()
 
         textFieldRow.configure { (cell) in
             cell.text = "123123"
@@ -52,36 +52,36 @@ class ViewController: JHTableViewController {
             print("\(str)")
         }
         
-        let textViewRow = TextViewRowFormer<FormTextViewCell>()
+        let textViewRow = TextViewRow()
         textViewRow.configure { (cell) in
             cell.title = "12312"
             cell.placeholder = "asdasdasd"
         }
-        let switchRow = SwitchRowFormer<FormSwitchCell>()
+        let switchRow = SwitchRow()
         switchRow.configure { (cell) in
             cell.title = "Switch"
         }
         
-        let segmentRow = SegmentedRowFormer<FormSegmentedCell>()
+        let segmentRow = SegmentedRow()
         segmentRow.configure(handler: { (cell) in
             cell.title = "Switch"
             cell.segmentTitles = ["Opt1", "Opt2", "Opt3"]
             cell.selectedIndex = UISegmentedControl.noSegment
         })
-
-        let sectionFormer1 = SectionFormer(rowFormer: avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
-        let header = LabelHeaderFooterFormer<FormLabelHeaderView>()
+        
+        let sectionFormer1 = SectionFormer(avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
+        let header = LabelHeader()
         header.text = "123"
         sectionFormer1.set(headerViewFormer: header)
         
-        let datePickerRow = DatePickerRowFormer<FormDatePickerCell>()
-        let pickerRow = PickerRowFormer<FormPickerCell, Any>()
+        let datePickerRow = DatePickerRow()
+        let pickerRow = PickerRow()
         pickerRow.configure { (cell) in
             cell.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
         }
-        let sectionFormer2 = SectionFormer(rowFormer: datePickerRow,pickerRow)
+        let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
         
-        let inlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, Any>()
+        let inlinePickerRow = InlinePickerRow()
         inlinePickerRow.configure { (cell) in
             cell.title = "InlinePicker"
             cell.pickerItems = [InlinePickerItem(
@@ -90,11 +90,11 @@ class ViewController: JHTableViewController {
                  value: nil)]
                  + (1...20).map { InlinePickerItem(title: "Option\($0)") }
         }
-        let inlineDateRow = InlineDatePickerRowFormer<FormInlineDatePickerCell>()
+        let inlineDateRow = InlineDatePickerRow()
         inlineDateRow.configure { (cell) in
             cell.title = "InlineDatePicker"
         }
-        let sectionFormer3 = SectionFormer(rowFormer: inlinePickerRow,inlineDateRow)
+        let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow)
         former.append(sectionFormer: sectionFormer1,sectionFormer3,sectionFormer2)
     }
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Foundation
+
 
 public extension UIGestureRecognizer {
     private class GestureAction {

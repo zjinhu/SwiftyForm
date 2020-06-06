@@ -30,22 +30,22 @@ Pod::Spec.new do |spec|
   spec.swift_versions     = ['5.0','5.1','5.2']
   spec.requires_arc = true
 
-  spec.frameworks   = "UIKit", "Foundation" #支持的框架
+  spec.frameworks   = "UIKit"
   spec.dependency 'SnapKit'
   
-  spec.subspec 'CellFormers' do |ss|
-      ss.source_files = 'SwiftyForm/Class/CellFormers/**/*' 
-    end
-  spec.subspec 'Cells' do |ss|
-      ss.source_files = 'SwiftyForm/Class/Cells/**/*' 
-    end
   spec.subspec 'Formers' do |ss|
+  	  ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/Formers/**/*' 
     end
-  spec.subspec 'HeaderFooters' do |ss|
-      ss.source_files = 'SwiftyForm/Class/HeaderFooters/**/*' 
+  spec.subspec 'Cells' do |ss|
+  	  ss.dependency 'SwiftyForm/Formers'
+      ss.source_files = 'SwiftyForm/Class/Cells/**/*' 
     end
-  spec.subspec 'HederFooterFormers' do |ss|
-      ss.source_files = 'SwiftyForm/Class/HederFooterFormers/**/*' 
+  spec.subspec 'Core' do |ss|
+      ss.source_files = 'SwiftyForm/Class/Core/**/*' 
+    end
+  spec.subspec 'HeaderFooters' do |ss|
+  	  ss.dependency 'SwiftyForm/Formers'
+      ss.source_files = 'SwiftyForm/Class/HeaderFooters/**/*' 
     end
 end

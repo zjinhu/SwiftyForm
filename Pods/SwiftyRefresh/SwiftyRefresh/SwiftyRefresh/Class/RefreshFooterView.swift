@@ -6,7 +6,7 @@
 //  Copyright © 2020 狄烨 . All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 import SnapKit
 public class RefreshFooterView: RefreshView {
