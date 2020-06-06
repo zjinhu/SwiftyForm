@@ -33,19 +33,19 @@ Pod::Spec.new do |s|
   s.frameworks   = "UIKit"
   s.dependency 'SnapKit'
   
-  s.subs 'Formers' do |ss|
+  s.subspec 'Formers' do |ss|
   	  ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/Formers/**/*' 
     end
-  s.subs 'Cells' do |ss|
+  s.subspec 'Cells' do |ss|
   	  ss.dependency 'SwiftyForm/Formers'
       ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/Cells/**/*' 
     end
-  s.subs 'Core' do |ss|
+  s.subspec 'Core' do |ss|
       ss.source_files = 'SwiftyForm/Class/Core/**/*' 
     end
-  s.subs 'HeaderFooters' do |ss|
+  s.subspec 'HeaderFooters' do |ss|
   	  ss.dependency 'SwiftyForm/Formers'
       ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/HeaderFooters/**/*' 
