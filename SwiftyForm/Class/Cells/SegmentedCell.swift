@@ -39,7 +39,7 @@ open class SegmentedCell: BaseCell, SegmentedFormableRow {
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         let titleLabel = UILabel()
@@ -54,12 +54,12 @@ open class SegmentedCell: BaseCell, SegmentedFormableRow {
         
         titleLabel.snp.makeConstraints { (make) in
              make.top.bottom.equalToSuperview()
-             make.left.equalToSuperview().offset(15)
+             make.left.equalToSuperview().offset(20)
          }
          
          segmentedControl.snp.makeConstraints { (make) in
              make.centerY.equalToSuperview()
-             make.right.equalToSuperview().offset(-15)
+             make.right.equalToSuperview().offset(-20)
          }
     }
     
@@ -69,7 +69,7 @@ open class SegmentedCell: BaseCell, SegmentedFormableRow {
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }

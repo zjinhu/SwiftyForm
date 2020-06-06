@@ -32,7 +32,7 @@ open class ButtonCell: BaseCell, ButtonFormableRow {
         contentView.addSubview(leftButton)
         self.leftButton = leftButton
         leftButton.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
             make.right.equalTo(contentView.snp.centerX).offset(-5)
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
@@ -42,7 +42,7 @@ open class ButtonCell: BaseCell, ButtonFormableRow {
         contentView.addSubview(rightButton)
         self.rightButton = rightButton
         rightButton.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-20)
             make.left.equalTo(contentView.snp.centerX).offset(5)
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
@@ -53,11 +53,11 @@ open class ButtonCell: BaseCell, ButtonFormableRow {
         super.updateWithRowFormer(rowFormer)
         
         rightButton.snp.remakeConstraints { (make) in
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-20)
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
             if leftButton.isHidden{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(contentView.snp.centerX).offset(5)
             }

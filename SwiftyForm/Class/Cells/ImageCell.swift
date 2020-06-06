@@ -64,25 +64,25 @@ open class ImageCell: BaseCell, ImageFormableRow {
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
             make.height.equalTo(60)
         }
         
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalTo(titleLabel)
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         subTitleLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(titleLabel)
             make.left.equalTo(titleLabel.snp.right)
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-20)
         }
         
         coverImageView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom)
-            make.left.equalToSuperview().offset(15)
-            make.right.equalToSuperview().offset(-15)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
             make.height.equalTo(120)
         }
     }
@@ -94,7 +94,7 @@ open class ImageCell: BaseCell, ImageFormableRow {
             make.top.equalToSuperview()
             make.height.equalTo(60)
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }

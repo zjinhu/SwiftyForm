@@ -34,7 +34,7 @@ open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         let titleLabel = UILabel()
@@ -46,8 +46,8 @@ open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
         contentView.insertSubview(titleLabel, at: 0)
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
-            make.right.equalToSuperview().offset(-15)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
         self.titleLabel = titleLabel
     }
@@ -57,7 +57,7 @@ open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
         
         titleLabel.snp.updateConstraints { (make) in
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalToSuperview().offset(50)
             }

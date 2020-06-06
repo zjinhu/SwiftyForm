@@ -36,14 +36,14 @@ open class InlinePickerCell: BaseCell, InlinePickerFormableRow {
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }
         }
 
         displayLabel.snp.updateConstraints { (make) in
-            make.right.equalToSuperview().offset((accessoryType == .none) ? -15 : -5)
+            make.right.equalToSuperview().offset((accessoryType == .none) ? -20 : -5)
         }
     }
     
@@ -56,7 +56,7 @@ open class InlinePickerCell: BaseCell, InlinePickerFormableRow {
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         let titleLabel = UILabel()
@@ -74,13 +74,13 @@ open class InlinePickerCell: BaseCell, InlinePickerFormableRow {
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         displayLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.equalTo(titleLabel.snp.right)
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-20)
         }
     }
 }

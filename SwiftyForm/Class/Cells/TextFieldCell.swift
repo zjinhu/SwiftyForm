@@ -36,7 +36,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }
@@ -45,7 +45,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         
         textField.snp.updateConstraints { (make) in
             if titleLabel.text?.isEmpty == true{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleLabel.snp.right)
             }
@@ -61,7 +61,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         let titleLabel = UILabel()
@@ -70,7 +70,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         self.titleLabel = titleLabel
         
@@ -81,7 +81,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         textField.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.equalTo(titleLabel.snp.right)
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-20)
         }
         self.textField = textField
     }

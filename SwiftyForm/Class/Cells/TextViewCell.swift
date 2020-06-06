@@ -35,10 +35,10 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.equalToSuperview()
-            make.right.equalToSuperview().offset(-15)
+            make.right.equalToSuperview().offset(-20)
             make.height.equalTo(40)
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(15)
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }
@@ -62,7 +62,7 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
+            make.left.equalToSuperview().offset(20)
         }
         
         let titleLabel = UILabel()
@@ -80,15 +80,15 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
 
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
-            make.left.equalToSuperview().offset(15)
-            make.right.equalToSuperview().offset(-15)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
             make.height.equalTo(40)
         }
         textView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom)
-            make.left.equalToSuperview().offset(15)
-            make.right.equalToSuperview().offset(-15)
-            make.bottom.equalToSuperview().offset(-15)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-20)
         }
         
     }
