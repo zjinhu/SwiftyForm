@@ -6,7 +6,7 @@
 #  To see working Podss in the CocoaPods repo see https://github.com/CocoaPods/ss/
 #
 
-Pod::s.new do |s|
+Pod::Spec.new do |s|
 
   s.name         = "SwiftyForm"
   s.version      = "0.0.1"
