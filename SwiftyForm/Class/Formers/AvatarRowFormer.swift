@@ -11,12 +11,14 @@ import UIKit
 public protocol AvatarFormableRow: FormableRow {
     
     func formTextLabel() -> UILabel?
+    func formLeftImageView() -> UIImageView?
     func formAvatarView() -> UIImageView?
 }
 
 open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: AvatarFormableRow {
  
     open var title: String?
+    open var leftImage: UIImage?
     open var avatarImage: UIImage?
     open var textDisabledColor: UIColor? = .lightGray
     
@@ -25,6 +27,12 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
     open override func initialized() {
         super.initialized()
         rowHeight = 60
+    }
+    
+    open override func cellInitialized(_ cell: T) {
+        super.cellInitialized(cell)
+        let leftImageView = cell.formLeftImageView()
+        leftImageView?.image = leftImage
     }
     
     open override func update() {

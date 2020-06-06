@@ -11,18 +11,26 @@ import UIKit
 public protocol LabelFormableRow: FormableRow {
     
     func formTextLabel() -> UILabel?
+    func formLeftImageView() -> UIImageView?
     func formSubTextLabel() -> UILabel?
 }
 
 open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: LabelFormableRow {
 
     open var title: String?
+    open var leftImage: UIImage?
     open var subText: String?
     open var textDisabledColor: UIColor? = .lightGray
     open var subTextDisabledColor: UIColor? = .lightGray
  
     private final var textColor: UIColor?
     private final var subTextColor: UIColor?
+    
+    open override func cellInitialized(_ cell: T) {
+        super.cellInitialized(cell)
+        let leftImageView = cell.formLeftImageView()
+        leftImageView?.image = leftImage
+    }
     
     open override func update() {
         super.update()

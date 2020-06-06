@@ -16,6 +16,11 @@ public class SegmentedCell: BaseCell, SegmentedFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var segmentedControl: UISegmentedControl!
+    public private(set) weak var leftImageView: UIImageView!
+    
+    public func formLeftImageView() -> UIImageView? {
+        return leftImageView
+    }
     
     public func formTitleLabel() -> UILabel? {
         return titleLabel
@@ -27,6 +32,15 @@ public class SegmentedCell: BaseCell, SegmentedFormableRow {
     
     public override func setup() {
         super.setup()
+        
+        let leftImageView = UIImageView()
+        leftImageView.clipsToBounds = true
+        contentView.addSubview(leftImageView)
+        self.leftImageView = leftImageView
+        leftImageView.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(15)
+        }
         
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -47,5 +61,18 @@ public class SegmentedCell: BaseCell, SegmentedFormableRow {
              make.centerY.equalToSuperview()
              make.right.equalToSuperview().offset(-15)
          }
+    }
+    
+    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+        super.updateWithRowFormer(rowFormer)
+        
+        titleLabel.snp.remakeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            if leftImageView.image == nil{
+                make.left.equalToSuperview().offset(15)
+            }else{
+                make.left.equalTo(leftImageView.snp.right).offset(5)
+            }
+        }
     }
 }

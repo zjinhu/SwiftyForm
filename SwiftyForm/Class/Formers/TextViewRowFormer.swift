@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 public protocol TextViewFormableRow: FormableRow {
-    
+    func formLeftImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
     func formTextView() -> UITextView
 }
@@ -21,6 +21,7 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
         return enabled
     }
     open var title: String?
+    open var leftImage: UIImage?
     open var text: String?
     open var placeholder: String?
     open var attributedPlaceholder: NSAttributedString?
@@ -52,6 +53,8 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     
     open override func cellInitialized(_ cell: T) {
         cell.formTextView().delegate = observer
+        let leftImageView = cell.formLeftImageView()
+        leftImageView?.image = leftImage
     }
     
     open override func update() {

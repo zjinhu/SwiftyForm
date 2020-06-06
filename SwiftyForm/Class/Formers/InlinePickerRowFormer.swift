@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol InlinePickerFormableRow: FormableRow {
-    
+    func formLeftImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
     func formDisplayLabel() -> UILabel?
 }
@@ -33,6 +33,7 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
     }
     
     open var title: String?
+    open var leftImage: UIImage?
     open var pickerItems: [InlinePickerItem<S>] = []
     open var selectedRow: Int = 0
     open var titleDisabledColor: UIColor? = .lightGray
@@ -66,6 +67,12 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
         return self
     }
     
+    open override func cellInitialized(_ cell: T) {
+        super.cellInitialized(cell)
+        let leftImageView = cell.formLeftImageView()
+        leftImageView?.image = leftImage
+    }
+    
     open override func update() {
         super.update()
         
@@ -85,7 +92,7 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
             displayLabel?.text = pickerItems[selectedRow].title
             _ = pickerItems[selectedRow].displayTitle.map { displayLabel?.attributedText = $0 }
         }
-        
+
         if enabled {
             if isEditing {
                 if titleColor == nil { titleColor = titleLabel?.textColor }

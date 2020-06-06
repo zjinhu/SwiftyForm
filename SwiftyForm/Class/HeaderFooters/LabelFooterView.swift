@@ -15,13 +15,27 @@ public class LabelFooter: LabelHeaderFooterFormer<LabelFooterView> {
 public class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
 
     public private(set) weak var titleLabel: UILabel!
+    public private(set) weak var leftImageView: UIImageView!
     
     public func formTitleLabel() -> UILabel {
         return titleLabel
     }
     
+    public func formLeftImageView() -> UIImageView? {
+        return leftImageView
+    }
+    
     override public func setup() {
         super.setup()
+        
+        let leftImageView = UIImageView()
+        leftImageView.clipsToBounds = true
+        contentView.addSubview(leftImageView)
+        self.leftImageView = leftImageView
+        leftImageView.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(15)
+        }
         
         let titleLabel = UILabel()
         titleLabel.textColor = .lightGray
@@ -36,6 +50,17 @@ public class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
             make.right.equalToSuperview().offset(-15)
         }
         self.titleLabel = titleLabel
-
+    }
+    
+    public override func updateHeaderFooterFormer(_ headerFooterFormer: ViewFormer) {
+        super.updateHeaderFooterFormer(headerFooterFormer)
+        
+        titleLabel.snp.updateConstraints { (make) in
+            if leftImageView.image == nil{
+                make.left.equalToSuperview().offset(15)
+            }else{
+                make.left.equalToSuperview().offset(50)
+            }
+        }
     }
 }

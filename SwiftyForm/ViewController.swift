@@ -19,6 +19,7 @@ class ViewController: JHTableViewController {
         let check = CheckRow()
         check.configure { (row) in
             row.title = "asdfas"
+            row.leftImage = UIImage.init(named: "Image")
             row.checkColor = .orange
         }
         
@@ -63,7 +64,9 @@ class ViewController: JHTableViewController {
         let switchRow = SwitchRow()
         switchRow.configure { (row) in
             row.title = "Switch"
+            row.switchWhenSelected = true
         }
+
         
         let segmentRow = SegmentedRow()
         segmentRow.configure(handler: { (row) in
@@ -75,6 +78,8 @@ class ViewController: JHTableViewController {
         let sectionFormer1 = SectionFormer(avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
         let header = LabelHeader()
         header.text = "123"
+        header.leftImage = UIImage.init(named: "Image")
+        
         sectionFormer1.set(headerViewFormer: header)
         
         let datePickerRow = DatePickerRow()

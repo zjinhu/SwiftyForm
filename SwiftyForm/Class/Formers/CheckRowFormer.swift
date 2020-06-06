@@ -9,14 +9,15 @@
 import UIKit
 
 public protocol CheckFormableRow: FormableRow {
-    
     func formTitleLabel() -> UILabel?
+    func formLeftImageView() -> UIImageView?
 }
 
 
 open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: CheckFormableRow {
     
     open var title: String?
+    open var leftImage: UIImage?
     open var checked = false
     open var customCheckView: UIView?
     open var titleDisabledColor: UIColor? = .lightGray
@@ -32,6 +33,12 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         return self
     }
     
+    open override func cellInitialized(_ cell: T) {
+        super.cellInitialized(cell)
+        let leftImageView = cell.formLeftImageView()
+        leftImageView?.image = leftImage
+    }
+    
     open override func update() {
         super.update()
         if let customCheckView = customCheckView {
@@ -40,8 +47,10 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         } else {
             cell.accessoryType = checked ? .checkmark : .none
         }
+        
         let titleLabel = cell.formTitleLabel()
         titleLabel?.text = title
+        
         if enabled {
             _ = titleColor.map { titleLabel?.textColor = $0 }
             titleColor = nil
@@ -68,5 +77,4 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
             }
         }
     }
- 
 }

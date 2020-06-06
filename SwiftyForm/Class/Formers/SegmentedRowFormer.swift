@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol SegmentedFormableRow: FormableRow {
-        
+    func formLeftImageView() -> UIImageView?
     func formSegmented() -> UISegmentedControl
     func formTitleLabel() -> UILabel?
 }
@@ -17,6 +17,7 @@ public protocol SegmentedFormableRow: FormableRow {
 open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SegmentedFormableRow {
     
     open var title: String?
+    open var leftImage: UIImage?
     open var segmentTitles = [String]()
     open var selectedIndex: Int = 0
     open var titleDisabledColor: UIColor? = .lightGray
@@ -33,6 +34,8 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         cell.formSegmented().addTarget(self, action: #selector(SegmentedRowFormer.valueChanged(segment:)), for: .valueChanged)
+        let leftImageView = cell.formLeftImageView()
+        leftImageView?.image = leftImage
     }
     
     open override func update() {
@@ -48,7 +51,7 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         }
         segment.selectedSegmentIndex = selectedIndex
         segment.isEnabled = enabled
-        
+ 
         if enabled {
             _ = titleColor.map { titleLabel?.textColor = $0 }
             titleColor = nil
