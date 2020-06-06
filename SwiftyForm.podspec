@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.summary      = "A short description of SwiftyForm."
 
   s.description  = <<-DESC
+  form
                    DESC
 
   s.homepage     = "https://github.com/jackiehu/"
