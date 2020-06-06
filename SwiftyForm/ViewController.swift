@@ -10,7 +10,7 @@ import SwiftBrick
 
 class ViewController: JHTableViewController {
     
-    public private(set) lazy var former: Former = Former(tableView: self.tableView!)
+    lazy var former = Former(tableView: self.tableView!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,7 @@ class ViewController: JHTableViewController {
             cell.title = "12312"
             cell.placeholder = "asdasdasd"
         }
+        
         let switchRow = SwitchRow()
         switchRow.configure { (cell) in
             cell.title = "Switch"
@@ -74,10 +75,12 @@ class ViewController: JHTableViewController {
         sectionFormer1.set(headerViewFormer: header)
         
         let datePickerRow = DatePickerRow()
+        
         let pickerRow = PickerRow()
         pickerRow.configure { (cell) in
             cell.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
         }
+        
         let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
         
         let inlinePickerRow = InlinePickerRow()
@@ -89,11 +92,14 @@ class ViewController: JHTableViewController {
                  value: nil)]
                  + (1...20).map { InlinePickerItem(title: "Option\($0)") }
         }
+        
         let inlineDateRow = InlineDatePickerRow()
         inlineDateRow.configure { (cell) in
             cell.title = "InlineDatePicker"
         }
+        
         let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow)
+        
         former.append(sectionFormer: sectionFormer1,sectionFormer3,sectionFormer2)
     }
 
