@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
     end
   s.subs 'Cells' do |ss|
   	  ss.dependency 'SwiftyForm/Formers'
+      ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/Cells/**/*' 
     end
   s.subs 'Core' do |ss|
@@ -46,6 +47,7 @@ Pod::Spec.new do |s|
     end
   s.subs 'HeaderFooters' do |ss|
   	  ss.dependency 'SwiftyForm/Formers'
+      ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/HeaderFooters/**/*' 
     end
 end
