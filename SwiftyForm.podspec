@@ -1,50 +1,50 @@
 #
-#  Be sure to run `pod spec lint SwiftyForm.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
+#  Be sure to run `pod s lint SwiftyForm.pods' to ensure this is a
+#  valid s and to remove all comments including this before submitting the s.
 #
-#  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
+#  To learn more about Pods attributes see https://guides.cocoapods.org/syntax/pods.html
+#  To see working Podss in the CocoaPods repo see https://github.com/CocoaPods/ss/
 #
 
-Pod::Spec.new do |spec|
+Pod::s.new do |s|
 
-  spec.name         = "SwiftyForm"
-  spec.version      = "0.0.1"
-  spec.summary      = "A short description of SwiftyForm."
+  s.name         = "SwiftyForm"
+  s.version      = "0.0.1"
+  s.summary      = "A short description of SwiftyForm."
 
-  spec.description  = <<-DESC
+  s.description  = <<-DESC
                    DESC
 
-  spec.homepage     = "https://github.com/jackiehu/"
+  s.homepage     = "https://github.com/jackiehu/"
 
-  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
-
-
-  spec.author             = { 'HU' => '814030966@qq.com' }
-
-  spec.source       = { :git => 'https://github.com/jackiehu/SwiftyForm.git', :tag => s.version.to_s }
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
 
+  s.author       = { 'HU' => '814030966@qq.com' }
 
-  spec.ios.deployment_target = "11.0" 
-  spec.swift_versions     = ['5.0','5.1','5.2']
-  spec.requires_arc = true
+  s.source       = { :git => 'https://github.com/jackiehu/SwiftyForm.git', :tag => s.version.to_s }
 
-  spec.frameworks   = "UIKit"
-  spec.dependency 'SnapKit'
+
+
+  s.ios.deployment_target = "11.0" 
+  s.swift_versions     = ['5.0','5.1','5.2']
+  s.requires_arc = true
+
+  s.frameworks   = "UIKit"
+  s.dependency 'SnapKit'
   
-  spec.subspec 'Formers' do |ss|
+  s.subs 'Formers' do |ss|
   	  ss.dependency 'SwiftyForm/Core'
       ss.source_files = 'SwiftyForm/Class/Formers/**/*' 
     end
-  spec.subspec 'Cells' do |ss|
+  s.subs 'Cells' do |ss|
   	  ss.dependency 'SwiftyForm/Formers'
       ss.source_files = 'SwiftyForm/Class/Cells/**/*' 
     end
-  spec.subspec 'Core' do |ss|
+  s.subs 'Core' do |ss|
       ss.source_files = 'SwiftyForm/Class/Core/**/*' 
     end
-  spec.subspec 'HeaderFooters' do |ss|
+  s.subs 'HeaderFooters' do |ss|
   	  ss.dependency 'SwiftyForm/Formers'
       ss.source_files = 'SwiftyForm/Class/HeaderFooters/**/*' 
     end
