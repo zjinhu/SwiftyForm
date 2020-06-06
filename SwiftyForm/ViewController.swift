@@ -40,7 +40,6 @@ class ViewController: JHTableViewController {
             print("点击了啊啊啊")
         }
         
-        
         let textFieldRow = TextFieldRow()
 
         textFieldRow.configure { (cell) in
