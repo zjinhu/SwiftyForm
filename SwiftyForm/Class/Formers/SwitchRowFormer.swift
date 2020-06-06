@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol SwitchFormableRow: FormableRow {
-    func formLeftImageView() -> UIImageView?
+    func formTitleImageView() -> UIImageView?
     func formSwitch() -> UISwitch
     func formTitleLabel() -> UILabel?
 }
@@ -17,7 +17,7 @@ public protocol SwitchFormableRow: FormableRow {
 open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SwitchFormableRow {
 
     open var title: String?
-    open var leftImage: UIImage?
+    open var titleImage: UIImage?
     open var switched = false
     open var switchWhenSelected = false
     open var titleDisabledColor: UIColor? = .lightGray
@@ -35,9 +35,15 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         cell.formSwitch().addTarget(self, action: #selector(SwitchRowFormer.switchChanged(_:)), for: .valueChanged)
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
     }
+    
+    open override func initialized() {
+        super.initialized()
+        rowHeight = 60
+    }
+
     
     open override func update() {
         super.update()

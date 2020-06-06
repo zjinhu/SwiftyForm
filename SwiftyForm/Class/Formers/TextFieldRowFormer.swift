@@ -11,7 +11,7 @@ import UIKit
 public protocol TextFieldFormableRow: FormableRow {
     
     func formTextField() -> UITextField
-    func formLeftImageView() -> UIImageView?
+    func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
 }
 
@@ -22,7 +22,7 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     }
     
     open var title: String?
-    open var leftImage: UIImage?
+    open var titleImage: UIImage?
     open var text: String?
     open var placeholder: String?
     open var attributedPlaceholder: NSAttributedString?
@@ -50,6 +50,12 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         return self
     }
     
+    open override func initialized() {
+        super.initialized()
+        rowHeight = 60
+    }
+
+    
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         let textField = cell.formTextField()
@@ -60,8 +66,8 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         events.forEach {
             textField.addTarget(self, action: $0.0, for: $0.1)
         }
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
     }
     
     open override func update() {

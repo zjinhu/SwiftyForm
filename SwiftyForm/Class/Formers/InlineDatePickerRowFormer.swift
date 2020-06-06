@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol InlineDatePickerFormableRow: FormableRow {
-    func formLeftImageView() -> UIImageView?
+    func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
     func formDisplayLabel() -> UILabel?
 }
@@ -24,7 +24,7 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
     }
     
     open var title: String?
-    open var leftImage: UIImage?
+    open var titleImage: UIImage?
     open var date: Date = Date()
     open var displayDisabledColor: UIColor? = .lightGray
     open var titleDisabledColor: UIColor? = .lightGray
@@ -65,10 +65,15 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
         return self
     }
     
+    open override func initialized() {
+        super.initialized()
+        rowHeight = 60
+    }
+    
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
     }
     
     open override func update() {
@@ -78,8 +83,8 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
         titleLabel?.text = title
         let displayLabel = cell.formDisplayLabel()
         displayLabel?.text = displayTextFromDate?(date) ?? "\(date)"
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
         if enabled {
             if isEditing {
                 if titleColor == nil { titleColor = titleLabel?.textColor ?? .black }

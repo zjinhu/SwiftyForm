@@ -15,7 +15,7 @@ public class ImageRow: ImageRowFormer<ImageCell> {
 open class ImageCell: BaseCell, ImageFormableRow {
     
     public private(set) weak var titleLabel: UILabel!
-    public private(set) weak var subTextLabel: UILabel!
+    public private(set) weak var subTitleLabel: UILabel!
     public private(set) weak var titleImageView: UIImageView!
     public private(set) weak var coverImageView: UIImageView!
     
@@ -31,8 +31,8 @@ open class ImageCell: BaseCell, ImageFormableRow {
         return coverImageView
     }
     
-    public func formSubTextLabel() -> UILabel? {
-        return subTextLabel
+    public func formSubTitleLabel() -> UILabel? {
+        return subTitleLabel
     }
     
     open override func setup() {
@@ -49,11 +49,11 @@ open class ImageCell: BaseCell, ImageFormableRow {
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
         
-        let subTextLabel = UILabel()
-        subTextLabel.textColor = .lightGray
-        subTextLabel.textAlignment = .right
-        contentView.addSubview(subTextLabel)
-        self.subTextLabel = subTextLabel
+        let subTitleLabel = UILabel()
+        subTitleLabel.textColor = .lightGray
+        subTitleLabel.textAlignment = .right
+        contentView.addSubview(subTitleLabel)
+        self.subTitleLabel = subTitleLabel
         
         let coverImageView = UIImageView()
         coverImageView.clipsToBounds = true
@@ -65,7 +65,7 @@ open class ImageCell: BaseCell, ImageFormableRow {
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(15)
-            make.height.equalTo(40)
+            make.height.equalTo(60)
         }
         
         titleImageView.snp.makeConstraints { (make) in
@@ -73,7 +73,7 @@ open class ImageCell: BaseCell, ImageFormableRow {
             make.left.equalToSuperview().offset(15)
         }
         
-        subTextLabel.snp.makeConstraints { (make) in
+        subTitleLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(titleLabel)
             make.left.equalTo(titleLabel.snp.right)
             make.right.equalToSuperview().offset(-15)
@@ -92,7 +92,7 @@ open class ImageCell: BaseCell, ImageFormableRow {
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.equalToSuperview()
-            make.height.equalTo(40)
+            make.height.equalTo(60)
             if titleImageView.image == nil{
                 make.left.equalToSuperview().offset(15)
             }else{

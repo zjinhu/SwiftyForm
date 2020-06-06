@@ -10,46 +10,51 @@ import UIKit
 
 public protocol LabelFormableRow: FormableRow {
     
-    func formTextLabel() -> UILabel?
-    func formLeftImageView() -> UIImageView?
-    func formSubTextLabel() -> UILabel?
+    func formTitleLabel() -> UILabel?
+    func formTitleImageView() -> UIImageView?
+    func formSubTitleLabel() -> UILabel?
 }
 
 open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: LabelFormableRow {
 
     open var title: String?
-    open var leftImage: UIImage?
-    open var subText: String?
-    open var textDisabledColor: UIColor? = .lightGray
-    open var subTextDisabledColor: UIColor? = .lightGray
+    open var titleImage: UIImage?
+    open var subTitle: String?
+    open var titleDisabledColor: UIColor? = .lightGray
+    open var subTitleDisabledColor: UIColor? = .lightGray
  
-    private final var textColor: UIColor?
-    private final var subTextColor: UIColor?
+    private final var titleColor: UIColor?
+    private final var subTitleColor: UIColor?
+    
+    open override func initialized() {
+        super.initialized()
+        rowHeight = 60
+    }
     
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
     }
     
     open override func update() {
         super.update()
         
-        let textLabel = cell.formTextLabel()
-        let subTextLabel = cell.formSubTextLabel()
+        let textLabel = cell.formTitleLabel()
+        let subTitleLabel = cell.formSubTitleLabel()
         textLabel?.text = title
-        subTextLabel?.text = subText
+        subTitleLabel?.text = subTitle
         
         if enabled {
-            _ = textColor.map { textLabel?.textColor = $0 }
-            _ = subTextColor.map { subTextLabel?.textColor = $0 }
-            textColor = nil
-            subTextColor = nil
+            _ = titleColor.map { textLabel?.textColor = $0 }
+            _ = subTitleColor.map { subTitleLabel?.textColor = $0 }
+            titleColor = nil
+            subTitleColor = nil
         } else {
-            if textColor == nil { textColor = textLabel?.textColor ?? .black }
-            if subTextColor == nil { subTextColor = subTextLabel?.textColor ?? .black }
-            textLabel?.textColor = textDisabledColor
-            subTextLabel?.textColor = subTextDisabledColor
+            if titleColor == nil { titleColor = textLabel?.textColor ?? .black }
+            if subTitleColor == nil { subTitleColor = subTitleLabel?.textColor ?? .black }
+            textLabel?.textColor = titleDisabledColor
+            subTitleLabel?.textColor = subTitleDisabledColor
         }
     }
 }

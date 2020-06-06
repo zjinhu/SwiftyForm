@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol InlinePickerFormableRow: FormableRow {
-    func formLeftImageView() -> UIImageView?
+    func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
     func formDisplayLabel() -> UILabel?
 }
@@ -33,7 +33,7 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
     }
     
     open var title: String?
-    open var leftImage: UIImage?
+    open var titleImage: UIImage?
     open var pickerItems: [InlinePickerItem<S>] = []
     open var selectedRow: Int = 0
     open var titleDisabledColor: UIColor? = .lightGray
@@ -69,10 +69,15 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
     
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
     }
     
+    open override func initialized() {
+        super.initialized()
+        rowHeight = 60
+    }
+
     open override func update() {
         super.update()
         

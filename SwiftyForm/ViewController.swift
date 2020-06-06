@@ -19,7 +19,7 @@ class ViewController: JHTableViewController {
         let check = CheckRow()
         check.configure { (row) in
             row.title = "asdfas"
-            row.leftImage = UIImage.init(named: "Image")
+            row.titleImage = UIImage.init(named: "Image")
             row.checkColor = .orange
         }
         
@@ -36,7 +36,7 @@ class ViewController: JHTableViewController {
         let labelRow = LabelRow()
         labelRow.configure { (row) in
             row.title = "asdfas"
-            row.subText = "qwqweqwe"
+            row.subTitle = "qwqweqwe"
             row.cell.accessoryType = .disclosureIndicator
         }
         labelRow.onSelected { (row) in
@@ -77,8 +77,8 @@ class ViewController: JHTableViewController {
         
         let sectionFormer1 = SectionFormer(avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
         let header = LabelHeader()
-        header.text = "123"
-        header.leftImage = UIImage.init(named: "Image")
+        header.title = "123"
+        header.titleImage = UIImage.init(named: "Image")
         
         sectionFormer1.set(headerViewFormer: header)
         
@@ -129,7 +129,7 @@ class ViewController: JHTableViewController {
         let imgRow = ImageRow()
         imgRow.configure { (row) in
             row.title = "asdfas"
-            row.subText = "qwqweqwe"
+            row.subTitle = "qwqweqwe"
             row.titleImage = UIImage.init(named: "Image")
         }
         imgRow.onSelected { (row) in

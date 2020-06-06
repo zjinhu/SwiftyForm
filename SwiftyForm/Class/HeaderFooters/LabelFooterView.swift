@@ -15,24 +15,24 @@ public class LabelFooter: LabelHeaderFooterFormer<LabelFooterView> {
 open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
 
     public private(set) weak var titleLabel: UILabel!
-    public private(set) weak var leftImageView: UIImageView!
+    public private(set) weak var titleImageView: UIImageView!
     
     public func formTitleLabel() -> UILabel {
         return titleLabel
     }
     
-    public func formLeftImageView() -> UIImageView? {
-        return leftImageView
+    public func formTitleImageView() -> UIImageView? {
+        return titleImageView
     }
     
     override open func setup() {
         super.setup()
         
-        let leftImageView = UIImageView()
-        leftImageView.clipsToBounds = true
-        contentView.addSubview(leftImageView)
-        self.leftImageView = leftImageView
-        leftImageView.snp.makeConstraints { (make) in
+        let titleImageView = UIImageView()
+        titleImageView.clipsToBounds = true
+        contentView.addSubview(titleImageView)
+        self.titleImageView = titleImageView
+        titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(15)
         }
@@ -56,7 +56,7 @@ open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
         super.updateHeaderFooterFormer(headerFooterFormer)
         
         titleLabel.snp.updateConstraints { (make) in
-            if leftImageView.image == nil{
+            if titleImageView.image == nil{
                 make.left.equalToSuperview().offset(15)
             }else{
                 make.left.equalToSuperview().offset(50)

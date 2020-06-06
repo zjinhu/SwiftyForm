@@ -15,29 +15,29 @@ public class LabelRow: LabelRowFormer<LabelCell> {
 open class LabelCell: BaseCell, LabelFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
-    public private(set) weak var subTextLabel: UILabel!
-    public private(set) weak var leftImageView: UIImageView!
+    public private(set) weak var subTitleLabel: UILabel!
+    public private(set) weak var titleImageView: UIImageView!
     
-    public func formLeftImageView() -> UIImageView? {
-        return leftImageView
+    public func formTitleImageView() -> UIImageView? {
+        return titleImageView
     }
     
-    public func formTextLabel() -> UILabel? {
+    public func formTitleLabel() -> UILabel? {
         return titleLabel
     }
     
-    public func formSubTextLabel() -> UILabel? {
-        return subTextLabel
+    public func formSubTitleLabel() -> UILabel? {
+        return subTitleLabel
     }
     
     open override func setup() {
         super.setup()
         
-        let leftImageView = UIImageView()
-        leftImageView.clipsToBounds = true
-        contentView.addSubview(leftImageView)
-        self.leftImageView = leftImageView
-        leftImageView.snp.makeConstraints { (make) in
+        let titleImageView = UIImageView()
+        titleImageView.clipsToBounds = true
+        contentView.addSubview(titleImageView)
+        self.titleImageView = titleImageView
+        titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(15)
         }
@@ -47,18 +47,18 @@ open class LabelCell: BaseCell, LabelFormableRow {
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
         
-        let subTextLabel = UILabel()
-        subTextLabel.textColor = .lightGray
-        subTextLabel.textAlignment = .right
-        contentView.addSubview(subTextLabel)
-        self.subTextLabel = subTextLabel
+        let subTitleLabel = UILabel()
+        subTitleLabel.textColor = .lightGray
+        subTitleLabel.textAlignment = .right
+        contentView.addSubview(subTitleLabel)
+        self.subTitleLabel = subTitleLabel
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.equalToSuperview().offset(15)
         }
         
-        subTextLabel.snp.makeConstraints { (make) in
+        subTitleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.equalTo(titleLabel.snp.right)
             make.right.equalToSuperview().offset(-15)
@@ -70,14 +70,14 @@ open class LabelCell: BaseCell, LabelFormableRow {
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            if leftImageView.image == nil{
+            if titleImageView.image == nil{
                 make.left.equalToSuperview().offset(15)
             }else{
-                make.left.equalTo(leftImageView.snp.right).offset(5)
+                make.left.equalTo(titleImageView.snp.right).offset(5)
             }
         }
 
-        subTextLabel.snp.updateConstraints { (make) in
+        subTitleLabel.snp.updateConstraints { (make) in
             make.right.equalToSuperview().offset((accessoryType == .none) ? -15 : -5)
         }
     }

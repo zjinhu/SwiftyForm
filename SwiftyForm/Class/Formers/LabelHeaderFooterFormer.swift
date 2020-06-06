@@ -9,26 +9,26 @@
 import UIKit
 
 public protocol LabelFormableView: FormableHeaderFooter {
-    func formLeftImageView() -> UIImageView?
+    func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel
 }
 
-public class LabelHeaderFooterFormer<T: UITableViewHeaderFooterView>: BaseHeaderFooterFormer<T> where T: LabelFormableView {
+open class LabelHeaderFooterFormer<T: UITableViewHeaderFooterView>: BaseHeaderFooterFormer<T> where T: LabelFormableView {
 
-    public var text: String?
-    open var leftImage: UIImage?
+    open var title: String?
+    open var titleImage: UIImage?
 
-    public override func initialized() {
+    open override func initialized() {
         super.initialized()
         viewHeight = 30
     }
     
-    public override func viewInitialized(_ view: T) {
+    open override func viewInitialized(_ view: T) {
         super.viewInitialized(view)
-        headerFooter.formLeftImageView()?.image = leftImage
+        headerFooter.formTitleImageView()?.image = titleImage
     }
-    public override func update() {
+    open override func update() {
         super.update() 
-        headerFooter.formTitleLabel().text = text
+        headerFooter.formTitleLabel().text = title
     }
 }

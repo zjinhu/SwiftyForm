@@ -10,17 +10,17 @@ import UIKit
 
 public protocol AvatarFormableRow: FormableRow {
     
-    func formTextLabel() -> UILabel?
-    func formLeftImageView() -> UIImageView?
+    func formTitleLabel() -> UILabel?
+    func formTitleImageView() -> UIImageView?
     func formAvatarView() -> UIImageView?
 }
 
 open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: AvatarFormableRow {
  
     open var title: String?
-    open var leftImage: UIImage?
+    open var titleImage: UIImage?
     open var avatarImage: UIImage?
-    open var textDisabledColor: UIColor? = .lightGray
+    open var titleDisabledColor: UIColor? = .lightGray
     
     private final var textColor: UIColor?
     
@@ -31,14 +31,14 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
     
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
-        let leftImageView = cell.formLeftImageView()
-        leftImageView?.image = leftImage
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
     }
     
     open override func update() {
         super.update()
         
-        let textLabel = cell.formTextLabel()
+        let textLabel = cell.formTitleLabel()
         let avatarView = cell.formAvatarView()
         textLabel?.text = title
         avatarView?.image = avatarImage
@@ -48,7 +48,7 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
             textColor = nil
         } else {
             if textColor == nil { textColor = textLabel?.textColor ?? .black }
-            textLabel?.textColor = textDisabledColor
+            textLabel?.textColor = titleDisabledColor
         }
     }
 }

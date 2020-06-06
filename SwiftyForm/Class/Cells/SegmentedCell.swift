@@ -16,10 +16,10 @@ open class SegmentedCell: BaseCell, SegmentedFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var segmentedControl: UISegmentedControl!
-    public private(set) weak var leftImageView: UIImageView!
+    public private(set) weak var titleImageView: UIImageView!
     
-    public func formLeftImageView() -> UIImageView? {
-        return leftImageView
+    public func formTitleImageView() -> UIImageView? {
+        return titleImageView
     }
     
     public func formTitleLabel() -> UILabel? {
@@ -33,11 +33,11 @@ open class SegmentedCell: BaseCell, SegmentedFormableRow {
     open override func setup() {
         super.setup()
         
-        let leftImageView = UIImageView()
-        leftImageView.clipsToBounds = true
-        contentView.addSubview(leftImageView)
-        self.leftImageView = leftImageView
-        leftImageView.snp.makeConstraints { (make) in
+        let titleImageView = UIImageView()
+        titleImageView.clipsToBounds = true
+        contentView.addSubview(titleImageView)
+        self.titleImageView = titleImageView
+        titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(15)
         }
@@ -68,10 +68,10 @@ open class SegmentedCell: BaseCell, SegmentedFormableRow {
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            if leftImageView.image == nil{
+            if titleImageView.image == nil{
                 make.left.equalToSuperview().offset(15)
             }else{
-                make.left.equalTo(leftImageView.snp.right).offset(5)
+                make.left.equalTo(titleImageView.snp.right).offset(5)
             }
         }
     }
