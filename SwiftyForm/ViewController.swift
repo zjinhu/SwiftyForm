@@ -108,7 +108,25 @@ class ViewController: JHTableViewController {
             row.title = "InlineDatePicker"
         }
         
-        let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow)
+        let btnRow = ButtonRow()
+        btnRow.configure { (row) in
+            row.cell.leftButton.isHidden = true
+            row.cell.rightButton.backgroundColor = .orange
+        }
+        
+        let btn2Row = ButtonRow()
+        btn2Row.configure { (row) in
+            row.cell.leftButton.backgroundColor = .blue
+            row.cell.rightButton.backgroundColor = .orange
+        }
+        btn2Row.onLeftButtonClick {
+            print("点击了111")
+        }
+        btn2Row.onRightButtonClick {
+            print("点击了222")
+        }
+        
+        let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow,btnRow,btn2Row)
         
         former.append(sectionFormer: sectionFormer1,sectionFormer3,sectionFormer2)
     }

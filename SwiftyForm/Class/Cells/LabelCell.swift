@@ -77,7 +77,6 @@ public class LabelCell: BaseCell, LabelFormableRow {
             }
         }
 
-        
         subTextLabel.snp.updateConstraints { (make) in
             make.right.equalToSuperview().offset((accessoryType == .none) ? -15 : -5)
         }

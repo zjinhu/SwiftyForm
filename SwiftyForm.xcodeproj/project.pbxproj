@@ -50,6 +50,10 @@
 		8196A70F248A31400055FC49 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A701248A31400055FC49 /* SwitchCell.swift */; };
 		8196A713248A5ADD0055FC49 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A712248A5ADD0055FC49 /* AvatarCell.swift */; };
 		8196A715248A5BF90055FC49 /* AvatarRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A714248A5BF90055FC49 /* AvatarRowFormer.swift */; };
+		E2346E0A248BA18E00E4832B /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2346E09248BA18E00E4832B /* ButtonCell.swift */; };
+		E2346E0C248BA24000E4832B /* ButtonRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2346E0B248BA24000E4832B /* ButtonRowFormer.swift */; };
+		E2346E0E248BADF700E4832B /* ImageRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2346E0D248BADF700E4832B /* ImageRowFormer.swift */; };
+		E2346E10248BAE0F00E4832B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2346E0F248BAE0F00E4832B /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +104,10 @@
 		8196A714248A5BF90055FC49 /* AvatarRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRowFormer.swift; sourceTree = "<group>"; };
 		C74FFE71B75DB0870F24908B /* Pods-SwiftyForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyForm.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm.debug.xcconfig"; sourceTree = "<group>"; };
 		C9C4070DD8FFA4C70F3A8D2E /* Pods-SwiftyForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyForm.release.xcconfig"; path = "Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm.release.xcconfig"; sourceTree = "<group>"; };
+		E2346E09248BA18E00E4832B /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		E2346E0B248BA24000E4832B /* ButtonRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowFormer.swift; sourceTree = "<group>"; };
+		E2346E0D248BADF700E4832B /* ImageRowFormer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowFormer.swift; sourceTree = "<group>"; };
+		E2346E0F248BAE0F00E4832B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,8 @@
 				8196A6F7248A313F0055FC49 /* PickerCell.swift */,
 				8196A6FA248A313F0055FC49 /* InlineDatePickerCell.swift */,
 				8196A6FE248A313F0055FC49 /* InlinePickerCell.swift */,
+				E2346E09248BA18E00E4832B /* ButtonCell.swift */,
+				E2346E0F248BAE0F00E4832B /* ImageCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -217,6 +227,8 @@
 				8196A6E8248A2FE30055FC49 /* PickerRowFormer.swift */,
 				8196A6E6248A2FE30055FC49 /* InlineDatePickerRowFormer.swift */,
 				8196A6DD248A2FE20055FC49 /* InlinePickerRowFormer.swift */,
+				E2346E0B248BA24000E4832B /* ButtonRowFormer.swift */,
+				E2346E0D248BADF700E4832B /* ImageRowFormer.swift */,
 				8196A6CB248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift */,
 			);
 			path = Formers;
@@ -371,13 +383,16 @@
 				8196A708248A31400055FC49 /* InlineDatePickerCell.swift in Sources */,
 				8196A6D8248A29440055FC49 /* BaseCell.swift in Sources */,
 				8196A6F2248A2FE30055FC49 /* InlineDatePickerRowFormer.swift in Sources */,
+				E2346E0E248BADF700E4832B /* ImageRowFormer.swift in Sources */,
 				8196A70A248A31400055FC49 /* CheckCell.swift in Sources */,
 				8196A6BF2489FDA70055FC49 /* ViewFormer.swift in Sources */,
 				8196A6C4248A187D0055FC49 /* BaseHeaderFooterView.swift in Sources */,
 				8196A6DA248A2F0F0055FC49 /* LabelRowFormer.swift in Sources */,
 				8196A715248A5BF90055FC49 /* AvatarRowFormer.swift in Sources */,
 				8196A70D248A31400055FC49 /* LabelCell.swift in Sources */,
+				E2346E0A248BA18E00E4832B /* ButtonCell.swift in Sources */,
 				8196A70C248A31400055FC49 /* InlinePickerCell.swift in Sources */,
+				E2346E10248BAE0F00E4832B /* ImageCell.swift in Sources */,
 				8196A6C12489FDD10055FC49 /* FormerProtocol.swift in Sources */,
 				8196A6ED248A2FE30055FC49 /* TextViewRowFormer.swift in Sources */,
 				8196A6CC248A1FFD0055FC49 /* LabelHeaderFooterFormer.swift in Sources */,
@@ -393,6 +408,7 @@
 				8196A6EF248A2FE30055FC49 /* SegmentedRowFormer.swift in Sources */,
 				8196A6A52489F9120055FC49 /* SceneDelegate.swift in Sources */,
 				8196A705248A31400055FC49 /* PickerCell.swift in Sources */,
+				E2346E0C248BA24000E4832B /* ButtonRowFormer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
