@@ -54,6 +54,8 @@ public class AvatarCell: BaseCell, AvatarFormableRow {
 
     public override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
-
+        avatarView.snp.updateConstraints { (make) in
+            make.right.equalToSuperview().offset((accessoryType == .none) ? -15 : -5)
+        }
     }
 }

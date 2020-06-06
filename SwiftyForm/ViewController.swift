@@ -17,56 +17,59 @@ class ViewController: JHTableViewController {
         // Do any additional setup after loading the view.
 
         let check = CheckRow()
-        check.configure { (cell) in
-            cell.title = "asdfas"
-            cell.checkColor = .orange
+        check.configure { (row) in
+            row.title = "asdfas"
+            row.checkColor = .orange
         }
         
         let avatarRow = AvatarRow()
-        avatarRow.configure { (cell) in
-            cell.title = "头像"
-            cell.avatarImage = UIImage.init(named: "icon")
+        avatarRow.configure { (row) in
+            row.title = "头像"
+            row.avatarImage = UIImage.init(named: "icon")
+            row.cell.accessoryType = .disclosureIndicator
         }
-        avatarRow.onSelected { (cell) in
+        avatarRow.onSelected { (row) in
             print("dianjile")
         }
         
         let labelRow = LabelRow()
-        labelRow.configure { (cell) in
-            cell.title = "asdfas"
-            cell.subText = "qwqweqwe"
+        labelRow.configure { (row) in
+            row.title = "asdfas"
+            row.subText = "qwqweqwe"
+            row.cell.accessoryType = .disclosureIndicator
         }
-        labelRow.onSelected { (cell) in
+        labelRow.onSelected { (row) in
             print("点击了啊啊啊")
         }
         
         let textFieldRow = TextFieldRow()
 
-        textFieldRow.configure { (cell) in
-            cell.text = "123123"
-//            cell.title = "hahaha"
-            cell.placeholder = "12414124124"
+        textFieldRow.configure { (row) in
+            row.text = "123123"
+//            row.title = "hahaha"
+            row.placeholder = "12414124124"
+            
         }
         textFieldRow.onTextChanged { (str) in
             print("\(str)")
         }
         
         let textViewRow = TextViewRow()
-        textViewRow.configure { (cell) in
-            cell.title = "12312"
-            cell.placeholder = "asdasdasd"
+        textViewRow.configure { (row) in
+            row.title = "12312"
+            row.placeholder = "asdasdasd"
         }
         
         let switchRow = SwitchRow()
-        switchRow.configure { (cell) in
-            cell.title = "Switch"
+        switchRow.configure { (row) in
+            row.title = "Switch"
         }
         
         let segmentRow = SegmentedRow()
-        segmentRow.configure(handler: { (cell) in
-            cell.title = "Switch"
-            cell.segmentTitles = ["Opt1", "Opt2", "Opt3"]
-            cell.selectedIndex = UISegmentedControl.noSegment
+        segmentRow.configure(handler: { (row) in
+            row.title = "Switch"
+            row.segmentTitles = ["Opt1", "Opt2", "Opt3"]
+            row.selectedIndex = UISegmentedControl.noSegment
         })
         
         let sectionFormer1 = SectionFormer(avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
@@ -77,16 +80,17 @@ class ViewController: JHTableViewController {
         let datePickerRow = DatePickerRow()
         
         let pickerRow = PickerRow()
-        pickerRow.configure { (cell) in
-            cell.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
+        pickerRow.configure { (row) in
+            row.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
         }
         
         let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
         
         let inlinePickerRow = InlinePickerRow()
-        inlinePickerRow.configure { (cell) in
-            cell.title = "InlinePicker"
-            cell.pickerItems = [InlinePickerItem(
+        inlinePickerRow.configure { (row) in
+            row.cell.accessoryType = .disclosureIndicator
+            row.title = "InlinePicker"
+            row.pickerItems = [InlinePickerItem(
                  title: "",
                  displayTitle: NSAttributedString(string: "Not set"),
                  value: nil)]
@@ -94,8 +98,9 @@ class ViewController: JHTableViewController {
         }
         
         let inlineDateRow = InlineDatePickerRow()
-        inlineDateRow.configure { (cell) in
-            cell.title = "InlineDatePicker"
+        inlineDateRow.configure { (row) in
+            row.cell.accessoryType = .disclosureIndicator
+            row.title = "InlineDatePicker"
         }
         
         let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow)

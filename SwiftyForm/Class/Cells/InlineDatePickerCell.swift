@@ -29,6 +29,10 @@ public class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
     
     public override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
+        
+        displayLabel.snp.updateConstraints { (make) in
+            make.right.equalToSuperview().offset((accessoryType == .none) ? -15 : -5)
+        }
     }
     
     public override func setup() {
