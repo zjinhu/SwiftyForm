@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
 
   spec.author             = { 'HU' => '814030966@qq.com' }
 
-  spec.source       = { :git => 'https://github.com/jackiehu/SwiftMesh.git', :tag => s.version.to_s }
+  spec.source       = { :git => 'https://github.com/jackiehu/SwiftyForm.git', :tag => s.version.to_s }
 
 
 
