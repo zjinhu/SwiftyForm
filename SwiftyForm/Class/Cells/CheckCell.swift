@@ -12,7 +12,7 @@ public class CheckRow: CheckRowFormer<CheckCell> {
 
 }
 
-public class CheckCell: BaseCell, CheckFormableRow {
+open class CheckCell: BaseCell, CheckFormableRow {
 
     public private(set) weak var leftImageView: UIImageView!
     public private(set) weak var titleLabel: UILabel!
@@ -25,7 +25,7 @@ public class CheckCell: BaseCell, CheckFormableRow {
         return titleLabel
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()
@@ -47,7 +47,7 @@ public class CheckCell: BaseCell, CheckFormableRow {
         }
     }
     
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in

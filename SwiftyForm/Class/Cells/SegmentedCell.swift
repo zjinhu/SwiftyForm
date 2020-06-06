@@ -12,7 +12,7 @@ public class SegmentedRow: SegmentedRowFormer<SegmentedCell> {
 
 }
 
-public class SegmentedCell: BaseCell, SegmentedFormableRow {
+open class SegmentedCell: BaseCell, SegmentedFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var segmentedControl: UISegmentedControl!
@@ -30,7 +30,7 @@ public class SegmentedCell: BaseCell, SegmentedFormableRow {
         return segmentedControl
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()
@@ -63,7 +63,7 @@ public class SegmentedCell: BaseCell, SegmentedFormableRow {
          }
     }
     
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in

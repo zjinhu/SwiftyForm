@@ -12,7 +12,7 @@ public class DatePickerRow: DatePickerRowFormer<DatePickerCell> {
 
 }
 
-public class DatePickerCell: BaseCell, DatePickerFormableRow {
+open class DatePickerCell: BaseCell, DatePickerFormableRow {
 
     public private(set) weak var datePicker: UIDatePicker!
     
@@ -20,7 +20,7 @@ public class DatePickerCell: BaseCell, DatePickerFormableRow {
         return datePicker
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let datePicker = UIDatePicker()

@@ -12,7 +12,7 @@ public class LabelHeader: LabelHeaderFooterFormer<LabelHeaderView> {
 
 }
 
-public class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
+open class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var leftImageView: UIImageView!
@@ -25,7 +25,7 @@ public class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
         return leftImageView
     }
     
-    override public func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()
@@ -51,7 +51,7 @@ public class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
         self.titleLabel = titleLabel
     }
     
-    public override func updateHeaderFooterFormer(_ headerFooterFormer: ViewFormer) {
+    open override func updateHeaderFooterFormer(_ headerFooterFormer: ViewFormer) {
         super.updateHeaderFooterFormer(headerFooterFormer)
 
         titleLabel.snp.remakeConstraints { (make) in

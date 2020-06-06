@@ -12,7 +12,7 @@ public class SwitchRow: SwitchRowFormer<SwitchCell> {
 
 }
 
-public class SwitchCell: BaseCell, SwitchFormableRow {
+open class SwitchCell: BaseCell, SwitchFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var switchButton: UISwitch!
@@ -30,7 +30,7 @@ public class SwitchCell: BaseCell, SwitchFormableRow {
         return switchButton
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()
@@ -62,7 +62,7 @@ public class SwitchCell: BaseCell, SwitchFormableRow {
         }
     }
     
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in

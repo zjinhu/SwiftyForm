@@ -44,6 +44,10 @@ open class ButtonRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
     open override func update() {
         super.update()
         cell.selectionStyle = .none
+        let leftButton = cell.formLeftButton()
+        let rightButton = cell.formRightButton()
+        leftButton?.isEnabled = enabled
+        rightButton?.isEnabled = enabled
     }
     
     @objc private dynamic func leftButtonAction(_ sender: UIButton) {

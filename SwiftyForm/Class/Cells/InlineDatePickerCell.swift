@@ -12,7 +12,7 @@ public class InlineDatePickerRow: InlineDatePickerRowFormer<InlineDatePickerCell
 
 }
 
-public class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
+open class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var displayLabel: UILabel!
@@ -30,7 +30,7 @@ public class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
         return displayLabel
     }
     
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
@@ -48,7 +48,7 @@ public class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
         }
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()

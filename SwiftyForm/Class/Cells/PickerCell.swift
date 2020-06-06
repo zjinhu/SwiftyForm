@@ -12,7 +12,7 @@ public class PickerRow: PickerRowFormer<PickerCell, Any> {
 
 }
 
-public class PickerCell: BaseCell, PickerFormableRow {
+open class PickerCell: BaseCell, PickerFormableRow {
 
     public private(set) weak var pickerView: UIPickerView!
     
@@ -20,7 +20,7 @@ public class PickerCell: BaseCell, PickerFormableRow {
         return pickerView
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let pickerView = UIPickerView()

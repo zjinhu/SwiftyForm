@@ -12,7 +12,7 @@ public class TextFieldRow: TextFieldRowFormer<TextFieldCell> {
 
 }
 
-public class TextFieldCell: BaseCell, TextFieldFormableRow {
+open class TextFieldCell: BaseCell, TextFieldFormableRow {
 
     public private(set) weak var textField: UITextField!
     public private(set) weak var titleLabel: UILabel!
@@ -30,7 +30,7 @@ public class TextFieldCell: BaseCell, TextFieldFormableRow {
         return titleLabel
     }
     
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
@@ -52,7 +52,7 @@ public class TextFieldCell: BaseCell, TextFieldFormableRow {
         }
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()

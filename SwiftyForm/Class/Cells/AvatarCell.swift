@@ -12,7 +12,7 @@ public class AvatarRow: AvatarRowFormer<AvatarCell> {
 
 }
 
-public class AvatarCell: BaseCell, AvatarFormableRow {
+open class AvatarCell: BaseCell, AvatarFormableRow {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var avatarView: UIImageView!
@@ -30,7 +30,7 @@ public class AvatarCell: BaseCell, AvatarFormableRow {
         return avatarView
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftImageView = UIImageView()
@@ -66,7 +66,7 @@ public class AvatarCell: BaseCell, AvatarFormableRow {
         }
     }
 
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in

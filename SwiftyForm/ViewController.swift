@@ -126,7 +126,17 @@ class ViewController: JHTableViewController {
             print("点击了222")
         }
         
-        let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow,btnRow,btn2Row)
+        let imgRow = ImageRow()
+        imgRow.configure { (row) in
+            row.title = "asdfas"
+            row.subText = "qwqweqwe"
+            row.titleImage = UIImage.init(named: "Image")
+        }
+        imgRow.onSelected { (row) in
+            print("点击imgRow")
+        }
+        
+        let sectionFormer3 = SectionFormer(inlinePickerRow,inlineDateRow,btnRow,btn2Row,imgRow)
         
         former.append(sectionFormer: sectionFormer1,sectionFormer3,sectionFormer2)
     }

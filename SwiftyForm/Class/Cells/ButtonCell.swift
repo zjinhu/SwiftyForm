@@ -12,7 +12,7 @@ public class ButtonRow: ButtonRowFormer<ButtonCell> {
 
 }
 
-public class ButtonCell: BaseCell, ButtonFormableRow {
+open class ButtonCell: BaseCell, ButtonFormableRow {
     
     public private(set) weak var leftButton: UIButton!
     public private(set) weak var rightButton: UIButton!
@@ -25,7 +25,7 @@ public class ButtonCell: BaseCell, ButtonFormableRow {
         return rightButton
     }
  
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
         let leftButton = UIButton()
@@ -49,7 +49,7 @@ public class ButtonCell: BaseCell, ButtonFormableRow {
         }
     }
     
-    public override func updateWithRowFormer(_ rowFormer: RowFormer) {
+    open override func updateWithRowFormer(_ rowFormer: RowFormer) {
         super.updateWithRowFormer(rowFormer)
         
         rightButton.snp.remakeConstraints { (make) in
