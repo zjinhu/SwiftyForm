@@ -58,7 +58,7 @@ open class SwitchCell: BaseCell, SwitchFormableRow {
         
         switchButton.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-20)
+            make.right.equalToSuperview().offset(-24)
         }
     }
     
@@ -68,12 +68,11 @@ open class SwitchCell: BaseCell, SwitchFormableRow {
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(20)
+                make.left.equalToSuperview().offset(24)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }
         }
-
 
     }
 }
