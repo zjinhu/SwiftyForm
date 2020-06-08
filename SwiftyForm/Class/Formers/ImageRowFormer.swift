@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ImageForm协议
 public protocol ImageFormableRow: FormableRow {
     func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
@@ -15,6 +16,7 @@ public protocol ImageFormableRow: FormableRow {
     func formImageView() -> UIImageView?
 }
 
+/// ImageForm 顶部和LabelRorm一样,下边是图片
 open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: ImageFormableRow {
  
     open var title: String?

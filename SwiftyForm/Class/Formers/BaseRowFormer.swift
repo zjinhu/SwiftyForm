@@ -9,7 +9,8 @@
 import UIKit
 
 open class BaseRowFormer<T: UITableViewCell>: RowFormer {
-
+    
+    /// 获取form里的cell
     public var cell: T {
         return cellInstance as! T
     }
@@ -17,21 +18,32 @@ open class BaseRowFormer<T: UITableViewCell>: RowFormer {
     public init() {
         super.init(withCellType: T.self)
     }
-
-    @discardableResult
-    public final func cellSetup(_ handler: @escaping ((T) -> Void)) -> Self {
+    
+    /// 设置cell内视图
+    /// - Parameter handler: 回调闭包
+    /// - Returns: 返回former
+    @discardableResult public final func cellSetup(_ handler: @escaping ((T) -> Void)) -> Self {
         cellSetup = { handler(($0 as! T)) }
         return self
     }
     
-    @discardableResult
-    public final func cellUpdate(_ update: ((T) -> Void)) -> Self {
+    /// cell更新
+    /// - Parameter update: 回调闭包
+    /// - Returns: 返回former
+    @discardableResult public final func cellUpdate(_ update: ((T) -> Void)) -> Self {
         update(cell)
         return self
     }
     
-    open func cellInitialized(_ cell: T) {}
+    /// cell初始化
+    /// - Parameter cell: cell泛型
+    open func cellInitialized(_ cell: T) {
+        
+    }
 
+    
+    /// cell初始化
+    /// - Parameter cell: cell
     override func cellInstanceInitialized(_ cell: UITableViewCell) {
         cellInitialized(cell as! T)
     }

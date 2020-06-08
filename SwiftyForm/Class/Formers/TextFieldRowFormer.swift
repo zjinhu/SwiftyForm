@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// TextFieldForm协议
 public protocol TextFieldFormableRow: FormableRow {
     
     func formTextField() -> UITextField
@@ -15,6 +16,7 @@ public protocol TextFieldFormableRow: FormableRow {
     func formTitleLabel() -> UILabel?
 }
 
+/// TextFieldForm
 open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: TextFieldFormableRow {
 
     override open var canBecomeEditing: Bool {
@@ -37,25 +39,33 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     private final var textColor: UIColor?
     private final var titleColor: UIColor?
  
- private lazy var observer: Observer<T> = Observer<T>(textFieldRowFormer: self)
-    @discardableResult
-    public final func onTextChanged(_ handler: @escaping ((String) -> Void)) -> Self {
+    private lazy var observer: Observer<T> = Observer<T>(textFieldRowFormer: self)
+    
+    /// TextFieldForm输入变化
+    /// - Parameter handler: handler description
+    /// - Returns: description
+    @discardableResult public final func onTextChanged(_ handler: @escaping ((String) -> Void)) -> Self {
         onTextChanged = handler
         return self
     }
 
-    @discardableResult
-    public final func onReturn(_ handler: @escaping ((String) -> Void)) -> Self {
+    
+    /// TextFieldForm输入回车
+    /// - Parameter handler: handler description
+    /// - Returns: description
+    @discardableResult public final func onReturn(_ handler: @escaping ((String) -> Void)) -> Self {
         onReturn = handler
         return self
     }
     
+    /// 初始化TextFieldForm
     open override func initialized() {
         super.initialized()
         rowHeight = 60
     }
-
     
+    /// TextFieldForm初始化
+    /// - Parameter cell: cell description
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         let textField = cell.formTextField()
@@ -70,6 +80,7 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         titleImageView?.image = titleImage
     }
     
+    /// TextFieldForm数据更新
     open override func update() {
         super.update()
         
@@ -100,6 +111,8 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         }
     }
     
+    /// TextFieldFormc cell被点击
+    /// - Parameter indexPath: indexPath description
     open override func cellSelected(indexPath: IndexPath) {
         let textField = cell.formTextField()
         if !textField.isEditing {

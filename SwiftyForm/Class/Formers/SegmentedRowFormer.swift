@@ -8,12 +8,14 @@
 
 import UIKit
 
+/// SegmentedForm
 public protocol SegmentedFormableRow: FormableRow {
     func formTitleImageView() -> UIImageView?
     func formSegmented() -> UISegmentedControl
     func formTitleLabel() -> UILabel?
 }
 
+/// SegmentedForm
 open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SegmentedFormableRow {
     
     open var title: String?
@@ -25,12 +27,16 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     private final var onSegmentSelected: ((Int, String) -> Void)?
     private final var titleColor: UIColor?
     
-    @discardableResult
-    public final func onSegmentSelected(_ handler: @escaping ((Int, String) -> Void)) -> Self {
+    /// SegmentedForm 选项卡变化回调
+    /// - Parameter handler: handler description
+    /// - Returns: description
+    @discardableResult public final func onSegmentSelected(_ handler: @escaping ((Int, String) -> Void)) -> Self {
         onSegmentSelected = handler
         return self
     }
     
+    /// SegmentedForm初始化
+    /// - Parameter cell: cell description
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         cell.formSegmented().addTarget(self, action: #selector(SegmentedRowFormer.valueChanged(segment:)), for: .valueChanged)
@@ -38,11 +44,13 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         titleImageView?.image = titleImage
     }
     
+    /// SegmentedForm初始化
     open override func initialized() {
         super.initialized()
         rowHeight = 60
     }
-
+    
+    /// SegmentedForm 数据更新
     open override func update() {
         super.update()
         

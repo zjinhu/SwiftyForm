@@ -8,12 +8,14 @@
 
 import UIKit
 
+/// CheckForm协议
 public protocol CheckFormableRow: FormableRow {
     func formTitleLabel() -> UILabel?
     func formTitleImageView() -> UIImageView?
 }
 
 
+/// CheckFormer
 open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: CheckFormableRow {
     
     open var title: String?
@@ -21,29 +23,34 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
     open var checked = false
     open var customCheckView: UIView?
     open var titleDisabledColor: UIColor? = .lightGray
-    
     open var checkColor: UIColor?
  
     private final var titleColor: UIColor?
     private final var onCheckChanged: ((Bool) -> Void)?
     
-    @discardableResult
-    public final func onCheckChanged(_ handler: @escaping ((Bool) -> Void)) -> Self {
+    /// CheckForm状态变化
+    /// - Parameter handler: handler description
+    /// - Returns: description
+    @discardableResult public final func onCheckChanged(_ handler: @escaping ((Bool) -> Void)) -> Self {
         onCheckChanged = handler
         return self
     }
     
+    /// CheckForm初始化 继承可重写
+    /// - Parameter cell: cell泛型
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
     
+    /// 初始化CheckForm
     open override func initialized() {
         super.initialized()
         rowHeight = 60
     }
     
+    /// CheckForm数据更新
     open override func update() {
         super.update()
         if let customCheckView = customCheckView {
@@ -69,6 +76,8 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         }
     }
     
+    /// CheckForm点击选中
+    /// - Parameter indexPath: indexPath description
     open override func cellSelected(indexPath: IndexPath) {
         former?.deselect(animated: true)
         if enabled {

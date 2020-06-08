@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// LabelForm 协议
 public protocol LabelFormableRow: FormableRow {
     
     func formTitleLabel() -> UILabel?
@@ -15,6 +16,7 @@ public protocol LabelFormableRow: FormableRow {
     func formSubTitleLabel() -> UILabel?
 }
 
+/// LabelForm
 open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: LabelFormableRow {
 
     open var title: String?
@@ -26,17 +28,21 @@ open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where
     private final var titleColor: UIColor?
     private final var subTitleColor: UIColor?
     
+    /// LabelForm初始化
     open override func initialized() {
         super.initialized()
         rowHeight = 60
     }
     
+    /// LabelForm初始化
+    /// - Parameter cell: cell 泛型
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
     
+    /// LabelForm数据更新
     open override func update() {
         super.update()
         

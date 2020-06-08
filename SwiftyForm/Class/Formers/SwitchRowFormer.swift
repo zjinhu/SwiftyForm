@@ -8,12 +8,14 @@
 
 import UIKit
 
+/// SwitchForm协议
 public protocol SwitchFormableRow: FormableRow {
     func formTitleImageView() -> UIImageView?
     func formSwitch() -> UISwitch
     func formTitleLabel() -> UILabel?
 }
 
+/// SwitchForm
 open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SwitchFormableRow {
 
     open var title: String?
@@ -26,12 +28,16 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
     private final var titleColor: UIColor?
     private final var selectionStyle: UITableViewCell.SelectionStyle?
     
-    @discardableResult
-    public final func onSwitchChanged(_ handler: @escaping ((Bool) -> Void)) -> Self {
+    /// SwitchForm 状态变化
+    /// - Parameter handler: handler description
+    /// - Returns: description
+    @discardableResult public final func onSwitchChanged(_ handler: @escaping ((Bool) -> Void)) -> Self {
         onSwitchChanged = handler
         return self
     }
     
+    /// SwitchForm初始化
+    /// - Parameter cell: cell description
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         cell.formSwitch().addTarget(self, action: #selector(SwitchRowFormer.switchChanged(_:)), for: .valueChanged)
@@ -39,12 +45,13 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
         titleImageView?.image = titleImage
     }
     
+    /// SwitchForm初始化
     open override func initialized() {
         super.initialized()
         rowHeight = 60
     }
 
-    
+    /// SwitchForm数据更新
     open override func update() {
         super.update()
         
@@ -71,6 +78,8 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
         }
     }
     
+    /// SwitchForm cell被点击
+    /// - Parameter indexPath: indexPath description
     open override func cellSelected(indexPath: IndexPath) {        
         former?.deselect(animated: true)
         if switchWhenSelected && enabled {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// AvatarForm协议
 public protocol AvatarFormableRow: FormableRow {
     
     func formTitleLabel() -> UILabel?
@@ -15,6 +16,7 @@ public protocol AvatarFormableRow: FormableRow {
     func formAvatarView() -> UIImageView?
 }
 
+/// AvatarForm
 open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: AvatarFormableRow {
  
     open var title: String?
@@ -24,17 +26,19 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
     
     private final var textColor: UIColor?
     
+    /// AvatarForm初始化
     open override func initialized() {
         super.initialized()
         rowHeight = 60
     }
-    
+    /// AvatarForm初始化
     open override func cellInitialized(_ cell: T) {
         super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
     
+    /// AvatarForm数据更新
     open override func update() {
         super.update()
         

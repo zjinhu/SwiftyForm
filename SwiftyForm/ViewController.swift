@@ -43,7 +43,7 @@ class ViewController: JHTableViewController {
         let textFieldRow = TextFieldRow()
         textFieldRow.cell.addDownLine()
         textFieldRow.text = "123123"
-        //            row.title = "hahaha"
+        textFieldRow.title = "hahaha"
         textFieldRow.placeholder = "12414124124"
         textFieldRow.onTextChanged { (str) in
             print("\(str)")

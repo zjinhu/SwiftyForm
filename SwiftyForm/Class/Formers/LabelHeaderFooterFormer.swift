@@ -8,11 +8,12 @@
 
 import UIKit
 
+/// 图文header footer Form协议
 public protocol LabelFormableView: FormableHeaderFooter {
     func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel
 }
-
+/// 图文header footer Form
 open class LabelHeaderFooterFormer<T: UITableViewHeaderFooterView>: BaseHeaderFooterFormer<T> where T: LabelFormableView {
 
     open var title: String?

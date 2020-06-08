@@ -9,12 +9,14 @@
 import UIKit
 import SnapKit
 
+/// TextViewForm 协议
 public protocol TextViewFormableRow: FormableRow {
     func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
     func formTextView() -> UITextView
 }
 
+/// TextViewForm
 open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: TextViewFormableRow {
 
     override open var canBecomeEditing: Bool {
@@ -40,23 +42,28 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
         cell.formTextView().delegate = nil
     }
     
-    @discardableResult
-    public final func onTextChanged(_ handler: @escaping ((String) -> Void)) -> Self {
+    /// TextViewForm 输入变化
+    /// - Parameter handler: handler description
+    /// - Returns: description
+    @discardableResult public final func onTextChanged(_ handler: @escaping ((String) -> Void)) -> Self {
         onTextChanged = handler
         return self
     }
     
+    /// TextViewForm 初始化
     open override func initialized() {
         super.initialized()
         rowHeight = 170
     }
     
+    /// TextViewForm 初始化
     open override func cellInitialized(_ cell: T) {
         cell.formTextView().delegate = observer
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
     
+    /// TextViewForm数据更新
     open override func update() {
         super.update()
         
@@ -102,6 +109,8 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
         }
     }
     
+    /// TextViewForm cell被点击
+    /// - Parameter indexPath: indexPath description
     open override func cellSelected(indexPath: IndexPath) {
         let textView = cell.formTextView()
         textView.becomeFirstResponder()
