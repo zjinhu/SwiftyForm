@@ -15,65 +15,55 @@ class ViewController: JHTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        
         let check = CheckRow()
-        check.configure { (row) in
-            row.title = "asdfas"
-            row.titleImage = UIImage.init(named: "Image")
-            row.checkColor = .orange
-        }
+        check.title = "asdfas"
+        check.titleImage = UIImage.init(named: "Image")
+        check.checkColor = .orange
+        check.cell.addDownLine()
         
         let avatarRow = AvatarRow()
-        avatarRow.configure { (row) in
-            row.title = "头像"
-            row.avatarImage = UIImage.init(named: "icon")
-            row.cell.accessoryType = .disclosureIndicator
-        }
+        avatarRow.title = "头像"
+        avatarRow.avatarImage = UIImage.init(named: "icon")
+        avatarRow.cell.accessoryType = .disclosureIndicator
+        avatarRow.cell.addDownLine()
         avatarRow.onSelected { (row) in
             print("dianjile")
         }
         
         let labelRow = LabelRow()
-        labelRow.configure { (row) in
-            row.title = "asdfas"
-            row.subTitle = "qwqweqwe"
-            row.cell.accessoryType = .disclosureIndicator
-        }
+        labelRow.title = "asdfas"
+        labelRow.subTitle = "qwqweqwe"
+        labelRow.cell.accessoryType = .disclosureIndicator
+        labelRow.cell.addDownLine()
         labelRow.onSelected { (row) in
             print("点击了啊啊啊")
         }
         
         let textFieldRow = TextFieldRow()
-
-        textFieldRow.configure { (row) in
-            row.text = "123123"
-//            row.title = "hahaha"
-            row.placeholder = "12414124124"
-            
-        }
+        textFieldRow.cell.addDownLine()
+        textFieldRow.text = "123123"
+        //            row.title = "hahaha"
+        textFieldRow.placeholder = "12414124124"
         textFieldRow.onTextChanged { (str) in
             print("\(str)")
         }
         
         let textViewRow = TextViewRow()
-        textViewRow.configure { (row) in
-            row.title = "12312"
-            row.placeholder = "asdasdasd"
-        }
+        textViewRow.title = "12312"
+        textViewRow.placeholder = "asdasdasd"
+        textViewRow.cell.addDownLine()
         
         let switchRow = SwitchRow()
-        switchRow.configure { (row) in
-            row.title = "Switch"
-            row.switchWhenSelected = true
-        }
-
+        switchRow.title = "Switch"
+        switchRow.switchWhenSelected = true
+        switchRow.cell.addDownLine()
         
         let segmentRow = SegmentedRow()
-        segmentRow.configure(handler: { (row) in
-            row.title = "Switch"
-            row.segmentTitles = ["Opt1", "Opt2", "Opt3"]
-            row.selectedIndex = UISegmentedControl.noSegment
-        })
+        segmentRow.title = "Switch"
+        segmentRow.segmentTitles = ["Opt1", "Opt2", "Opt3"]
+        segmentRow.selectedIndex = UISegmentedControl.noSegment
+        segmentRow.cell.addDownLine()
         
         let sectionFormer1 = SectionFormer(avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
         let header = LabelHeader()
@@ -83,42 +73,37 @@ class ViewController: JHTableViewController {
         sectionFormer1.set(headerViewFormer: header)
         
         let datePickerRow = DatePickerRow()
+        datePickerRow.cell.addDownLine()
         
         let pickerRow = PickerRow()
-        pickerRow.configure { (row) in
-            row.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
-        }
+        pickerRow.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
+        pickerRow.cell.addDownLine()
         
         let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
         
         let inlinePickerRow = InlinePickerRow()
-        inlinePickerRow.configure { (row) in
-            row.cell.accessoryType = .disclosureIndicator
-            row.title = "InlinePicker"
-            row.pickerItems = [InlinePickerItem(
-                 title: "",
-                 displayTitle: NSAttributedString(string: "Not set"),
-                 value: nil)]
-                 + (1...20).map { InlinePickerItem(title: "Option\($0)") }
-        }
+        inlinePickerRow.cell.accessoryType = .disclosureIndicator
+        inlinePickerRow.title = "InlinePicker"
+        inlinePickerRow.cell.addDownLine()
+        inlinePickerRow.pickerItems = [InlinePickerItem(
+            title: "",
+            displayTitle: NSAttributedString(string: "Not set"),
+            value: nil)]
+            + (1...20).map { InlinePickerItem(title: "Option\($0)") }
         
         let inlineDateRow = InlineDatePickerRow()
-        inlineDateRow.configure { (row) in
-            row.cell.accessoryType = .disclosureIndicator
-            row.title = "InlineDatePicker"
-        }
+        inlineDateRow.cell.accessoryType = .disclosureIndicator
+        inlineDateRow.title = "InlineDatePicker"
+        inlineDateRow.cell.addDownLine()
         
         let btnRow = ButtonRow()
-        btnRow.configure { (row) in
-            row.cell.leftButton.isHidden = true
-            row.cell.rightButton.backgroundColor = .orange
-        }
-        
+        btnRow.cell.leftButton.isHidden = true
+        btnRow.cell.rightButton.backgroundColor = .orange
+        btnRow.cell.addDownLine()
         let btn2Row = ButtonRow()
-        btn2Row.configure { (row) in
-            row.cell.leftButton.backgroundColor = .blue
-            row.cell.rightButton.backgroundColor = .orange
-        }
+        btn2Row.cell.leftButton.backgroundColor = .blue
+        btn2Row.cell.rightButton.backgroundColor = .orange
+        btn2Row.cell.addDownLine()
         btn2Row.onLeftButtonClick {
             print("点击了111")
         }
@@ -127,11 +112,10 @@ class ViewController: JHTableViewController {
         }
         
         let imgRow = ImageRow()
-        imgRow.configure { (row) in
-            row.title = "asdfas"
-            row.subTitle = "qwqweqwe"
-            row.titleImage = UIImage.init(named: "Image")
-        }
+        imgRow.cell.addDownLine()
+        imgRow.title = "asdfas"
+        imgRow.subTitle = "qwqweqwe"
+        imgRow.titleImage = UIImage.init(named: "Image")
         imgRow.onSelected { (row) in
             print("点击imgRow")
         }
@@ -140,7 +124,7 @@ class ViewController: JHTableViewController {
         
         former.append(sectionFormer: sectionFormer1,sectionFormer3,sectionFormer2)
     }
-
-
+    
+    
 }
 

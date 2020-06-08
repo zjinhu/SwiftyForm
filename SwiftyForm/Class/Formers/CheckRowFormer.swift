@@ -39,6 +39,11 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         titleImageView?.image = titleImage
     }
     
+    open override func initialized() {
+        super.initialized()
+        rowHeight = 60
+    }
+    
     open override func update() {
         super.update()
         if let customCheckView = customCheckView {

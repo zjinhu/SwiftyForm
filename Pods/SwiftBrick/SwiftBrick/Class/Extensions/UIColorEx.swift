@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 public extension UIColor {
     convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         guard red >= 0 && red <= 255 else { return nil }
