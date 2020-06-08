@@ -10,10 +10,5 @@ target 'SwiftyForm' do
   # Pods for SwiftyForm
 
   pod 'SwiftBrick'
-  pod 'SwiftMediator'
-  pod 'SwiftShow'
-  pod 'Swift_Log'
-  pod 'Swift_Notification'
-  pod 'SwiftyRefresh'
 
 end

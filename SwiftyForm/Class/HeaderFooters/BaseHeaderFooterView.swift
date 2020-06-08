@@ -25,7 +25,7 @@ open class BaseHeaderFooterView: UITableViewHeaderFooterView, FormableHeaderFoot
     }
     
     open func setup() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .clear
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }

@@ -199,22 +199,10 @@ fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftBrick/SwiftBrick.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftButton/SwiftButton.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftMediator/SwiftMediator.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftShow/SwiftShow.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Swift_Log/Swift_Log.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Swift_Notification/Swift_Notification.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyRefresh/SwiftyRefresh.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftBrick/SwiftBrick.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftButton/SwiftButton.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftMediator/SwiftMediator.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftShow/SwiftShow.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Swift_Log/Swift_Log.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Swift_Notification/Swift_Notification.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyRefresh/SwiftyRefresh.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
