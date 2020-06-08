@@ -26,6 +26,6 @@ open class BaseCell: UITableViewCell, FormableRow {
 
     
     open func setup() {
-        textLabel?.backgroundColor = .clear
+        contentView.backgroundColor = .clear
     }
 }

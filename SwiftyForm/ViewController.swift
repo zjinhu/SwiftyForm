@@ -68,6 +68,7 @@ class ViewController: JHTableViewController {
         let sectionFormer1 = SectionFormer(avatarRow, check,labelRow,textFieldRow,textViewRow,switchRow,segmentRow)
         let header = LabelHeader()
         header.title = "123"
+//        header.headerFooter.backColor = .red
         header.titleImage = UIImage.init(named: "Image")
         
         sectionFormer1.set(headerViewFormer: header)
