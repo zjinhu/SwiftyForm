@@ -93,6 +93,11 @@ class ViewController: JHTableViewController {
             + (1...20).map { InlinePickerItem(title: "Option\($0)") }
         
         let inlineDateRow = InlineDatePickerRow()
+//        inlineDateRow.inlineCellUpdate { (picker) in
+//            picker.datePicker.locale = Locale.init(identifier: "zh")
+//            picker.datePicker.datePickerMode = .date
+//            picker.datePicker.timeZone = TimeZone.init(identifier: "GMT")
+//        }
         inlineDateRow.cell.accessoryType = .disclosureIndicator
         inlineDateRow.title = "InlineDatePicker"
         inlineDateRow.cell.addDownLine()
