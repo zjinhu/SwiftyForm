@@ -20,12 +20,10 @@ open class LabelHeaderFooterFormer<T: UITableViewHeaderFooterView>: BaseHeaderFo
     open var titleImage: UIImage?
 
     open override func initialized() {
-        super.initialized()
         viewHeight = 30
     }
     
     open override func viewInitialized(_ view: T) {
-        super.viewInitialized(view)
         headerFooter.formTitleImageView()?.image = titleImage
     }
     open override func update() {

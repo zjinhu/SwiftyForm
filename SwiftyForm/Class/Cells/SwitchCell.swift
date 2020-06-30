@@ -63,12 +63,11 @@ open class SwitchCell: BaseCell, SwitchFormableRow {
     }
     
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            if titleImageView.image == nil{
-                make.left.equalToSuperview().offset(24)
+            if rowFormer.titleImage == nil{
+                make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }

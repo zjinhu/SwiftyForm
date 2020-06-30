@@ -26,12 +26,10 @@ open class DatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable w
     }
     
     open override func initialized() {
-        super.initialized()
         rowHeight = 216
     }
     
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         cell.formDatePicker().addTarget(self, action: #selector(DatePickerRowFormer.dateChanged(datePicker:)), for: .valueChanged)
     }
     

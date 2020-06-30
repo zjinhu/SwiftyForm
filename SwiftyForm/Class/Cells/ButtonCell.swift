@@ -50,7 +50,6 @@ open class ButtonCell: BaseCell, ButtonFormableRow {
     }
     
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
         
         rightButton.snp.remakeConstraints { (make) in
             make.right.equalToSuperview().offset(-20)

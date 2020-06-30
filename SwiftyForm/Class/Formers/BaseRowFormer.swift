@@ -10,6 +10,9 @@ import UIKit
 
 open class BaseRowFormer<T: UITableViewCell>: RowFormer {
     
+    public var titleDisabledColor: UIColor? = .lightGray
+    public var titleColor: UIColor?
+    
     /// 获取form里的cell
     public var cell: T {
         return cellInstance as! T

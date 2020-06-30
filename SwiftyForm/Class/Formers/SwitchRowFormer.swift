@@ -18,14 +18,9 @@ public protocol SwitchFormableRow: FormableRow {
 /// SwitchForm
 open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SwitchFormableRow {
 
-    open var title: String?
-    open var titleImage: UIImage?
     open var switched = false
     open var switchWhenSelected = false
-    open var titleDisabledColor: UIColor? = .lightGray
- 
     private final var onSwitchChanged: ((Bool) -> Void)?
-    private final var titleColor: UIColor?
     private final var selectionStyle: UITableViewCell.SelectionStyle?
     
     /// SwitchForm 状态变化
@@ -39,7 +34,6 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
     /// SwitchForm初始化
     /// - Parameter cell: cell description
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         cell.formSwitch().addTarget(self, action: #selector(SwitchRowFormer.switchChanged(_:)), for: .valueChanged)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
@@ -47,7 +41,6 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
     
     /// SwitchForm初始化
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
 

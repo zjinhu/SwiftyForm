@@ -18,26 +18,19 @@ public protocol LabelFormableRow: FormableRow {
 
 /// LabelForm
 open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: LabelFormableRow {
-
-    open var title: String?
-    open var titleImage: UIImage?
-    open var subTitle: String?
-    open var titleDisabledColor: UIColor? = .lightGray
-    open var subTitleDisabledColor: UIColor? = .lightGray
  
-    private final var titleColor: UIColor?
+    open var subTitle: String?
+    open var subTitleDisabledColor: UIColor? = .lightGray
     private final var subTitleColor: UIColor?
     
     /// LabelForm初始化
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     
     /// LabelForm初始化
     /// - Parameter cell: cell 泛型
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }

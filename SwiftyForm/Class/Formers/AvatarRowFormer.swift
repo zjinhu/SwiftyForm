@@ -18,22 +18,15 @@ public protocol AvatarFormableRow: FormableRow {
 
 /// AvatarForm
 open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: AvatarFormableRow {
- 
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var avatarImage: UIImage?
-    open var titleDisabledColor: UIColor? = .lightGray
-    
-    private final var textColor: UIColor?
     
     /// AvatarForm初始化
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     /// AvatarForm初始化
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
@@ -48,10 +41,10 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
         avatarView?.image = avatarImage
         
         if enabled {
-            _ = textColor.map { textLabel?.textColor = $0 }
-            textColor = nil
+            _ = titleColor.map { textLabel?.textColor = $0 }
+            titleColor = nil
         } else {
-            if textColor == nil { textColor = textLabel?.textColor ?? .black }
+            if titleColor == nil { titleColor = textLabel?.textColor ?? .black }
             textLabel?.textColor = titleDisabledColor
         }
     }

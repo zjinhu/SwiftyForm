@@ -40,13 +40,11 @@ open class ButtonRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
     
     /// 初始化
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     
     /// 初始化
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         cell.formLeftButton()?.addTarget(self, action: #selector(ButtonRowFormer.leftButtonAction(_:)), for: .touchUpInside)
         cell.formRightButton()?.addTarget(self, action: #selector(ButtonRowFormer.rightButtonAction(_:)), for: .touchUpInside)
     }

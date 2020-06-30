@@ -18,24 +18,17 @@ public protocol ImageFormableRow: FormableRow {
 
 /// ImageForm 顶部和LabelRorm一样,下边是图片
 open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: ImageFormableRow {
- 
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var subTitle: String?
     open var coverImage: UIImage?
-    open var titleDisabledColor: UIColor? = .lightGray
     open var subTitleDisabledColor: UIColor? = .lightGray
- 
-    private final var titleColor: UIColor?
     private final var subTitleColor: UIColor?
  
     open override func initialized() {
-        super.initialized()
         rowHeight = 190
     }
     
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
@@ -45,23 +38,23 @@ open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         
         cell.selectionStyle = .none
 
-        let textLabel = cell.formTitleLabel()
+        let titleLabel = cell.formTitleLabel()
         let subTitleLabel = cell.formSubTitleLabel()
-        textLabel?.text = title
+        titleLabel?.text = title
         subTitleLabel?.text = subTitle
         
         let coverImageView = cell.formImageView()
         coverImageView?.image = coverImage
         
         if enabled {
-            _ = titleColor.map { textLabel?.textColor = $0 }
+            _ = titleColor.map { titleLabel?.textColor = $0 }
             _ = subTitleColor.map { subTitleLabel?.textColor = $0 }
             titleColor = nil
             subTitleColor = nil
         } else {
-            if titleColor == nil { titleColor = textLabel?.textColor ?? .black }
+            if titleColor == nil { titleColor = titleLabel?.textColor ?? .black }
             if subTitleColor == nil { subTitleColor = subTitleLabel?.textColor ?? .black }
-            textLabel?.textColor = titleDisabledColor
+            titleLabel?.textColor = titleDisabledColor
             subTitleLabel?.textColor = subTitleDisabledColor
         }
         

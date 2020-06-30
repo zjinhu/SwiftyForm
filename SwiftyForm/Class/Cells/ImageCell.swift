@@ -40,12 +40,14 @@ open class ImageCell: BaseCell, ImageFormableRow {
         
         let titleImageView = UIImageView()
         titleImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        titleImageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         titleImageView.clipsToBounds = true
         contentView.addSubview(titleImageView)
         self.titleImageView = titleImageView
         
         let titleLabel = UILabel()
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
         
@@ -62,20 +64,19 @@ open class ImageCell: BaseCell, ImageFormableRow {
         contentView.addSubview(coverImageView)
         self.coverImageView = coverImageView
         
+        titleImageView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLabel)
+            make.left.equalToSuperview().offset(20)
+        }
+        
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(20)
             make.height.equalTo(60)
         }
         
-        titleImageView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(titleLabel)
-            make.left.equalToSuperview().offset(20)
-        }
-        
         subTitleLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(titleLabel)
-            make.left.equalTo(titleLabel.snp.right)
             make.right.equalToSuperview().offset(-20)
         }
         
@@ -88,12 +89,11 @@ open class ImageCell: BaseCell, ImageFormableRow {
     }
 
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.equalToSuperview()
             make.height.equalTo(60)
-            if titleImageView.image == nil{
+            if rowFormer.titleImage == nil{
                 make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)

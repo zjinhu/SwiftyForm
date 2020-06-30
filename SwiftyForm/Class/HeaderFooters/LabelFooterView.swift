@@ -53,7 +53,6 @@ open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
     }
     
     open override func updateHeaderFooterFormer(_ headerFooterFormer: ViewFormer) {
-        super.updateHeaderFooterFormer(headerFooterFormer)
         
         titleLabel.snp.updateConstraints { (make) in
             if titleImageView.image == nil{

@@ -31,12 +31,9 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
     override open var canBecomeEditing: Bool {
         return enabled
     }
-    
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var pickerItems: [InlinePickerItem<S>] = []
     open var selectedRow: Int = 0
-    open var titleDisabledColor: UIColor? = .lightGray
     open var displayDisabledColor: UIColor? = .lightGray
     open var titleEditingColor: UIColor?
     open var displayEditingColor: UIColor?
@@ -44,7 +41,6 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
     private final var onValueChanged: ((InlinePickerItem<S>) -> Void)?
     private final var onEditingBegin: ((InlinePickerItem<S>, T) -> Void)?
     private final var onEditingEnded: ((InlinePickerItem<S>, T) -> Void)?
-    private final var titleColor: UIColor?
     private final var displayTextColor: UIColor?
     
     public override init() {
@@ -68,13 +64,11 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
     }
     
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
     
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
 

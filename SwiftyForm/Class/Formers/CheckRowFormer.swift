@@ -18,14 +18,10 @@ public protocol CheckFormableRow: FormableRow {
 /// CheckFormer
 open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: CheckFormableRow {
     
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var checked = false
     open var customCheckView: UIView?
-    open var titleDisabledColor: UIColor? = .lightGray
     open var checkColor: UIColor?
- 
-    private final var titleColor: UIColor?
     private final var onCheckChanged: ((Bool) -> Void)?
     
     /// CheckForm状态变化
@@ -39,14 +35,12 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
     /// CheckForm初始化 继承可重写
     /// - Parameter cell: cell泛型
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }
     
     /// 初始化CheckForm
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     

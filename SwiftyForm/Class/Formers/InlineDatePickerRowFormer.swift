@@ -22,12 +22,9 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
     override open var canBecomeEditing: Bool {
         return enabled
     }
-    
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var date: Date = Date()
     open var displayDisabledColor: UIColor? = .lightGray
-    open var titleDisabledColor: UIColor? = .lightGray
     open var displayEditingColor: UIColor?
     open var titleEditingColor: UIColor?
     
@@ -35,7 +32,6 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
     private final var onEditingBegin: ((Date, T) -> Void)?
     private final var onEditingEnded: ((Date, T) -> Void)?
     private final var displayTextFromDate: ((Date) -> String)?
-    private final var titleColor: UIColor?
     private final var displayTextColor: UIColor?
     
     public override init() {
@@ -66,12 +62,10 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
     }
     
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
     }

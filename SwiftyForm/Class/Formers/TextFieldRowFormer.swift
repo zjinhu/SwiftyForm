@@ -22,23 +22,17 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     override open var canBecomeEditing: Bool {
         return enabled
     }
-    
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var text: String?
     open var placeholder: String?
     open var attributedPlaceholder: NSAttributedString?
     open var textDisabledColor: UIColor? = .lightGray
-    open var titleDisabledColor: UIColor? = .lightGray
     open var titleEditingColor: UIColor?
     open var returnToNextRow = true
-    
     fileprivate final var onReturn: ((String) -> Void)?
-    
     private final var onTextChanged: ((String) -> Void)?
     private final var textColor: UIColor?
-    private final var titleColor: UIColor?
- 
+
     private lazy var observer: Observer<T> = Observer<T>(textFieldRowFormer: self)
     
     /// TextFieldForm输入变化
@@ -60,14 +54,12 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     
     /// 初始化TextFieldForm
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     
     /// TextFieldForm初始化
     /// - Parameter cell: cell description
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         let textField = cell.formTextField()
         textField.delegate = observer
         let events: [(Selector, UIControl.Event)] = [(#selector(TextFieldRowFormer.textChanged(textField:)), .editingChanged),
@@ -76,8 +68,6 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         events.forEach {
             textField.addTarget(self, action: $0.0, for: $0.1)
         }
-        let titleImageView = cell.formTitleImageView()
-        titleImageView?.image = titleImage
     }
     
     /// TextFieldForm数据更新
@@ -87,11 +77,14 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         cell.selectionStyle = .none
         let titleLabel = cell.formTitleLabel()
         let textField = cell.formTextField()
-        titleLabel?.text = title
-        textField.text = text
         _ = placeholder.map { textField.placeholder = $0 }
         _ = attributedPlaceholder.map { textField.attributedPlaceholder = $0 }
         textField.isUserInteractionEnabled = false
+
+        let titleImageView = cell.formTitleImageView()
+        titleImageView?.image = titleImage
+        titleLabel?.text = title
+        textField.text = text
         
         if enabled {
             if isEditing {

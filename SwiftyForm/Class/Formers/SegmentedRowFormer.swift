@@ -18,14 +18,10 @@ public protocol SegmentedFormableRow: FormableRow {
 /// SegmentedForm
 open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SegmentedFormableRow {
     
-    open var title: String?
-    open var titleImage: UIImage?
+
     open var segmentTitles = [String]()
     open var selectedIndex: Int = 0
-    open var titleDisabledColor: UIColor? = .lightGray
- 
     private final var onSegmentSelected: ((Int, String) -> Void)?
-    private final var titleColor: UIColor?
     
     /// SegmentedForm 选项卡变化回调
     /// - Parameter handler: handler description
@@ -38,7 +34,6 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     /// SegmentedForm初始化
     /// - Parameter cell: cell description
     open override func cellInitialized(_ cell: T) {
-        super.cellInitialized(cell)
         cell.formSegmented().addTarget(self, action: #selector(SegmentedRowFormer.valueChanged(segment:)), for: .valueChanged)
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
@@ -46,7 +41,6 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     
     /// SegmentedForm初始化
     open override func initialized() {
-        super.initialized()
         rowHeight = 60
     }
     

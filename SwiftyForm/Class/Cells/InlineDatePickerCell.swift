@@ -31,11 +31,10 @@ open class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
     }
     
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            if titleImageView.image == nil{
+            if rowFormer.titleImage == nil{
                 make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)

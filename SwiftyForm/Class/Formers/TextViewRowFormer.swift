@@ -14,6 +14,7 @@ public protocol TextViewFormableRow: FormableRow {
     func formTitleImageView() -> UIImageView?
     func formTitleLabel() -> UILabel?
     func formTextView() -> UITextView
+    func formSubTitleLabel() -> UILabel?
 }
 
 /// TextViewForm
@@ -22,18 +23,16 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     override open var canBecomeEditing: Bool {
         return enabled
     }
-    open var title: String?
-    open var titleImage: UIImage?
+    open var subTitle: String?
+    open var subTitleDisabledColor: UIColor? = .lightGray
+    private final var subTitleColor: UIColor?
     open var text: String?
     open var placeholder: String?
     open var attributedPlaceholder: NSAttributedString?
     open var textDisabledColor: UIColor? = .lightGray
-    open var titleDisabledColor: UIColor? = .lightGray
     open var titleEditingColor: UIColor?
- 
     fileprivate final var onTextChanged: ((String) -> Void)?
     fileprivate final var textColor: UIColor?
-    fileprivate final var titleColor: UIColor?
     fileprivate final var _attributedString: NSAttributedString?
     fileprivate final weak var placeholderLabel: UILabel?
     fileprivate final lazy var observer: Observer<T> = Observer<T>(textViewRowFormer: self)
@@ -52,15 +51,18 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     
     /// TextViewForm 初始化
     open override func initialized() {
-        super.initialized()
-        rowHeight = 170
+        rowHeight = 80
     }
     
     /// TextViewForm 初始化
     open override func cellInitialized(_ cell: T) {
-        cell.formTextView().delegate = observer
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
+        let textView = cell.formTextView()
+        textView.delegate = observer
+        let titleLabel = cell.formTitleLabel()
+        titleLabel?.text = title
+        textView.text = text
     }
     
     /// TextViewForm数据更新
@@ -70,10 +72,9 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
         cell.selectionStyle = .none
         let textView = cell.formTextView()
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
-        textView.text = text
         textView.isUserInteractionEnabled = false
-        
+        let subTitleLabel = cell.formSubTitleLabel()
+        subTitleLabel?.text = subTitle
         if placeholderLabel == nil {
             let placeholderLabel = UILabel()
             placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -97,7 +98,9 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
                 _ = titleEditingColor.map { titleLabel?.textColor = $0 }
             } else {
                 _ = titleColor.map { titleLabel?.textColor = $0 }
+                _ = subTitleColor.map { subTitleLabel?.textColor = $0 }
                 titleColor = nil
+                subTitleColor = nil
             }
             _ = textColor.map { textView.textColor = $0 }
             textColor = nil
@@ -106,6 +109,8 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
             if textColor == nil { textColor = textView.textColor ?? .black }
             titleLabel?.textColor = titleDisabledColor
             textView.textColor = textDisabledColor
+            if subTitleColor == nil { subTitleColor = subTitleLabel?.textColor ?? .black }
+            subTitleLabel?.textColor = subTitleDisabledColor
         }
     }
     

@@ -48,7 +48,6 @@ open class CheckCell: BaseCell, CheckFormableRow {
     }
     
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()

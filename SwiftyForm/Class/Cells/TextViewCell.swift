@@ -17,6 +17,7 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
     public private(set) weak var textView: UITextView!
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var titleImageView: UIImageView!
+    public private(set) weak var subTitleLabel: UILabel!
     
     public func formTitleImageView() -> UIImageView? {
         return titleImageView
@@ -30,25 +31,33 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
         return titleLabel
     }
     
+    public func formSubTitleLabel() -> UILabel? {
+        return subTitleLabel
+    }
+    
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
-        
+
         titleLabel.snp.remakeConstraints { (make) in
             make.top.equalToSuperview()
-            make.right.equalToSuperview().offset(-20)
             make.height.equalTo(40)
-            if titleImageView.image == nil{
+            if rowFormer.titleImage == nil{
                 make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }
         }
 
-        textView.snp.updateConstraints { (make) in
-            if titleLabel.text?.isEmpty == true{
-                make.top.equalToSuperview()
-            }else{
+        textView.snp.remakeConstraints { (make) in
+            if let text = rowFormer.title, text.count > 0 {
                 make.top.equalTo(titleLabel.snp.bottom)
+                make.left.equalToSuperview().offset(15)
+                make.right.equalToSuperview().offset(-15)
+                make.bottom.equalToSuperview().offset(-15)
+            }else{
+                make.top.equalToSuperview()
+                make.left.equalToSuperview().offset(15)
+                make.right.equalToSuperview().offset(-15)
+                make.bottom.equalToSuperview().offset(-5)
             }
         }
     }
@@ -58,18 +67,23 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
         
         let titleImageView = UIImageView()
         titleImageView.clipsToBounds = true
+        titleImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        titleImageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleImageView)
         self.titleImageView = titleImageView
-        titleImageView.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(20)
-        }
+
         
         let titleLabel = UILabel()
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
+        
+        let subTitleLabel = UILabel()
+        subTitleLabel.textColor = .lightGray
+        subTitleLabel.textAlignment = .right
+        contentView.addSubview(subTitleLabel)
+        self.subTitleLabel = subTitleLabel
         
         let textView = UITextView()
         textView.backgroundColor = .clear
@@ -78,17 +92,27 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
         contentView.addSubview(textView)
         self.textView = textView
 
+        titleImageView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLabel)
+            make.left.equalToSuperview().offset(20)
+        }
+        
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
             make.height.equalTo(40)
         }
+        subTitleLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLabel)
+            make.left.equalTo(titleLabel.snp.right)
+            make.right.equalToSuperview().offset(-20)
+        }
+        
         textView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(-20)
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().offset(-15)
+            make.bottom.equalToSuperview().offset(-15)
         }
         
     }

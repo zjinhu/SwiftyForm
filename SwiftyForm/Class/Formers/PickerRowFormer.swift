@@ -46,7 +46,6 @@ open class PickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Formable wh
     }
     
     open override func initialized() {
-        super.initialized()
         rowHeight = 216
     }
     

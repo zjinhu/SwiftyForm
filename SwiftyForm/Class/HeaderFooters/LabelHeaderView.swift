@@ -52,7 +52,6 @@ open class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
     }
     
     open override func updateHeaderFooterFormer(_ headerFooterFormer: ViewFormer) {
-        super.updateHeaderFooterFormer(headerFooterFormer)
 
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()

@@ -31,23 +31,25 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
     }
     
     open override func updateWithRowFormer(_ rowFormer: RowFormer) {
-        super.updateWithRowFormer(rowFormer)
         
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            if titleImageView.image == nil{
+            if rowFormer.titleImage == nil{
                 make.left.equalToSuperview().offset(20)
             }else{
                 make.left.equalTo(titleImageView.snp.right).offset(5)
             }
         }
-
         
-        textField.snp.updateConstraints { (make) in
-            if titleLabel.text?.isEmpty == true{
-                make.left.equalToSuperview().offset(20)
-            }else{
+        textField.snp.remakeConstraints { (make) in
+            if let text = rowFormer.title, text.count > 0 {
                 make.left.equalTo(titleLabel.snp.right)
+                make.right.equalToSuperview().offset(-20)
+                make.top.bottom.equalToSuperview()
+            }else{ 
+                make.left.equalToSuperview().offset(20)
+                make.right.equalToSuperview().offset(-20)
+                make.top.bottom.equalToSuperview()
             }
         }
     }
@@ -57,6 +59,8 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         
         let titleImageView = UIImageView()
         titleImageView.clipsToBounds = true
+        titleImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        titleImageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleImageView)
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
@@ -70,7 +74,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(20)
+            make.left.equalTo(titleImageView.snp.right).offset(5)
         }
         self.titleLabel = titleLabel
         

@@ -19,6 +19,10 @@ open class RowFormer{
     public final let cellType: UITableViewCell.Type
     public final var rowHeight: CGFloat = 44
     public final var isEditing = false
+    
+    public final var title: String?
+    public final var titleImage: UIImage?
+    
     public final var enabled = true { didSet { update() } }
     open var canBecomeEditing: Bool {
         return false
