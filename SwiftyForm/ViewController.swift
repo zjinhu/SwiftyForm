@@ -52,8 +52,8 @@ class ViewController: JHTableViewController {
         
         let textViewRow = TextViewRow()
 //        textViewRow.titleImage = UIImage.init(named: "Image")
-        textViewRow.title = "输入框"
-        textViewRow.subTitle = "这里是TextView"
+//        textViewRow.title = "输入框"
+//        textViewRow.subTitle = "这里是TextView"
         
         textViewRow.placeholder = "请输入"
         textViewRow.cell.addDownLine()

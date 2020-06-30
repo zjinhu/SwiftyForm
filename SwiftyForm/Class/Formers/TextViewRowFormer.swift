@@ -81,7 +81,7 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
             textView.addSubview(placeholderLabel)
             self.placeholderLabel = placeholderLabel
             placeholderLabel.snp.makeConstraints { (make) in
-                make.top.equalToSuperview().offset(6)
+                make.top.equalToSuperview().offset(8)
                 make.left.equalToSuperview().offset(5)
             }
         }
