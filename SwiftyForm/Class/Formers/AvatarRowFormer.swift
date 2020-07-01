@@ -19,11 +19,11 @@ public protocol AvatarFormableRow: FormableRow {
 /// AvatarForm
 open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: AvatarFormableRow {
 
-    open var avatarImage: UIImage?
+    public var avatarImage: UIImage?
     
     /// AvatarForm初始化
     open override func initialized() {
-        rowHeight = 60
+        rowHeight = 80
     }
     /// AvatarForm初始化
     open override func cellInitialized(_ cell: T) {
@@ -31,10 +31,15 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
         titleImageView?.image = titleImage
     }
     
+    open override func cellSelected(indexPath: IndexPath) {
+        super.cellSelected(indexPath: indexPath)
+        former?.deselect(animated: true)
+    }
+    
     /// AvatarForm数据更新
     open override func update() {
         super.update()
-        
+
         let textLabel = cell.formTitleLabel()
         let avatarView = cell.formAvatarView()
         textLabel?.text = title

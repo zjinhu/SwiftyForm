@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// UISegmentedControl选择cell 左侧titleImageView titleLabel 右侧segmentedControl
 public class SegmentedRow: SegmentedRowFormer<SegmentedCell> {
 
 }

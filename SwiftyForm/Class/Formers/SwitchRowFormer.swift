@@ -18,10 +18,10 @@ public protocol SwitchFormableRow: FormableRow {
 /// SwitchForm
 open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: SwitchFormableRow {
 
-    open var switched = false
-    open var switchWhenSelected = false
-    private final var onSwitchChanged: ((Bool) -> Void)?
-    private final var selectionStyle: UITableViewCell.SelectionStyle?
+    public var switched = false
+    public var switchWhenSelected = false
+    public var onSwitchChanged: ((Bool) -> Void)?
+    public var selectionStyle: UITableViewCell.SelectionStyle?
     
     /// SwitchForm 状态变化
     /// - Parameter handler: handler description

@@ -26,11 +26,10 @@ open class PickerItem<S> {
 
 open class PickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Formable where T: PickerFormableRow {
 
-    open var pickerItems: [PickerItem<S>] = []
-    open var selectedRow: Int = 0
- 
-    
-    fileprivate final var onValueChanged: ((PickerItem<S>) -> Void)?
+    public var pickerItems: [PickerItem<S>] = []
+    public var selectedRow: Int = 0
+
+    public var onValueChanged: ((PickerItem<S>) -> Void)?
     private lazy var observer: Observer<T, S> = Observer<T, S>(pickerRowFormer: self)
     
     deinit {

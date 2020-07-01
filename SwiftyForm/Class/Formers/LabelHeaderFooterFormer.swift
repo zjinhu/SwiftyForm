@@ -16,8 +16,8 @@ public protocol LabelFormableView: FormableHeaderFooter {
 /// 图文header footer Form
 open class LabelHeaderFooterFormer<T: UITableViewHeaderFooterView>: BaseHeaderFooterFormer<T> where T: LabelFormableView {
 
-    open var title: String?
-    open var titleImage: UIImage?
+    public var title: String?
+    public var titleImage: UIImage?
 
     open override func initialized() {
         viewHeight = 30

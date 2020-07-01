@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// Mark选中样式cell 左侧 titleImageView titleLabel 右侧mark标记(cell自带)
 public class CheckRow: CheckRowFormer<CheckCell> {
 
 }

@@ -32,16 +32,16 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
         return enabled
     }
 
-    open var pickerItems: [InlinePickerItem<S>] = []
-    open var selectedRow: Int = 0
-    open var displayDisabledColor: UIColor? = .lightGray
-    open var titleEditingColor: UIColor?
-    open var displayEditingColor: UIColor?
+    public var pickerItems: [InlinePickerItem<S>] = []
+    public var selectedRow: Int = 0
+    public var displayDisabledColor: UIColor? = .lightGray
+    public var titleEditingColor: UIColor?
+    public var displayEditingColor: UIColor?
     
-    private final var onValueChanged: ((InlinePickerItem<S>) -> Void)?
-    private final var onEditingBegin: ((InlinePickerItem<S>, T) -> Void)?
-    private final var onEditingEnded: ((InlinePickerItem<S>, T) -> Void)?
-    private final var displayTextColor: UIColor?
+    public var onValueChanged: ((InlinePickerItem<S>) -> Void)?
+    public var onEditingBegin: ((InlinePickerItem<S>, T) -> Void)?
+    public var onEditingEnded: ((InlinePickerItem<S>, T) -> Void)?
+    public var displayTextColor: UIColor?
     
     public override init() {
         inlineRowFormer = PickerRowFormer<InlineCellType, S>()

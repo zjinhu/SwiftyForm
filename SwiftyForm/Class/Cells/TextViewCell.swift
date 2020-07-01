@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 输入框样式cell 左侧titleImageView titleLabel 右侧subTitleLabel 下方textView(title为空则只展示textView)
 public class TextViewRow: TextViewRowFormer<TextViewCell> {
 
 }

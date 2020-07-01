@@ -17,8 +17,8 @@ public protocol ButtonFormableRow: FormableRow {
 /// ButtonForm 隐藏左侧按钮会只展示一个大按钮RightButton
 open class ButtonRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: ButtonFormableRow {
 
-    private final var onLeftButtonClick: (() -> Void)?
-    private final var onRightButtonClick: (() -> Void)?
+    public var onLeftButtonClick: (() -> Void)?
+    public var onRightButtonClick: (() -> Void)?
     
     
     /// 左侧按钮点击

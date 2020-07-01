@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 头像样式cell 左侧titleImageView titleLabel 右侧avatarView mark箭头(cell自带)
 public class AvatarRow: AvatarRowFormer<AvatarCell> {
 
 }

@@ -23,16 +23,16 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
         return enabled
     }
 
-    open var date: Date = Date()
-    open var displayDisabledColor: UIColor? = .lightGray
-    open var displayEditingColor: UIColor?
-    open var titleEditingColor: UIColor?
+    public var date: Date = Date()
+    public var displayDisabledColor: UIColor? = .lightGray
+    public var displayEditingColor: UIColor?
+    public var titleEditingColor: UIColor?
     
-    private final var onDateChanged: ((Date) -> Void)?
-    private final var onEditingBegin: ((Date, T) -> Void)?
-    private final var onEditingEnded: ((Date, T) -> Void)?
-    private final var displayTextFromDate: ((Date) -> String)?
-    private final var displayTextColor: UIColor?
+    public var onDateChanged: ((Date) -> Void)?
+    public var onEditingBegin: ((Date, T) -> Void)?
+    public var onEditingEnded: ((Date, T) -> Void)?
+    public var displayTextFromDate: ((Date) -> String)?
+    public var displayTextColor: UIColor?
     
     public override init() {
         inlineRowFormer = DatePickerRowFormer<InlineCellType>()

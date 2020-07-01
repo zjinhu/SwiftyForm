@@ -19,10 +19,10 @@ public protocol ImageFormableRow: FormableRow {
 /// ImageForm 顶部和LabelRorm一样,下边是图片
 open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: ImageFormableRow {
 
-    open var subTitle: String?
-    open var coverImage: UIImage?
-    open var subTitleDisabledColor: UIColor? = .lightGray
-    private final var subTitleColor: UIColor?
+    public var subTitle: String?
+    public var coverImage: UIImage?
+    public var subTitleDisabledColor: UIColor? = .lightGray
+    public var subTitleColor: UIColor?
  
     open override func initialized() {
         rowHeight = 190
@@ -33,10 +33,13 @@ open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         titleImageView?.image = titleImage
     }
     
+    open override func cellSelected(indexPath: IndexPath) {
+        super.cellSelected(indexPath: indexPath)
+        former?.deselect(animated: true)
+    }
+    
     open override func update() {
         super.update()
-        
-        cell.selectionStyle = .none
 
         let titleLabel = cell.formTitleLabel()
         let subTitleLabel = cell.formSubTitleLabel()

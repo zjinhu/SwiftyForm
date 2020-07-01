@@ -23,15 +23,15 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         return enabled
     }
 
-    open var text: String?
-    open var placeholder: String?
-    open var attributedPlaceholder: NSAttributedString?
-    open var textDisabledColor: UIColor? = .lightGray
-    open var titleEditingColor: UIColor?
-    open var returnToNextRow = true
-    fileprivate final var onReturn: ((String) -> Void)?
-    private final var onTextChanged: ((String) -> Void)?
-    private final var textColor: UIColor?
+    public var text: String?
+    public var placeholder: String?
+    public var attributedPlaceholder: NSAttributedString?
+    public var textDisabledColor: UIColor? = .lightGray
+    public var titleEditingColor: UIColor?
+    public var returnToNextRow = true
+    public var onReturn: ((String) -> Void)?
+    public var onTextChanged: ((String) -> Void)?
+    public var textColor: UIColor?
 
     private lazy var observer: Observer<T> = Observer<T>(textFieldRowFormer: self)
     

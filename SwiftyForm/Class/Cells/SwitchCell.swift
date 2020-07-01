@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// UISwitch选择cell 左侧titleImageView titleLabel 右侧switchButton
 public class SwitchRow: SwitchRowFormer<SwitchCell> {
 
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 图片cell 左侧titleImageView titleLabel 右侧subTitleLabel 下方coverImageView
 public class ImageRow: ImageRowFormer<ImageCell> {
 
 }

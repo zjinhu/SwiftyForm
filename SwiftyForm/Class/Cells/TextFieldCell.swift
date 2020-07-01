@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 输入框样式cell 左侧titleImageView titleLabel 右侧textField
 public class TextFieldRow: TextFieldRowFormer<TextFieldCell> {
 
 }

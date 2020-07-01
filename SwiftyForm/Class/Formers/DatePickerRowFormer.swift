@@ -15,9 +15,9 @@ public protocol DatePickerFormableRow: FormableRow {
 
 open class DatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: DatePickerFormableRow {
 
-    open var date: Date = Date()
+    public var date: Date = Date()
  
-    private final var onDateChanged: ((Date) -> Void)?
+    public var onDateChanged: ((Date) -> Void)?
     
     @discardableResult
     public final func onDateChanged(_ handler: @escaping ((Date) -> Void)) -> Self {

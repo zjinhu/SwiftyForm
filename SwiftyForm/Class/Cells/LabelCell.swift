@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 一般样式cell 左侧titleImageView titleLabel 右侧subTitleLabel mark箭头(cell自带)
 public class LabelRow: LabelRowFormer<LabelCell> {
 
 }

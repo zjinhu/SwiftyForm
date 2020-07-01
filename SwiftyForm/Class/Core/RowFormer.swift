@@ -17,10 +17,16 @@ open class RowFormer{
     
     public internal(set) final weak var former: Former?
     public final let cellType: UITableViewCell.Type
+    
+    /// cell高度
     public final var rowHeight: CGFloat = 44
     public final var isEditing = false
     
+    
+    /// cell 标题
     public final var title: String?
+    
+    /// cell左侧小图片
     public final var titleImage: UIImage?
     
     public final var enabled = true { didSet { update() } }
@@ -28,9 +34,16 @@ open class RowFormer{
         return false
     }
     
+    /// 闭包设置cell
     internal final var cellSetup: ((UITableViewCell) -> Void)?
+    
+    /// cell点击
     internal final var onSelected: ((RowFormer) -> Void)?
+    
+    /// cell更新
     internal final var onUpdate: ((RowFormer) -> Void)?
+    
+    /// cell动态高度
     internal final var dynamicRowHeight: ((UITableView, IndexPath) -> CGFloat)?
     
     public init<T: UITableViewCell>(withCellType type: T.Type) {

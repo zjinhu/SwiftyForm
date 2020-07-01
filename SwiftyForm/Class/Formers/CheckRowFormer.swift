@@ -19,10 +19,10 @@ public protocol CheckFormableRow: FormableRow {
 open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where T: CheckFormableRow {
     
 
-    open var checked = false
-    open var customCheckView: UIView?
-    open var checkColor: UIColor?
-    private final var onCheckChanged: ((Bool) -> Void)?
+    public var checked = false
+    public var customCheckView: UIView?
+    public var checkColor: UIColor?
+    public var onCheckChanged: ((Bool) -> Void)?
     
     /// CheckForm状态变化
     /// - Parameter handler: handler description

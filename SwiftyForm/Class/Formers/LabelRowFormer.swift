@@ -19,9 +19,9 @@ public protocol LabelFormableRow: FormableRow {
 /// LabelForm
 open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: LabelFormableRow {
  
-    open var subTitle: String?
-    open var subTitleDisabledColor: UIColor? = .lightGray
-    private final var subTitleColor: UIColor?
+    public var subTitle: String?
+    public var subTitleDisabledColor: UIColor? = .lightGray
+    public var subTitleColor: UIColor?
     
     /// LabelForm初始化
     open override func initialized() {
@@ -35,10 +35,15 @@ open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where
         titleImageView?.image = titleImage
     }
     
+    open override func cellSelected(indexPath: IndexPath) {
+        super.cellSelected(indexPath: indexPath)
+        former?.deselect(animated: true)
+    }
+    
     /// LabelForm数据更新
     open override func update() {
         super.update()
-        
+ 
         let textLabel = cell.formTitleLabel()
         let subTitleLabel = cell.formSubTitleLabel()
         textLabel?.text = title

@@ -23,18 +23,18 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     override open var canBecomeEditing: Bool {
         return enabled
     }
-    open var subTitle: String?
-    open var subTitleDisabledColor: UIColor? = .lightGray
-    private final var subTitleColor: UIColor?
-    open var text: String?
-    open var placeholder: String?
-    open var attributedPlaceholder: NSAttributedString?
-    open var textDisabledColor: UIColor? = .lightGray
-    open var titleEditingColor: UIColor?
-    fileprivate final var onTextChanged: ((String) -> Void)?
-    fileprivate final var textColor: UIColor?
-    fileprivate final var _attributedString: NSAttributedString?
-    fileprivate final weak var placeholderLabel: UILabel?
+    public var subTitle: String?
+    public var subTitleDisabledColor: UIColor? = .lightGray
+    public var subTitleColor: UIColor?
+    public var text: String?
+    public var placeholder: String?
+    public var attributedPlaceholder: NSAttributedString?
+    public var textDisabledColor: UIColor? = .lightGray
+    public var titleEditingColor: UIColor?
+    public var onTextChanged: ((String) -> Void)?
+    public var textColor: UIColor?
+    public var attributedString: NSAttributedString?
+    public weak var placeholderLabel: UILabel?
     fileprivate final lazy var observer: Observer<T> = Observer<T>(textViewRowFormer: self)
     
     deinit {
@@ -129,10 +129,10 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
                 .clear
         } else {
             if text?.isEmpty ?? true {
-                _ = _attributedString.map { placeholderLabel?.attributedText = $0 }
-                _attributedString = nil
+                _ = attributedString.map { placeholderLabel?.attributedText = $0 }
+                attributedString = nil
             } else {
-                if _attributedString == nil { _attributedString = placeholderLabel?.attributedText }
+                if attributedString == nil { attributedString = placeholderLabel?.attributedText }
                 placeholderLabel?.attributedText = nil
             }
         }
