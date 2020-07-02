@@ -66,6 +66,7 @@ class ViewController: JHTableViewController {
         labelRow.cell.addDownLine()
         labelRow.onSelected { (row) in
             print("点击了文本的Cell")
+            
         }
         
         //MARK: 输入框样式cell
@@ -96,6 +97,7 @@ class ViewController: JHTableViewController {
         switchRow.onSwitchChanged { (isOpen) in
             print("点击了开关的Cell\(isOpen)")
         }
+        
         
         //MARK: Segmented样式cell
         let segmentRow = SegmentedRow()
@@ -170,6 +172,11 @@ class ViewController: JHTableViewController {
         btnRow.cell.addDownLine()
         btnRow.onRightButtonClick {
             print("点击了按钮")
+
+            sectionFormer1.remove(rowFormers: [avatarRow,
+            check,
+            labelRow])
+            self.former.reload(sectionFormer: sectionFormer1)
         }
         
         //MARK: 两个按钮样式cell
@@ -179,9 +186,13 @@ class ViewController: JHTableViewController {
         btn2Row.cell.addDownLine()
         btn2Row.onLeftButtonClick {
             print("点击了左侧按钮")
+            sectionFormer1.remove(rowFormer: user)
+            self.former.reload(sectionFormer: sectionFormer1)
         }
         btn2Row.onRightButtonClick {
             print("点击了右侧按钮")
+            sectionFormer1.insert(rowFormer: user, toIndex: 0)
+            self.former.reload(sectionFormer: sectionFormer1)
         }
         
         //MARK: 选择图片样式cell
@@ -194,10 +205,10 @@ class ViewController: JHTableViewController {
             print("点击了选择图片")
         }
         
-        let sectionFormer3 = SectionFormer(inlinePickerRow,
+        let sectionFormer3 = SectionFormer(btn2Row,
+                                           inlinePickerRow,
                                            inlineDateRow,
                                            btnRow,
-                                           btn2Row,
                                            imgRow)
         //MARK: 添加header
         let header3 = LabelHeader()

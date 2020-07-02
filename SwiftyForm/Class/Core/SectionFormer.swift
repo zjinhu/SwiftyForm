@@ -50,33 +50,33 @@ public final class SectionFormer{
         return Array<RowFormer>(rowFormers[range])
     }
     
-    /// Append RowFormer to last index.
+    /// 添加一行RowFormer
     @discardableResult
-    public func append(rowFormer: RowFormer...) -> Self {
-        add(rowFormers: rowFormer)
+    public func append(rowFormer: RowFormer) -> Self {
+        self.rowFormers.append(rowFormer)
         return self
     }
     
-    /// Add RowFormers to last index.
+    /// 添加一个RowFormer数组
     @discardableResult
     public func add(rowFormers: [RowFormer]) -> Self {
         self.rowFormers += rowFormers
         return self
     }
     
-    /// Insert RowFormer to any index.
+    /// 在指定位置插入一个RowFormer
     @discardableResult
-    public func insert(rowFormer: RowFormer..., toIndex: Int) -> Self {
+    public func insert(rowFormer: RowFormer, toIndex: Int) -> Self {
         let count = self.rowFormers.count
         if count == 0 ||  toIndex >= count {
-            add(rowFormers: rowFormers)
+            append(rowFormer: rowFormer)
             return self
         }
-        self.rowFormers.insert(contentsOf: rowFormers, at: toIndex)
+        self.rowFormers.insert(rowFormer, at: toIndex)
         return self
     }
     
-    /// Insert RowFormers to any index.
+    /// 在指定位置插入一个RowFormer数组
     @discardableResult
     public func insert(rowFormers: [RowFormer], toIndex: Int) -> Self {
         let count = self.rowFormers.count
@@ -88,25 +88,25 @@ public final class SectionFormer{
         return self
     }
     
-    /// Insert RowFormer to above other SectionFormer.
+    /// 在特定的RowFormer之前插入一个RowFormer
     @discardableResult
-    public func insert(rowFormer: RowFormer..., above: RowFormer) -> Self {
+    public func insert(rowFormer: RowFormer, above: RowFormer) -> Self {
         for (row, rowFormer) in self.rowFormers.enumerated() {
             if rowFormer === above {
-                insert(rowFormers: [rowFormer], toIndex: row)
+                insert(rowFormer: rowFormer, toIndex: row)
                 return self
             }
         }
-        add(rowFormers: rowFormers)
+        append(rowFormer: rowFormer)
         return self
     }
     
-    /// Insert RowFormers to above other SectionFormer.
+    /// 在特定的RowFormer之前插入一个RowFormer数组
     @discardableResult
     public func insert(rowFormers: [RowFormer], above: RowFormer) -> Self {
         for (row, rowFormer) in self.rowFormers.enumerated() {
             if rowFormer === above {
-                insert(rowFormers: [rowFormer], toIndex: row)
+                insert(rowFormers: rowFormers, toIndex: row)
                 return self
             }
         }
@@ -114,25 +114,25 @@ public final class SectionFormer{
         return self
     }
     
-    /// Insert RowFormer to below other SectionFormer.
+    /// 在特定的RowFormer之后插入一个RowFormer
     @discardableResult
-    public func insert(rowFormer: RowFormer..., below: RowFormer) -> Self {
+    public func insert(rowFormer: RowFormer, below: RowFormer) -> Self {
         for (row, rowFormer) in self.rowFormers.enumerated() {
             if rowFormer === below {
-                insert(rowFormers: [rowFormer], toIndex: row + 1)
+                insert(rowFormer: rowFormer, toIndex: row + 1)
                 return self
             }
         }
-        add(rowFormers: rowFormers)
+        append(rowFormer: rowFormer)
         return self
     }
     
-    /// Insert RowFormers to below other SectionFormer.
+    /// 在特定的RowFormer之后插入一个RowFormer数组
     @discardableResult
     public func insert(rowFormers: [RowFormer], below: RowFormer) -> Self {
         for (row, rowFormer) in self.rowFormers.enumerated() {
             if rowFormer === below {
-                insert(rowFormers: [rowFormer], toIndex: row + 1)
+                insert(rowFormers: rowFormers, toIndex: row + 1)
                 return self
             }
         }
@@ -140,11 +140,11 @@ public final class SectionFormer{
         return self
     }
     
-    /// Remove RowFormers from instances of RowFormer.
+    /// 移除特定RowFormer
     @discardableResult
-    public func remove(rowFormer: RowFormer...) -> Self {
+    public func remove(rowFormer: RowFormer) -> Self {
         var removedCount = 0
-        for (index, rowFormer) in self.rowFormers.enumerated() {
+        for (index, _) in self.rowFormers.enumerated() {
             if rowFormers.contains(where: { $0 === rowFormer }) {
                 remove(atIndex: index)
                 removedCount += 1
@@ -159,27 +159,20 @@ public final class SectionFormer{
     /// Remove RowFormers from instances of RowFormer.
     @discardableResult
     public func remove(rowFormers: [RowFormer]) -> Self {
-        var removedCount = 0
-        for (index, rowFormer) in self.rowFormers.enumerated() {
-            if rowFormers.contains(where: { $0 === rowFormer }) {
-                remove(atIndex: index)
-                removedCount += 1
-                if removedCount >= rowFormers.count {
-                    return self
-                }
-            }
+        rowFormers.forEach { (row) in
+            remove(rowFormer: row)
         }
         return self
     }
     
-    /// Remove RowFormer from index.
+    /// 移除特定行数的RowFormer
     @discardableResult
     public func remove(atIndex: Int) -> Self {
         rowFormers.remove(at: atIndex)
         return self
     }
     
-    /// Remove RowFormers from range.
+    ///移除特定范围的RowFormer
     @discardableResult
     public func remove(range: Range<Int>) -> Self {
         rowFormers.removeSubrange(range)
