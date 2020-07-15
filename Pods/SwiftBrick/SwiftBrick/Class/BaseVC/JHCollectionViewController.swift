@@ -10,6 +10,9 @@ import UIKit
 import SnapKit
 
 open class JHCollectionViewController: JHViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+//    deinit {
+//        print("JHCollectionViewController out")
+//    }
     // MARK: - 参数变量
     public enum ScrollDirectionType {
         case ScrollVertical
@@ -25,7 +28,7 @@ open class JHCollectionViewController: JHViewController ,UICollectionViewDelegat
     public convenience init(scrollDirectionType: ScrollDirectionType = .ScrollVertical) {
         self.init()
         
-        configFlowLayout()
+        setupFlowLayout()
         switch scrollDirectionType {
         case .ScrollHorizontal:
             flowLayout?.scrollDirection = UICollectionView.ScrollDirection.horizontal
@@ -36,17 +39,16 @@ open class JHCollectionViewController: JHViewController ,UICollectionViewDelegat
         }
     }
     
-    public convenience init(flowLayout: UICollectionViewFlowLayout) {
+    public convenience init(flowLayout layout: UICollectionViewFlowLayout) {
          self.init()
         
-         self.flowLayout = flowLayout
+         flowLayout = layout
      }
     
-    open func configFlowLayout() {
+    open func setupFlowLayout() {
         flowLayout = UICollectionViewFlowLayout.init()
         flowLayout?.minimumLineSpacing = 0
-        flowLayout?.minimumInteritemSpacing = 0
-        flowLayout?.minimumLineSpacing = 0
+        flowLayout?.minimumInteritemSpacing = 0 
         flowLayout?.scrollDirection = UICollectionView.ScrollDirection.vertical
     }
     
@@ -55,7 +57,7 @@ open class JHCollectionViewController: JHViewController ,UICollectionViewDelegat
         super.viewDidLoad()
 
         if flowLayout == nil  {
-            configFlowLayout()
+            setupFlowLayout()
         }
         
         collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: flowLayout!)
@@ -67,19 +69,19 @@ open class JHCollectionViewController: JHViewController ,UICollectionViewDelegat
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
         
-        self.view.addSubview(collectionView!)
-        collectionView?.snp.makeConstraints({ (make) in
-            make.top.equalTo(self.view.safeAreaInsets.top );
-            make.left.equalTo(self.view.safeAreaInsets.left);
-            make.right.equalTo(self.view.safeAreaInsets.right);
-            make.bottom.equalTo(self.view.safeAreaInsets.bottom);
-        })
+        view.addSubview(collectionView!)
+        collectionView?.snp.makeConstraints{ (make) in
+            make.top.equalTo(view.safeAreaInsets.top)
+            make.left.equalTo(view.safeAreaInsets.left)
+            make.right.equalTo(view.safeAreaInsets.right)
+            make.bottom.equalTo(view.safeAreaInsets.bottom)
+        }
         
-        self.extendedLayoutIncludesOpaqueBars = true
+        extendedLayoutIncludesOpaqueBars = true
         collectionView?.contentInsetAdjustmentBehavior = .automatic
         
         // Do any additional setup after loading the view.
-        let gestureArray : [UIGestureRecognizer]? = self.navigationController?.view.gestureRecognizers
+        let gestureArray : [UIGestureRecognizer]? = navigationController?.view.gestureRecognizers
         gestureArray?.forEach({ (gesture) in
             if gesture.isEqual(UIScreenEdgePanGestureRecognizer.self) {
                 collectionView?.panGestureRecognizer.require(toFail: gesture)
