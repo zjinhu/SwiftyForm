@@ -155,12 +155,18 @@ public final class SectionFormer{
         }
         return self
     }
-    
     /// Remove RowFormers from instances of RowFormer.
     @discardableResult
     public func remove(rowFormers: [RowFormer]) -> Self {
-        rowFormers.forEach { (row) in
-            remove(rowFormer: row)
+        var removedCount = 0
+        for (index, rowFormer) in self.rowFormers.enumerated() {
+            if rowFormers.contains(where: { $0 === rowFormer }) {
+                remove(atIndex: index)
+                removedCount += 1
+                if removedCount >= rowFormers.count {
+                    return self
+                }
+            }
         }
         return self
     }
