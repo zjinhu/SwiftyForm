@@ -30,7 +30,7 @@ class ViewController: JHTableViewController {
         let user2 = User2Row()
         user2.userName = "用户名"
         user2.avatarImage = UIImage.init(named: "icon")
-        user2.userInfo = "用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介"
+        user2.userInfo = "用户简介用户简介用户简介用户简介用户简介用户简介用户用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介"
         user2.cell.accessoryType = .disclosureIndicator
         user2.cell.userInfoLabel.font = .systemFont(ofSize: 11)
         user2.cell.addDownLine()
