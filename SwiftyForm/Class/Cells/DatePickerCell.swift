@@ -25,6 +25,9 @@ open class DatePickerCell: BaseCell, DatePickerFormableRow {
         
         let datePicker = UIDatePicker()
         datePicker.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
         contentView.addSubview(datePicker)
         self.datePicker = datePicker
         datePicker.snp.makeConstraints { (make) in
