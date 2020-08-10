@@ -71,6 +71,7 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
         
         cell.selectionStyle = .none
         let textView = cell.formTextView()
+        textView.text = text
         let titleLabel = cell.formTitleLabel()
         textView.isUserInteractionEnabled = false
         let subTitleLabel = cell.formSubTitleLabel()

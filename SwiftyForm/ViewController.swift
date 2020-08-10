@@ -87,6 +87,7 @@ class ViewController: JHTableViewController {
         //        textViewRow.subTitle = "这里是TextView"
         
         textViewRow.placeholder = "请输入"
+        textViewRow.text = "asefraefraefasfa"
         textViewRow.cell.addDownLine()
         
         //MARK: Switch样式cell
