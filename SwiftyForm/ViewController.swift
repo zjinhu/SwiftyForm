@@ -133,7 +133,7 @@ class ViewController: JHTableViewController {
         //MARK: 普通选择滚轮样式cell
         let pickerRow = PickerRow()
         pickerRow.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
-        pickerRow.cell.addDownLine()
+//        pickerRow.cell.addDownLine()
         
         let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
         //MARK: 添加header

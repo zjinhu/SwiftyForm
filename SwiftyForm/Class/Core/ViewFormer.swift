@@ -15,7 +15,7 @@ public protocol FormableHeaderFooter{
 
 open class ViewFormer {
     
-    open var viewHeight: CGFloat = 0.0001
+    open var viewHeight: CGFloat = .leastNormalMagnitude
     
     internal func viewInstanceInitialized(_ view: UITableViewHeaderFooterView) {
         

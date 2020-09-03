@@ -984,7 +984,7 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         if let dynamicViewHeight = headerViewFormer?.dynamicViewHeight {
             headerViewFormer?.viewHeight = dynamicViewHeight(tableView, section)
         }
-        return headerViewFormer?.viewHeight ?? 0.0001
+        return headerViewFormer?.viewHeight ?? .leastNormalMagnitude
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -992,7 +992,7 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         if let dynamicViewHeight = footerViewFormer?.dynamicViewHeight {
             footerViewFormer?.viewHeight = dynamicViewHeight(tableView, section)
         }
-        return footerViewFormer?.viewHeight ?? 0.0001
+        return footerViewFormer?.viewHeight ?? .leastNormalMagnitude
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
