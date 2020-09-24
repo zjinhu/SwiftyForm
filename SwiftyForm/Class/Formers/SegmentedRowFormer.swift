@@ -50,7 +50,13 @@ open class SegmentedRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
         
         cell.selectionStyle = .none
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
         let segment = cell.formSegmented()
         segment.removeAllSegments()
         for (index, title) in segmentTitles.enumerated() {

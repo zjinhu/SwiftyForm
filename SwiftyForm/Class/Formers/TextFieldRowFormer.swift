@@ -83,7 +83,15 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
 
         let titleImageView = cell.formTitleImageView()
         titleImageView?.image = titleImage
-        titleLabel?.text = title
+        
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
+        
         textField.text = text
         
         if enabled {

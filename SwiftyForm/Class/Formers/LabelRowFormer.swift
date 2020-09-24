@@ -46,7 +46,13 @@ open class LabelRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where
  
         let textLabel = cell.formTitleLabel()
         let subTitleLabel = cell.formSubTitleLabel()
-        textLabel?.text = title
+        if let title = title {
+            textLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            textLabel?.attributedText = attributedTitle
+        }
         subTitleLabel?.text = subTitle
         
         if enabled {

@@ -7,7 +7,7 @@
 //
 
 import SwiftBrick
-
+import SwiftyAttributes
 class ViewController: JHTableViewController {
     
     lazy var former = Former(tableView: self.tableView!)
@@ -92,7 +92,8 @@ class ViewController: JHTableViewController {
         
         //MARK: Switch样式cell
         let switchRow = SwitchRow()
-        switchRow.title = "选择"
+//        switchRow.enabled = false
+        switchRow.attributedTitle = "选择".withFont(Font15) + "滑块".withFont(Font11).withTextColor(.green)
         switchRow.switchWhenSelected = true
         switchRow.cell.addDownLine()
         switchRow.onSwitchChanged { (isOpen) in

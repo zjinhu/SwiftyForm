@@ -55,7 +55,14 @@ open class CheckRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         }
         
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
+        
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
         
         if enabled {
             _ = titleColor.map { titleLabel?.textColor = $0 }

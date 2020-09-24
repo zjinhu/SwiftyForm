@@ -10,5 +10,5 @@ target 'SwiftyForm' do
   # Pods for SwiftyForm
 
   pod 'SwiftBrick'
-
+  pod 'SwiftyAttributes'#富文本
 end

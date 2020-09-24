@@ -61,7 +61,15 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
         let textView = cell.formTextView()
         textView.delegate = observer
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
+        
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
+        
         textView.text = text
     }
     

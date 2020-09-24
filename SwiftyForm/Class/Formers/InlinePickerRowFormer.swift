@@ -76,7 +76,13 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>: BaseRowFormer<T>, Forma
         super.update()
         
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
         let displayLabel = cell.formDisplayLabel()
         if pickerItems.isEmpty {
             displayLabel?.text = ""

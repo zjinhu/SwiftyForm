@@ -42,7 +42,13 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
 
         let textLabel = cell.formTitleLabel()
         let avatarView = cell.formAvatarView()
-        textLabel?.text = title
+        if let title = title {
+            textLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            textLabel?.attributedText = attributedTitle
+        }
         avatarView?.image = avatarImage
         
         if enabled {

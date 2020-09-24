@@ -25,7 +25,7 @@ open class RowFormer{
     
     /// cell 标题
     public final var title: String?
-    
+    public final var attributedTitle: NSMutableAttributedString?
     /// cell左侧小图片
     public final var titleImage: UIImage?
     

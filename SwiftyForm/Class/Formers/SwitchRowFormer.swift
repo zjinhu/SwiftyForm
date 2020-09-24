@@ -57,7 +57,13 @@ open class SwitchRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
         }
         
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
         let switchButton = cell.formSwitch()
         switchButton.isOn = switched
         switchButton.isEnabled = enabled

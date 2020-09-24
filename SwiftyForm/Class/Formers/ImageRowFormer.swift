@@ -43,7 +43,13 @@ open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
 
         let titleLabel = cell.formTitleLabel()
         let subTitleLabel = cell.formSubTitleLabel()
-        titleLabel?.text = title
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
         subTitleLabel?.text = subTitle
         
         let coverImageView = cell.formImageView()

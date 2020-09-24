@@ -74,7 +74,13 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Form
         super.update()
         
         let titleLabel = cell.formTitleLabel()
-        titleLabel?.text = title
+        if let title = title {
+            titleLabel?.text = title
+        }
+        
+        if let attributedTitle = attributedTitle{
+            titleLabel?.attributedText = attributedTitle
+        }
         let displayLabel = cell.formDisplayLabel()
         displayLabel?.text = displayTextFromDate?(date) ?? "\(date)"
         let titleImageView = cell.formTitleImageView()
