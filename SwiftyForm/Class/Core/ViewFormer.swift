@@ -47,7 +47,7 @@ open class ViewFormer {
         
     }
     
-    public func update() {
+    open func update() {
         if let formableView = viewInstance as? FormableHeaderFooter {
             formableView.updateHeaderFooterFormer(self)
         }

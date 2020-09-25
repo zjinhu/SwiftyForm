@@ -216,6 +216,16 @@ class ViewController: JHTableViewController {
         let header3 = LabelHeader()
         sectionFormer3.set(headerViewFormer: header3)
         
+        let footer = ButtonFooter()
+        footer.viewHeight = 100
+        footer.headerFooter.backColor = .baseBackground
+        footer.headerFooter.button.backgroundColor = .red
+        footer.headerFooter.button.setTitle("123", for: .normal)
+        sectionFormer3.set(footerViewFormer: footer)
+        footer.onButtonClick {//[weak self] in
+//            guard let `self` = self else{return}
+            print("dianji")
+        }
         former.append(sectionFormer:
                         sectionFormer1,
                         sectionFormer3,
