@@ -1,10 +1,3 @@
-#
-#  Be sure to run `pod s lint SwiftyForm.pods' to ensure this is a
-#  valid s and to remove all comments including this before submitting the s.
-#
-#  To learn more about Pods attributes see https://guides.cocoapods.org/syntax/pods.html
-#  To see working Podss in the CocoaPods repo see https://github.com/CocoaPods/ss/
-#
 
 Pod::Spec.new do |s|
 
@@ -33,6 +26,6 @@ Pod::Spec.new do |s|
 
   s.frameworks   = "UIKit"
   s.dependency 'SnapKit'
-  s.source_files = 'SwiftyForm/Class/**/*' 
+  s.source_files = 'Sources/**/*'
 
 end
