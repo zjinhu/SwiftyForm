@@ -73,6 +73,7 @@ class ViewController: JHTableViewController {
         let textFieldRow = TextFieldRow()
         textFieldRow.titleImage = UIImage.init(named: "Image")
         textFieldRow.cell.addDownLine()
+        textFieldRow.textLimit = 10
         //        textFieldRow.text = "阿尔萨大法官"
         textFieldRow.title = "输入框"
         textFieldRow.placeholder = "请输入"
@@ -85,7 +86,7 @@ class ViewController: JHTableViewController {
         //        textViewRow.titleImage = UIImage.init(named: "Image")
         //        textViewRow.title = "输入框"
         //        textViewRow.subTitle = "这里是TextView"
-        
+        textViewRow.textLimit = 10
         textViewRow.placeholder = "请输入"
         textViewRow.text = "asefraefraefasfa"
         textViewRow.cell.addDownLine()

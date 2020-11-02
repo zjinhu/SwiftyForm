@@ -32,7 +32,8 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     public var onReturn: ((String) -> Void)?
     public var onTextChanged: ((String) -> Void)?
     public var textColor: UIColor?
-
+    public var textLimit: Int = 0
+    
     private lazy var observer: Observer<T> = Observer<T>(textFieldRowFormer: self)
     
     /// TextFieldForm输入变化
@@ -124,6 +125,11 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     
     @objc private dynamic func textChanged(textField: UITextField) {
         if enabled {
+
+            if let text = textField.text, textLimit > 0, text.count > textLimit{
+                textField.text = String(text.prefix(textLimit))
+            }
+            
             let text = textField.text ?? ""
             self.text = text
             onTextChanged?(text)

@@ -178,14 +178,14 @@
 		81BDE2D42546BA3100F8130D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				81BDE2D82546BA3100F8130D /* TextFieldCell.swift */,
+				81BDE2DC2546BA3100F8130D /* TextViewCell.swift */,
 				81BDE2D52546BA3100F8130D /* SegmentedCell.swift */,
 				81BDE2D62546BA3100F8130D /* PickerCell.swift */,
 				81BDE2D72546BA3100F8130D /* InlinePickerCell.swift */,
-				81BDE2D82546BA3100F8130D /* TextFieldCell.swift */,
 				81BDE2D92546BA3100F8130D /* UserCell.swift */,
 				81BDE2DA2546BA3100F8130D /* AvatarCell.swift */,
 				81BDE2DB2546BA3100F8130D /* InlineDatePickerCell.swift */,
-				81BDE2DC2546BA3100F8130D /* TextViewCell.swift */,
 				81BDE2DD2546BA3100F8130D /* CheckCell.swift */,
 				81BDE2DE2546BA3100F8130D /* DatePickerCell.swift */,
 				81BDE2DF2546BA3100F8130D /* ButtonCell.swift */,
@@ -223,6 +223,7 @@
 		81BDE2EF2546BA3100F8130D /* Formers */ = {
 			isa = PBXGroup;
 			children = (
+				81BDE2FC2546BA3100F8130D /* TextFieldRowFormer.swift */,
 				81BDE2F02546BA3100F8130D /* TextViewRowFormer.swift */,
 				81BDE2F12546BA3100F8130D /* LabelHeaderFooterFormer.swift */,
 				81BDE2F22546BA3100F8130D /* CheckRowFormer.swift */,
@@ -235,7 +236,6 @@
 				81BDE2F92546BA3100F8130D /* DatePickerRowFormer.swift */,
 				81BDE2FA2546BA3100F8130D /* UserRowFormer.swift */,
 				81BDE2FB2546BA3100F8130D /* LabelRowFormer.swift */,
-				81BDE2FC2546BA3100F8130D /* TextFieldRowFormer.swift */,
 				81BDE2FD2546BA3100F8130D /* SegmentedRowFormer.swift */,
 				81BDE2FE2546BA3100F8130D /* ButtonHeaderFooterFormer.swift */,
 				81BDE2FF2546BA3100F8130D /* BaseRowFormer.swift */,

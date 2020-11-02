@@ -35,6 +35,8 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     public var textColor: UIColor?
     public var attributedString: NSAttributedString?
     public weak var placeholderLabel: UILabel?
+    public var textLimit: Int = 0
+    
     fileprivate final lazy var observer: Observer<T> = Observer<T>(textViewRowFormer: self)
     
     deinit {
@@ -159,6 +161,11 @@ private class Observer<T: UITableViewCell>:NSObject, UITextViewDelegate where T:
     fileprivate dynamic func textViewDidChange(_ textView: UITextView) {
         guard let textViewRowFormer = textViewRowFormer else { return }
         if textViewRowFormer.enabled {
+            
+            if let text = textView.text, textViewRowFormer.textLimit > 0, text.count > textViewRowFormer.textLimit{
+                textView.text = String(text.prefix(textViewRowFormer.textLimit))
+            }
+            
             let text = textView.text ?? ""
             textViewRowFormer.text = text
             textViewRowFormer.onTextChanged?(text)
