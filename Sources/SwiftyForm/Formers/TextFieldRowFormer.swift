@@ -31,6 +31,7 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     public var returnToNextRow = true
     public var onReturn: ((String) -> Void)?
     public var onTextChanged: ((String) -> Void)?
+    public var onLimitAlert: ((Int) -> Void)?
     public var textColor: UIColor?
     public var textLimit: Int = 0
     
@@ -50,6 +51,11 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     /// - Returns: description
     @discardableResult public final func onReturn(_ handler: @escaping ((String) -> Void)) -> Self {
         onReturn = handler
+        return self
+    }
+    
+    @discardableResult public final func onLimitAlert(_ handler: @escaping ((Int) -> Void)) -> Self {
+        onLimitAlert = handler
         return self
     }
     
@@ -128,6 +134,7 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
 
             if let text = textField.text, textLimit > 0, text.count > textLimit{
                 textField.text = String(text.prefix(textLimit))
+                onLimitAlert?(textLimit)
             }
             
             let text = textField.text ?? ""

@@ -32,6 +32,7 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     public var textDisabledColor: UIColor? = .lightGray
     public var titleEditingColor: UIColor?
     public var onTextChanged: ((String) -> Void)?
+    public var onLimitAlert: ((Int) -> Void)?
     public var textColor: UIColor?
     public var attributedString: NSAttributedString?
     public weak var placeholderLabel: UILabel?
@@ -48,6 +49,11 @@ open class TextViewRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable whe
     /// - Returns: description
     @discardableResult public final func onTextChanged(_ handler: @escaping ((String) -> Void)) -> Self {
         onTextChanged = handler
+        return self
+    }
+    
+    @discardableResult public final func onLimitAlert(_ handler: @escaping ((Int) -> Void)) -> Self {
+        onLimitAlert = handler
         return self
     }
     
@@ -164,6 +170,7 @@ private class Observer<T: UITableViewCell>:NSObject, UITextViewDelegate where T:
             
             if let text = textView.text, textViewRowFormer.textLimit > 0, text.count > textViewRowFormer.textLimit{
                 textView.text = String(text.prefix(textViewRowFormer.textLimit))
+                textViewRowFormer.onLimitAlert?(textViewRowFormer.textLimit)
             }
             
             let text = textView.text ?? ""

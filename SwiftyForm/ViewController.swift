@@ -80,6 +80,9 @@ class ViewController: JHTableViewController {
         textFieldRow.onTextChanged { (str) in
             print("\(str)")
         }
+        textFieldRow.onLimitAlert { limit in
+            print("字数限制\(limit)")
+        }
         
         //MARK: 输入框样式cell
         let textViewRow = TextViewRow()
@@ -90,7 +93,9 @@ class ViewController: JHTableViewController {
         textViewRow.placeholder = "请输入"
         textViewRow.text = "asefraefraefasfa"
         textViewRow.cell.addDownLine()
-        
+        textViewRow.onLimitAlert { limit in
+            print("字数限制\(limit)")
+        }
         //MARK: Switch样式cell
         let switchRow = SwitchRow()
 //        switchRow.enabled = false
