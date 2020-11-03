@@ -131,12 +131,15 @@ open class TextFieldRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable wh
     
     @objc private dynamic func textChanged(textField: UITextField) {
         if enabled {
-
-            if let text = textField.text, textLimit > 0, text.count > textLimit{
-                textField.text = String(text.prefix(textLimit))
-                onLimitAlert?(textLimit)
+            if let positionRange = textField.markedTextRange , let _ = textField.position(from: positionRange.start, offset: 0) {
+                //正在使用拼音，不进行校验
+                
+            } else {
+                if let text = textField.text, textLimit > 0, text.count > textLimit{
+                    textField.text = String(text.prefix(textLimit))
+                    onLimitAlert?(textLimit)
+                }
             }
-            
             let text = textField.text ?? ""
             self.text = text
             onTextChanged?(text)

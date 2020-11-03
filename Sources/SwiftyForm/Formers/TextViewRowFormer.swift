@@ -167,12 +167,15 @@ private class Observer<T: UITableViewCell>:NSObject, UITextViewDelegate where T:
     fileprivate dynamic func textViewDidChange(_ textView: UITextView) {
         guard let textViewRowFormer = textViewRowFormer else { return }
         if textViewRowFormer.enabled {
-            
-            if let text = textView.text, textViewRowFormer.textLimit > 0, text.count > textViewRowFormer.textLimit{
-                textView.text = String(text.prefix(textViewRowFormer.textLimit))
-                textViewRowFormer.onLimitAlert?(textViewRowFormer.textLimit)
+            if let positionRange = textView.markedTextRange , let _ = textView.position(from: positionRange.start, offset: 0) {
+                //正在使用拼音，不进行校验
+                
+            } else {
+                if let text = textView.text, textViewRowFormer.textLimit > 0, text.count > textViewRowFormer.textLimit{
+                    textView.text = String(text.prefix(textViewRowFormer.textLimit))
+                    textViewRowFormer.onLimitAlert?(textViewRowFormer.textLimit)
+                }
             }
-            
             let text = textView.text ?? ""
             textViewRowFormer.text = text
             textViewRowFormer.onTextChanged?(text)
