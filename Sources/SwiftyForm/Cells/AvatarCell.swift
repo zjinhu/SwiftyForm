@@ -35,6 +35,8 @@ open class AvatarCell: BaseCell, AvatarFormableRow {
         
         let titleImageView = UIImageView()
         titleImageView.clipsToBounds = true
+        titleImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        titleImageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleImageView)
         self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
