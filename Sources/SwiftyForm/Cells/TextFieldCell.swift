@@ -42,11 +42,15 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         }
         
         textField.snp.remakeConstraints { (make) in
-            if let text = rowFormer.title, text.count > 0 {
+            if let text = rowFormer.title, !text.isEmpty{
                 make.left.equalTo(titleLabel.snp.right)
                 make.right.equalToSuperview().offset(-20)
                 make.top.bottom.equalToSuperview()
-            }else{ 
+            }else if let attributedTitle = rowFormer.attributedTitle, !attributedTitle.string.isEmpty {
+                make.left.equalTo(titleLabel.snp.right)
+                make.right.equalToSuperview().offset(-20)
+                make.top.bottom.equalToSuperview()
+            }else{
                 make.left.equalToSuperview().offset(20)
                 make.right.equalToSuperview().offset(-20)
                 make.top.bottom.equalToSuperview()

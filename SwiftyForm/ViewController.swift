@@ -86,12 +86,13 @@ class ViewController: JHTableViewController {
         
         //MARK: 输入框样式cell
         let textViewRow = TextViewRow()
-        //        textViewRow.titleImage = UIImage.init(named: "Image")
-        //        textViewRow.title = "输入框"
-        //        textViewRow.subTitle = "这里是TextView"
+        textViewRow.rowHeight = 160
+//        textViewRow.titleImage = UIImage.init(named: "Image")
+        textViewRow.attributedTitle = "输入框".withFont(Font15) + "滑块".withFont(Font11).withTextColor(.green)
+//        textViewRow.subTitle = "这里是TextView"
         textViewRow.textLimit = 10
         textViewRow.placeholder = "请输入"
-        textViewRow.text = "asefraefraefasfa"
+//        textViewRow.text = "asefraefraefasfa"
         textViewRow.cell.addDownLine()
         textViewRow.onLimitAlert { limit in
             print("字数限制\(limit)")

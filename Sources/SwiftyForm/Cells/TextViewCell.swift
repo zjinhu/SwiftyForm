@@ -48,7 +48,12 @@ open class TextViewCell: BaseCell, TextViewFormableRow {
         }
 
         textView.snp.remakeConstraints { (make) in
-            if let text = rowFormer.title, text.count > 0 {
+            if let text = rowFormer.title, !text.isEmpty {
+                make.top.equalTo(titleLabel.snp.bottom)
+                make.left.equalToSuperview().offset(15)
+                make.right.equalToSuperview().offset(-15)
+                make.bottom.equalToSuperview().offset(-15)
+            }else if let attributedTitle = rowFormer.attributedTitle, !attributedTitle.string.isEmpty {
                 make.top.equalTo(titleLabel.snp.bottom)
                 make.left.equalToSuperview().offset(15)
                 make.right.equalToSuperview().offset(-15)
