@@ -20,7 +20,7 @@ public protocol AvatarFormableRow: FormableRow {
 open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: AvatarFormableRow {
 
     public var avatarImage: UIImage?
-    
+    public var avatarRadius: CGFloat = 4
     /// AvatarForm初始化
     open override func initialized() {
         rowHeight = 80
@@ -50,7 +50,7 @@ open class AvatarRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable wher
             textLabel?.attributedText = attributedTitle
         }
         avatarView?.image = avatarImage
-        
+        avatarView?.layer.cornerRadius = avatarRadius
         if enabled {
             _ = titleColor.map { textLabel?.textColor = $0 }
             titleColor = nil

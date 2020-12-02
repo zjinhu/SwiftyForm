@@ -50,7 +50,6 @@ open class AvatarCell: BaseCell, AvatarFormableRow {
         self.titleLabel = titleLabel
         
         let avatarView = UIImageView()
-        avatarView.layer.cornerRadius = 25
         avatarView.clipsToBounds = true
         avatarView.backgroundColor = .lightGray
         contentView.addSubview(avatarView)

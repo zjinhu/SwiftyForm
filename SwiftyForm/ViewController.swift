@@ -51,6 +51,7 @@ class ViewController: JHTableViewController {
         //MARK: 横向头像样式cell
         let avatarRow = AvatarRow()
         avatarRow.title = "头像"
+        avatarRow.avatarRadius = 25
         avatarRow.avatarImage = UIImage.init(named: "icon")
         avatarRow.cell.accessoryType = .disclosureIndicator
         avatarRow.cell.addDownLine()
