@@ -59,7 +59,6 @@ open class ImageCell: BaseCell, ImageFormableRow {
         
         let coverImageView = UIImageView()
         coverImageView.clipsToBounds = true
-        coverImageView.layer.cornerRadius = 10
         coverImageView.backgroundColor = .lightGray
         contentView.addSubview(coverImageView)
         self.coverImageView = coverImageView

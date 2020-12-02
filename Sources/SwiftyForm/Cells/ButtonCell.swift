@@ -17,11 +17,11 @@ open class ButtonCell: BaseCell, ButtonFormableRow {
     public private(set) weak var leftButton: UIButton!
     public private(set) weak var rightButton: UIButton!
     
-    public func formLeftButton() -> UIButton? {
+    public func formLeftButton() -> UIButton {
         return leftButton
     }
     
-    public func formRightButton() -> UIButton? {
+    public func formRightButton() -> UIButton {
         return rightButton
     }
  

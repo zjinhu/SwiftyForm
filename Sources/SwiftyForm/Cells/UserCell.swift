@@ -39,7 +39,6 @@ open class UserCell: BaseCell, UserFormableRow {
         super.setup()
         
         let avatarView = UIImageView()
-        avatarView.layer.cornerRadius = 40
         avatarView.clipsToBounds = true
         avatarView.backgroundColor = .lightGray
         contentView.addSubview(avatarView)
@@ -105,7 +104,6 @@ open class User2Cell: BaseCell, UserFormableRow {
         super.setup()
         
         let avatarView = UIImageView()
-        avatarView.layer.cornerRadius = 40
         avatarView.clipsToBounds = true
         avatarView.backgroundColor = .lightGray
         contentView.addSubview(avatarView)

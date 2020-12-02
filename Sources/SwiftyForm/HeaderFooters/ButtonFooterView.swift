@@ -22,11 +22,8 @@ open class ButtonFooterView: BaseHeaderFooterView,ButtonFormableView{
 
     override open func setup() {
         super.setup()
-        
+
         let button = UIButton()
-        button.titleLabel?.font = .systemFont(ofSize: 14)
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.lightGray, for: .highlighted)
         contentView.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.center.equalToSuperview()

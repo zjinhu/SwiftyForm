@@ -178,7 +178,7 @@ class ViewController: JHTableViewController {
         let btnRow = ButtonRow()
         btnRow.rowHeight = 100
         btnRow.cell.leftButton.isHidden = true
-        btnRow.cell.rightButton.backgroundColor = .orange
+        btnRow.rightButtonBGColor = .orange
         btnRow.cell.addDownLine()
         btnRow.onRightButtonClick {
             print("点击了按钮")
@@ -191,8 +191,8 @@ class ViewController: JHTableViewController {
         
         //MARK: 两个按钮样式cell
         let btn2Row = ButtonRow()
-        btn2Row.cell.leftButton.backgroundColor = .blue
-        btn2Row.cell.rightButton.backgroundColor = .orange
+        btn2Row.leftButtonBGColor = .blue
+        btn2Row.rightButtonBGColor = .orange
         btn2Row.cell.addDownLine()
         btn2Row.onLeftButtonClick {
             print("点击了左侧按钮")
@@ -227,8 +227,9 @@ class ViewController: JHTableViewController {
         let footer = ButtonFooter()
         footer.viewHeight = 100
         footer.headerFooter.backColor = .baseBackground
-        footer.headerFooter.button.backgroundColor = .red
-        footer.headerFooter.button.setTitle("123", for: .normal)
+        footer.buttonBGColor = .red
+        footer.buttonTitle = "123"
+
         sectionFormer3.set(footerViewFormer: footer)
         footer.onButtonClick {//[weak self] in
 //            guard let `self` = self else{return}
@@ -238,6 +239,8 @@ class ViewController: JHTableViewController {
                         sectionFormer1,
                         sectionFormer3,
                         sectionFormer2)
+        
+        
     }
     
     

@@ -21,6 +21,7 @@ open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
 
     public var subTitle: String?
     public var coverImage: UIImage?
+    public var coverRadius: CGFloat = 10
     public var subTitleDisabledColor: UIColor? = .lightGray
     public var subTitleColor: UIColor?
  
@@ -54,7 +55,7 @@ open class ImageRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where 
         
         let coverImageView = cell.formImageView()
         coverImageView?.image = coverImage
-        
+        coverImageView?.layer.cornerRadius = coverRadius
         if enabled {
             _ = titleColor.map { titleLabel?.textColor = $0 }
             _ = subTitleColor.map { subTitleLabel?.textColor = $0 }

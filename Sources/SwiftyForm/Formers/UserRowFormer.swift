@@ -20,6 +20,7 @@ public protocol UserFormableRow: FormableRow {
 open class UserRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where T: UserFormableRow {
 
     public var avatarImage: UIImage?
+    public var avatarRadius: CGFloat = 40
     
     public var userName: String?
     public var userNameDisabledColor: UIColor? = .lightGray
@@ -53,7 +54,7 @@ open class UserRowFormer<T: UITableViewCell> : BaseRowFormer<T>, Formable where 
         userNameLabel?.text = userName
         userInfoLabel?.text = userInfo
         avatarView?.image = avatarImage
-        
+        avatarView?.layer.cornerRadius = avatarRadius
         if enabled {
             _ = userNameColor.map { userNameLabel?.textColor = $0 }
             _ = userInfoColor.map { userInfoLabel?.textColor = $0 }
