@@ -80,7 +80,7 @@ open class ButtonRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
         leftButton.setImage(leftButtonNorImage, for: .normal)
         leftButton.setImage(leftButtonHigImage, for: .highlighted)
         leftButton.layer.cornerRadius = leftButtonCornerRadius
-        
+        leftButton.clipsToBounds = true
         let rightButton = cell.formRightButton()
         rightButton.backgroundColor = rightButtonBGColor
         rightButton.titleLabel?.font = rightButtonTitleFont
@@ -90,7 +90,7 @@ open class ButtonRowFormer<T: UITableViewCell>: BaseRowFormer<T>, Formable where
         rightButton.setImage(rightButtonNorImage, for: .normal)
         rightButton.setImage(rightButtonHigImage, for: .highlighted)
         rightButton.layer.cornerRadius = rightButtonCornerRadius
-        
+        rightButton.clipsToBounds = true
         leftButton.isEnabled = enabled
         rightButton.isEnabled = enabled
     }

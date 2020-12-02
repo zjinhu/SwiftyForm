@@ -55,7 +55,7 @@ open class ButtonHeaderFooterFormer<T: UITableViewHeaderFooterView>: BaseHeaderF
         button.setImage(buttonNorImage, for: .normal)
         button.setImage(buttonHigImage, for: .highlighted)
         button.layer.cornerRadius = buttonCornerRadius
-
+        button.clipsToBounds = true
     }
 
 }
