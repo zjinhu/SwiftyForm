@@ -26,6 +26,7 @@ open class BaseCell: UITableViewCell, FormableRow {
 
     
     open func setup() {
+        selectionStyle = .none
         contentView.backgroundColor = .clear
     }
 }
