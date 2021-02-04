@@ -38,11 +38,7 @@ open class LabelFooterView: BaseHeaderFooterView, LabelFormableView {
         }
         
         let titleLabel = UILabel()
-        titleLabel.textColor = .lightGray
-        titleLabel.font = .systemFont(ofSize: 14)
-        titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.insertSubview(titleLabel, at: 0)
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()

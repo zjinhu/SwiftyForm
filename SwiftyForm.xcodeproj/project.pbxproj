@@ -35,9 +35,8 @@
 		81BDE3162546BA3100F8130D /* FormerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2E82546BA3100F8130D /* FormerProtocol.swift */; };
 		81BDE3172546BA3100F8130D /* RowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2E92546BA3100F8130D /* RowFormer.swift */; };
 		81BDE3182546BA3100F8130D /* ButtonFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2EB2546BA3100F8130D /* ButtonFooterView.swift */; };
-		81BDE3192546BA3100F8130D /* LabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2EC2546BA3100F8130D /* LabelFooterView.swift */; };
 		81BDE31A2546BA3100F8130D /* BaseHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2ED2546BA3100F8130D /* BaseHeaderFooterView.swift */; };
-		81BDE31B2546BA3100F8130D /* LabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2EE2546BA3100F8130D /* LabelHeaderView.swift */; };
+		81BDE31B2546BA3100F8130D /* LabelHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2EE2546BA3100F8130D /* LabelHeaderFooterView.swift */; };
 		81BDE31C2546BA3100F8130D /* TextViewRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2F02546BA3100F8130D /* TextViewRowFormer.swift */; };
 		81BDE31D2546BA3100F8130D /* LabelHeaderFooterFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2F12546BA3100F8130D /* LabelHeaderFooterFormer.swift */; };
 		81BDE31E2546BA3100F8130D /* CheckRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE2F22546BA3100F8130D /* CheckRowFormer.swift */; };
@@ -91,9 +90,8 @@
 		81BDE2E82546BA3100F8130D /* FormerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerProtocol.swift; sourceTree = "<group>"; };
 		81BDE2E92546BA3100F8130D /* RowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowFormer.swift; sourceTree = "<group>"; };
 		81BDE2EB2546BA3100F8130D /* ButtonFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFooterView.swift; sourceTree = "<group>"; };
-		81BDE2EC2546BA3100F8130D /* LabelFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelFooterView.swift; sourceTree = "<group>"; };
 		81BDE2ED2546BA3100F8130D /* BaseHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterView.swift; sourceTree = "<group>"; };
-		81BDE2EE2546BA3100F8130D /* LabelHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelHeaderView.swift; sourceTree = "<group>"; };
+		81BDE2EE2546BA3100F8130D /* LabelHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelHeaderFooterView.swift; sourceTree = "<group>"; };
 		81BDE2F02546BA3100F8130D /* TextViewRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewRowFormer.swift; sourceTree = "<group>"; };
 		81BDE2F12546BA3100F8130D /* LabelHeaderFooterFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelHeaderFooterFormer.swift; sourceTree = "<group>"; };
 		81BDE2F22546BA3100F8130D /* CheckRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckRowFormer.swift; sourceTree = "<group>"; };
@@ -213,9 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				81BDE2EB2546BA3100F8130D /* ButtonFooterView.swift */,
-				81BDE2EC2546BA3100F8130D /* LabelFooterView.swift */,
 				81BDE2ED2546BA3100F8130D /* BaseHeaderFooterView.swift */,
-				81BDE2EE2546BA3100F8130D /* LabelHeaderView.swift */,
+				81BDE2EE2546BA3100F8130D /* LabelHeaderFooterView.swift */,
 			);
 			path = HeaderFooters;
 			sourceTree = "<group>";
@@ -382,7 +379,7 @@
 				81BDE32E2546BA3100F8130D /* AvatarRowFormer.swift in Sources */,
 				81BDE30C2546BA3100F8130D /* CheckCell.swift in Sources */,
 				81BDE31A2546BA3100F8130D /* BaseHeaderFooterView.swift in Sources */,
-				81BDE31B2546BA3100F8130D /* LabelHeaderView.swift in Sources */,
+				81BDE31B2546BA3100F8130D /* LabelHeaderFooterView.swift in Sources */,
 				81BDE3132546BA3100F8130D /* SectionFormer.swift in Sources */,
 				81BDE3262546BA3100F8130D /* UserRowFormer.swift in Sources */,
 				81BDE32D2546BA3100F8130D /* CustomRowFormer.swift in Sources */,
@@ -398,7 +395,6 @@
 				81BDE32F2546BA3100F8130D /* ButtonRowFormer.swift in Sources */,
 				8196A6A32489F9120055FC49 /* AppDelegate.swift in Sources */,
 				81BDE3042546BA3100F8130D /* SegmentedCell.swift in Sources */,
-				81BDE3192546BA3100F8130D /* LabelFooterView.swift in Sources */,
 				81BDE31F2546BA3100F8130D /* ImageRowFormer.swift in Sources */,
 				8196A6A52489F9120055FC49 /* SceneDelegate.swift in Sources */,
 				81BDE3252546BA3100F8130D /* DatePickerRowFormer.swift in Sources */,

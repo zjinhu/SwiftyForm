@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class LabelHeader: LabelHeaderFooterFormer<LabelHeaderView> {
+public class LabelHeaderFooter: LabelHeaderFooterFormer<LabelHeaderFooterView> {
 
 }
 
-open class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
+open class LabelHeaderFooterView: BaseHeaderFooterView, LabelFormableView {
 
     public private(set) weak var titleLabel: UILabel!
     public private(set) weak var titleImageView: UIImageView!
@@ -31,18 +31,15 @@ open class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
         let titleImageView = UIImageView()
         titleImageView.clipsToBounds = true
         contentView.addSubview(titleImageView)
-        self.titleImageView = titleImageView
         titleImageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(20)
         }
+        self.titleImageView = titleImageView
         
         let titleLabel = UILabel()
-        titleLabel.textColor = .lightGray
-        titleLabel.font = .systemFont(ofSize: 14)
         titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.insertSubview(titleLabel, at: 0)
+        contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.equalToSuperview().offset(20)
@@ -55,6 +52,7 @@ open class LabelHeaderView: BaseHeaderFooterView, LabelFormableView {
 
         titleLabel.snp.remakeConstraints { (make) in
             make.top.bottom.equalToSuperview()
+            make.right.equalToSuperview().offset(-20)
             if titleImageView.image == nil{
                 make.left.equalToSuperview().offset(20)
             }else{

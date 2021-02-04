@@ -129,7 +129,7 @@ class ViewController: JHTableViewController {
                                            switchRow,
                                            segmentRow)
         //MARK: 添加header
-        let header = LabelHeader()
+        let header = LabelHeaderFooter()
         header.title = "header1"
         //        header.headerFooter.backColor = .red
         header.titleImage = UIImage.init(named: "Image")
@@ -146,7 +146,7 @@ class ViewController: JHTableViewController {
         
         let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
         //MARK: 添加header
-        let header2 = LabelHeader()
+        let header2 = LabelHeaderFooter()
         header2.title = "header12"
         //        header.headerFooter.backColor = .red
         header2.titleImage = UIImage.init(named: "Image")
@@ -221,7 +221,7 @@ class ViewController: JHTableViewController {
                                            btnRow,
                                            imgRow)
         //MARK: 添加header
-        let header3 = LabelHeader()
+        let header3 = LabelHeaderFooter()
         sectionFormer3.set(headerViewFormer: header3)
         
         let footer = ButtonFooter()
