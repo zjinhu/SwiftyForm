@@ -141,9 +141,10 @@ class ViewController: JHTableViewController {
         textViewRow.rowHeight = 160
 //        textViewRow.titleImage = UIImage.init(named: "Image")
         textViewRow.attributedTitle = "输入框".withFont(Font15) + "滑块".withFont(Font11).withTextColor(.green)
-//        textViewRow.subTitle = "这里是TextView"
+        textViewRow.subTitle = "这里是TextView"
         textViewRow.textLimit = 10
         textViewRow.placeholder = "请输入"
+        textViewRow.cell.formTextView().backgroundColor = .baseBackground
 //        textViewRow.text = "asefraefraefasfa"
         textViewRow.cell.addDownLine()
         textViewRow.onLimitAlert { limit in

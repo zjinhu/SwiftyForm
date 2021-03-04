@@ -3,6 +3,17 @@
 
 快速创建多变的表格样式，重度参考Former，Eureka。部分改动提高了代码的可读性易用性，基本满足展示需求。
 ## 使用
+
+<img src="1.png" style="zoom:25%;" />
+
+<img src="2.png" style="zoom:25%;" />
+
+<img src="3.png" style="zoom:25%;" />
+
+<img src="4.png" style="zoom:25%;" />
+
+<img src="5.png" style="zoom:25%;" />
+
 使用自己创建的tableView即可，绑定一下数据源
 ```
 lazy var former = Former(tableView: self.tableView!)
