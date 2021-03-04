@@ -12,9 +12,7 @@ class ViewController: JHTableViewController {
     
     lazy var former = Former(tableView: self.tableView!)
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    lazy var s1 : SectionFormer = {
         
         //MARK: 用户头像样式cell
         let user = UserRow()
@@ -27,26 +25,43 @@ class ViewController: JHTableViewController {
             print("点击了User的Cell")
         }
         
-        let user2 = User2Row()
-        user2.userName = "用户名"
-        user2.avatarImage = UIImage.init(named: "icon")
-        user2.userInfo = "用户简介用户简介用户简介用户简介用户简介用户简介用户用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介"
-        user2.cell.accessoryType = .disclosureIndicator
-        user2.cell.userInfoLabel.font = .systemFont(ofSize: 11)
-        user2.cell.addDownLine()
-        user2.onSelected { (row) in
+        let section = SectionFormer(user)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "用户简介样式, 上中下: 头像 名字 简介"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s2 : SectionFormer = {
+        
+        //MARK: 用户头像样式cell
+        let user = User2Row()
+        user.userName = "用户名"
+        user.avatarImage = UIImage.init(named: "icon")
+        user.userInfo = "用户简介用户简介用户简介用户简介用户简介用户简介用户用户简介用户简介用户简介用户简介用户简介用户简介用户简介用户简介"
+        user.cell.accessoryType = .disclosureIndicator
+        user.cell.userInfoLabel.font = .systemFont(ofSize: 11)
+        user.cell.addDownLine()
+        user.onSelected { (row) in
             print("点击了User2的Cell")
         }
         
-        //MARK: 点击选中样式cell
-        let check = CheckRow()
-        check.title = "选中"
-        check.titleImage = UIImage.init(named: "Image")
-        check.checkColor = .orange
-        check.cell.addDownLine()
-        check.onCheckChanged { (isCheck) in
-            print("点击了check的Cell\(isCheck)")
-        }
+        let section = SectionFormer(user)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "用户简介样式, 左-上下: 头像 名字 简介"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s3 : SectionFormer = {
         
         //MARK: 横向头像样式cell
         let avatarRow = AvatarRow()
@@ -58,6 +73,42 @@ class ViewController: JHTableViewController {
         avatarRow.onSelected { (row) in
             print("点击了头像的Cell")
         }
+        
+        let section = SectionFormer(avatarRow)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "头像样式, 左-右: 名字 头像 "
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s4 : SectionFormer = {
+        
+        //MARK: 点击选中样式cell
+        let check = CheckRow()
+        check.title = "选中"
+        check.titleImage = UIImage.init(named: "Image")
+        check.checkColor = .orange
+        check.cell.addDownLine()
+        check.onCheckChanged { (isCheck) in
+            print("点击了check的Cell\(isCheck)")
+        }
+        
+        let section = SectionFormer(check)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "选中样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s5 : SectionFormer = {
         
         //MARK: 纯文本样式cell
         let labelRow = LabelRow()
@@ -98,6 +149,20 @@ class ViewController: JHTableViewController {
         textViewRow.onLimitAlert { limit in
             print("字数限制\(limit)")
         }
+        
+        let section = SectionFormer(labelRow, textFieldRow, textViewRow)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "文本样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s6 : SectionFormer = {
+        
         //MARK: Switch样式cell
         let switchRow = SwitchRow()
 //        switchRow.enabled = false
@@ -119,49 +184,22 @@ class ViewController: JHTableViewController {
             print("点击了选项卡的Cell的第\(index)个\(title)")
         }
         
-        let sectionFormer1 = SectionFormer(user,
-                                           user2,
-                                           avatarRow,
-                                           check,
-                                           labelRow,
-                                           textFieldRow,
-                                           textViewRow,
-                                           switchRow,
-                                           segmentRow)
-        //MARK: 添加header
+        let section = SectionFormer(switchRow, segmentRow)
+        
         let header = LabelHeaderFooter()
-        header.title = "header1"
-        //        header.headerFooter.backColor = .red
-        header.titleImage = UIImage.init(named: "Image")
-        sectionFormer1.set(headerViewFormer: header)
+        header.viewHeight = 20
+        header.title = "选择样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s7 : SectionFormer = {
         
         //MARK: 日期滚轮样式cell
         let datePickerRow = DatePickerRow()
         datePickerRow.cell.addDownLine()
-        
-        //MARK: 普通选择滚轮样式cell
-        let pickerRow = PickerRow()
-        pickerRow.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
-//        pickerRow.cell.addDownLine()
-        
-        let sectionFormer2 = SectionFormer(datePickerRow,pickerRow)
-        //MARK: 添加header
-        let header2 = LabelHeaderFooter()
-        header2.title = "header12"
-        //        header.headerFooter.backColor = .red
-        header2.titleImage = UIImage.init(named: "Image")
-        sectionFormer2.set(headerViewFormer: header2)
-        
-        //MARK: 内嵌滚轮样式cell
-        let inlinePickerRow = InlinePickerRow()
-        inlinePickerRow.cell.accessoryType = .disclosureIndicator
-        inlinePickerRow.title = "内嵌picker"
-        inlinePickerRow.cell.addDownLine()
-        inlinePickerRow.pickerItems = [InlinePickerItem(
-            title: "",
-            displayTitle: NSAttributedString(string: "Not set"),
-            value: nil)]
-            + (1...20).map { InlinePickerItem(title: "Option\($0)") }
         
         //MARK: 内嵌日期滚轮样式cell
         let inlineDateRow = InlineDatePickerRow()
@@ -174,6 +212,47 @@ class ViewController: JHTableViewController {
         inlineDateRow.title = "内嵌日期"
         inlineDateRow.cell.addDownLine()
         
+        let section = SectionFormer(datePickerRow, inlineDateRow)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "日期样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s8 : SectionFormer = {
+        
+        //MARK: 普通选择滚轮样式cell
+        let pickerRow = PickerRow()
+        pickerRow.pickerItems = (1...20).map { PickerItem(title: "Option\($0)") }
+        
+        //MARK: 内嵌滚轮样式cell
+        let inlinePickerRow = InlinePickerRow()
+        inlinePickerRow.cell.accessoryType = .disclosureIndicator
+        inlinePickerRow.title = "内嵌picker"
+        inlinePickerRow.cell.addDownLine()
+        inlinePickerRow.pickerItems = [InlinePickerItem(
+            title: "",
+            displayTitle: NSAttributedString(string: "Not set"),
+            value: nil)]
+            + (1...20).map { InlinePickerItem(title: "Option\($0)") }
+        
+        let section = SectionFormer(pickerRow, inlinePickerRow)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "滚轮样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s9: SectionFormer = {
+        
         //MARK: 单个按钮样式cell
         let btnRow = ButtonRow()
         btnRow.rowHeight = 100
@@ -183,10 +262,6 @@ class ViewController: JHTableViewController {
         btnRow.onRightButtonClick {
             print("点击了按钮")
 
-            sectionFormer1.remove(rowFormers: [avatarRow,
-            check,
-            labelRow])
-            self.former.reload(sectionFormer: sectionFormer1)
         }
         
         //MARK: 两个按钮样式cell
@@ -196,14 +271,27 @@ class ViewController: JHTableViewController {
         btn2Row.cell.addDownLine()
         btn2Row.onLeftButtonClick {
             print("点击了左侧按钮")
-            sectionFormer1.remove(rowFormer: user)
-            self.former.reload(sectionFormer: sectionFormer1)
+//            sectionFormer1.remove(rowFormer: user)
+//            self.former.reload(sectionFormer: sectionFormer1)
         }
         btn2Row.onRightButtonClick {
             print("点击了右侧按钮")
-            sectionFormer1.insert(rowFormer: user, toIndex: 0)
-            self.former.reload(sectionFormer: sectionFormer1)
+//            sectionFormer1.insert(rowFormer: user, toIndex: 0)
+//            self.former.reload(sectionFormer: sectionFormer1)
         }
+        
+        let section = SectionFormer(btnRow, btn2Row)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "按钮样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
+        
+        return section
+    }()
+    
+    lazy var s10: SectionFormer = {
         
         //MARK: 选择图片样式cell
         let imgRow = ImageRow()
@@ -215,30 +303,43 @@ class ViewController: JHTableViewController {
             print("点击了选择图片")
         }
         
-        let sectionFormer3 = SectionFormer(btn2Row,
-                                           inlinePickerRow,
-                                           inlineDateRow,
-                                           btnRow,
-                                           imgRow)
-        //MARK: 添加header
-        let header3 = LabelHeaderFooter()
-        sectionFormer3.set(headerViewFormer: header3)
+        let section = SectionFormer(imgRow)
+        
+        let header = LabelHeaderFooter()
+        header.viewHeight = 20
+        header.title = "图片样式"
+        header.headerFooter.backColor = .baseTeal
+        section.set(headerViewFormer: header)
         
         let footer = ButtonFooter()
         footer.viewHeight = 100
         footer.headerFooter.backColor = .baseBackground
         footer.buttonBGColor = .red
-        footer.buttonTitle = "123"
+        footer.buttonTitle = "这是footer"
 
-        sectionFormer3.set(footerViewFormer: footer)
+        section.set(footerViewFormer: footer)
         footer.onButtonClick {//[weak self] in
 //            guard let `self` = self else{return}
             print("dianji")
         }
+        
+        return section
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         former.append(sectionFormer:
-                        sectionFormer1,
-                        sectionFormer3,
-                        sectionFormer2)
+                        s1,
+                        s2,
+                        s3,
+                        s4,
+                        s5,
+                        s6,
+                        s7,
+                        s8,
+                        s9,
+                        s10)
         
         
     }
