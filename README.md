@@ -55,7 +55,11 @@ self.former.reload(sectionFormer: sectionFormer1)
 
 #### cocoapods导入
 
+`pod 'Swift_Form'`
+
 #### SPM导入
+
+`https://github.com/jackiehu/SwiftyForm`
 
 #### 手动导入
 
