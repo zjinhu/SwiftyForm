@@ -51,3 +51,11 @@ sectionFormer1.insert(rowFormer: user, toIndex: 0)
 self.former.reload(sectionFormer: sectionFormer1)
 ```
 
+### 安装
+
+#### cocoapods导入
+
+#### SPM导入
+
+#### 手动导入
+
