@@ -1,8 +1,7 @@
 # SwiftyForm
 快速集成表单
 
-快速创建多变的表格样式，重度参考Former，Eureka。部分改动提高了代码的可读性易用性，基本满足展示需求。
-## 使用
+快速创建多变的表格样式，参考Former，Eureka。无需继承特定的VC，只需要有一个UITableView绑定下数据源即可。
 
 <img src="1.png" style="zoom:25%;" />
 
@@ -14,12 +13,16 @@
 
 <img src="5.png" style="zoom:25%;" />
 
+## 使用
+
 使用自己创建的tableView即可，绑定一下数据源
+
 ```
 lazy var former = Former(tableView: self.tableView!)
 ```
 
-然后在相应的地方添加相应的Row。比如：
+然后添加相应的Row，Section。比如：
+
 ```
 //MARK: 用户头像样式cell
         let user = UserRow()
