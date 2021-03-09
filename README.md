@@ -3,15 +3,12 @@
 
 快速创建多变的表格样式，参考Former，Eureka。无需继承特定的VC，只需要有一个UITableView绑定下数据源即可。
 
-<img src="1.png" style="zoom:25%;" />
+| ![](1.png) | ![](2.png) | ![](3.png) |
+| ---------- | ---------- | ---------- |
+| ![](4.png) | ![](5.png) |            |
+|            |            |            |
 
-<img src="2.png" style="zoom:25%;" />
 
-<img src="3.png" style="zoom:25%;" />
-
-<img src="4.png" style="zoom:25%;" />
-
-<img src="5.png" style="zoom:25%;" />
 
 ## 使用
 
