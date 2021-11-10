@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60052896FE8CC2550F6AE532 /* Pods_SwiftyForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F970DD961E3483413733268 /* Pods_SwiftyForm.framework */; };
+		815E1C9D273BCE69009E81CF /* SwiftBrick in Frameworks */ = {isa = PBXBuildFile; productRef = 815E1C9C273BCE69009E81CF /* SwiftBrick */; };
+		815E1CA0273BD14E009E81CF /* SwiftyAttributes in Frameworks */ = {isa = PBXBuildFile; productRef = 815E1C9F273BD14E009E81CF /* SwiftyAttributes */; };
 		8196A6A32489F9120055FC49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6A22489F9120055FC49 /* AppDelegate.swift */; };
 		8196A6A52489F9120055FC49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6A42489F9120055FC49 /* SceneDelegate.swift */; };
 		8196A6A72489F9120055FC49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196A6A62489F9120055FC49 /* ViewController.swift */; };
@@ -60,7 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F970DD961E3483413733268 /* Pods_SwiftyForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8196A69F2489F9120055FC49 /* SwiftyForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8196A6A22489F9120055FC49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8196A6A42489F9120055FC49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,8 +112,6 @@
 		81BDE3012546BA3100F8130D /* CustomRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRowFormer.swift; sourceTree = "<group>"; };
 		81BDE3022546BA3100F8130D /* AvatarRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarRowFormer.swift; sourceTree = "<group>"; };
 		81BDE3032546BA3100F8130D /* ButtonRowFormer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonRowFormer.swift; sourceTree = "<group>"; };
-		C74FFE71B75DB0870F24908B /* Pods-SwiftyForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyForm.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm.debug.xcconfig"; sourceTree = "<group>"; };
-		C9C4070DD8FFA4C70F3A8D2E /* Pods-SwiftyForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyForm.release.xcconfig"; path = "Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60052896FE8CC2550F6AE532 /* Pods_SwiftyForm.framework in Frameworks */,
+				815E1C9D273BCE69009E81CF /* SwiftBrick in Frameworks */,
+				815E1CA0273BD14E009E81CF /* SwiftyAttributes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,8 +132,6 @@
 			children = (
 				8196A6A12489F9120055FC49 /* SwiftyForm */,
 				8196A6A02489F9120055FC49 /* Products */,
-				B5B0F511AA06B0D71C63D3A0 /* Pods */,
-				C39C224F719C012A6D990B2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,23 +241,6 @@
 			path = Formers;
 			sourceTree = "<group>";
 		};
-		B5B0F511AA06B0D71C63D3A0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C74FFE71B75DB0870F24908B /* Pods-SwiftyForm.debug.xcconfig */,
-				C9C4070DD8FFA4C70F3A8D2E /* Pods-SwiftyForm.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		C39C224F719C012A6D990B2B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2F970DD961E3483413733268 /* Pods_SwiftyForm.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,17 +248,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8196A6B32489F9140055FC49 /* Build configuration list for PBXNativeTarget "SwiftyForm" */;
 			buildPhases = (
-				1DD6EA25E941048739A43865 /* [CP] Check Pods Manifest.lock */,
 				8196A69B2489F9120055FC49 /* Sources */,
 				8196A69C2489F9120055FC49 /* Frameworks */,
 				8196A69D2489F9120055FC49 /* Resources */,
-				D0AC974C7FC22D9E952C0D90 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SwiftyForm;
+			packageProductDependencies = (
+				815E1C9C273BCE69009E81CF /* SwiftBrick */,
+				815E1C9F273BD14E009E81CF /* SwiftyAttributes */,
+			);
 			productName = SwiftyForm;
 			productReference = 8196A69F2489F9120055FC49 /* SwiftyForm.app */;
 			productType = "com.apple.product-type.application";
@@ -307,6 +289,10 @@
 				Base,
 			);
 			mainGroup = 8196A6962489F9120055FC49;
+			packageReferences = (
+				815E1C9B273BCE69009E81CF /* XCRemoteSwiftPackageReference "SwiftBrick" */,
+				815E1C9E273BD14E009E81CF /* XCRemoteSwiftPackageReference "SwiftyAttributes" */,
+			);
 			productRefGroup = 8196A6A02489F9120055FC49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,48 +314,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1DD6EA25E941048739A43865 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftyForm-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0AC974C7FC22D9E952C0D90 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftyForm/Pods-SwiftyForm-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8196A69B2489F9120055FC49 /* Sources */ = {
@@ -563,7 +507,6 @@
 		};
 		8196A6B42489F9140055FC49 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C74FFE71B75DB0870F24908B /* Pods-SwiftyForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -583,7 +526,6 @@
 		};
 		8196A6B52489F9140055FC49 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9C4070DD8FFA4C70F3A8D2E /* Pods-SwiftyForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -623,6 +565,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		815E1C9B273BCE69009E81CF /* XCRemoteSwiftPackageReference "SwiftBrick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jackiehu/SwiftBrick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		815E1C9E273BD14E009E81CF /* XCRemoteSwiftPackageReference "SwiftyAttributes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eddiekaiger/SwiftyAttributes";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		815E1C9C273BCE69009E81CF /* SwiftBrick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 815E1C9B273BCE69009E81CF /* XCRemoteSwiftPackageReference "SwiftBrick" */;
+			productName = SwiftBrick;
+		};
+		815E1C9F273BD14E009E81CF /* SwiftyAttributes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 815E1C9E273BD14E009E81CF /* XCRemoteSwiftPackageReference "SwiftyAttributes" */;
+			productName = SwiftyAttributes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8196A6972489F9120055FC49 /* Project object */;
 }

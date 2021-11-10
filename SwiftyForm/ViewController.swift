@@ -5,7 +5,7 @@
 //  Created by iOS on 2020/6/5.
 //  Copyright © 2020 iOS. All rights reserved.
 //
-
+import UIKit
 import SwiftBrick
 import SwiftyAttributes
 class ViewController: JHTableViewController {
