@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Swift_Form"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "A short description of SwiftyForm."
 
   s.description  = <<-DESC
