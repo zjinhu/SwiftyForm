@@ -1,0 +1,52 @@
+PODS:
+  - SnapKit (5.6.0)
+  - Swift_Form (1.1.0):
+    - SnapKit
+  - SwiftBrick (2.3.8):
+    - SwiftBrick/BaseCell (= 2.3.8)
+    - SwiftBrick/BaseVC (= 2.3.8)
+    - SwiftBrick/Extensions (= 2.3.8)
+    - SwiftBrick/SwiftUI (= 2.3.8)
+    - SwiftBrick/Util (= 2.3.8)
+    - SwiftBrick/ViewFactory (= 2.3.8)
+  - SwiftBrick/BaseCell (2.3.8):
+    - SwiftBrick/Extensions
+  - SwiftBrick/BaseVC (2.3.8):
+    - SwiftBrick/BaseCell
+    - SwiftBrick/Extensions
+    - SwiftBrick/Util
+  - SwiftBrick/Extensions (2.3.8):
+    - SwiftBrick/Util
+  - SwiftBrick/SwiftUI (2.3.8):
+    - SwiftBrick/BaseVC
+    - SwiftBrick/Extensions
+  - SwiftBrick/Util (2.3.8)
+  - SwiftBrick/ViewFactory (2.3.8):
+    - SwiftBrick/Extensions
+    - SwiftBrick/Util
+  - SwiftyAttributes (5.3.0)
+
+DEPENDENCIES:
+  - Swift_Form (from `../`)
+  - SwiftBrick
+  - SwiftyAttributes
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - SwiftBrick
+    - SwiftyAttributes
+
+EXTERNAL SOURCES:
+  Swift_Form:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Swift_Form: 2d4a3318f33540707a1173ee857233cd39acd961
+  SwiftBrick: 05cf4fee475bd133db2b5e7f348e75025d339534
+  SwiftyAttributes: 6d7386e90ac611b6acac8b59e38f34bfa4621c80
+
+PODFILE CHECKSUM: 3287016a6d42bc126b3d19a8cd06dbff8ebad86b
+
+COCOAPODS: 1.12.1

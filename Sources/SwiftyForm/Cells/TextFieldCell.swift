@@ -73,6 +73,7 @@ open class TextFieldCell: BaseCell, TextFieldFormableRow {
         }
         
         let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleLabel)

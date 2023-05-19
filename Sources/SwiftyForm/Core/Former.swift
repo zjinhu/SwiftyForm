@@ -712,7 +712,7 @@ public final class Former: NSObject {
     private func setupTableView() {
         tableView?.delegate = self
         tableView?.dataSource = self
-        
+        tableView?.rowHeight = UITableView.automaticDimension
         NotificationCenter.default.addObserver(self, selector: #selector(Former.keyboardWillAppear(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(Former.keyboardWillDisappear(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }

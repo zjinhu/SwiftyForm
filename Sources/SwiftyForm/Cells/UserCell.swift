@@ -46,10 +46,12 @@ open class UserCell: BaseCell, UserFormableRow {
         
         let userNameLabel = UILabel()
         userNameLabel.textAlignment = .center
+        userNameLabel.numberOfLines = 0
         contentView.addSubview(userNameLabel)
         self.userNameLabel = userNameLabel
         
         let userInfoLabel = UILabel()
+        userInfoLabel.numberOfLines = 0
         userInfoLabel.textAlignment = .center
         userInfoLabel.textColor = .lightGray
         contentView.addSubview(userInfoLabel)
@@ -72,7 +74,6 @@ open class UserCell: BaseCell, UserFormableRow {
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         }
-        
 
     }
 
@@ -110,6 +111,7 @@ open class User2Cell: BaseCell, UserFormableRow {
         self.avatarView = avatarView
         
         let userNameLabel = UILabel()
+        userNameLabel.numberOfLines = 0
         userNameLabel.textAlignment = .left
         contentView.addSubview(userNameLabel)
         self.userNameLabel = userNameLabel

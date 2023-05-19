@@ -39,7 +39,8 @@ open class CheckCell: BaseCell, CheckFormableRow {
             make.left.equalToSuperview().offset(20)
         }
         
-        let titleLabel = UILabel()        
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel

@@ -1,0 +1,10 @@
+use_frameworks!
+
+platform :ios, '11.0'
+
+target 'Example' do
+  pod 'Swift_Form', :path => '../'
+  
+  pod 'SwiftBrick' 
+  pod 'SwiftyAttributes'
+end

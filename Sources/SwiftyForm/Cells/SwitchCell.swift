@@ -45,6 +45,7 @@ open class SwitchCell: BaseCell, SwitchFormableRow {
         }
         
         let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel

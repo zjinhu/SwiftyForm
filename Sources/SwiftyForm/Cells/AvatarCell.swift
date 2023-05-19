@@ -45,6 +45,7 @@ open class AvatarCell: BaseCell, AvatarFormableRow {
         }
         
         let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel

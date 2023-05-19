@@ -45,11 +45,13 @@ open class LabelCell: BaseCell, LabelFormableRow {
         }
         
         let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal) 
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
         
         let subTitleLabel = UILabel()
+        subTitleLabel.numberOfLines = 0
         subTitleLabel.textColor = .lightGray
         subTitleLabel.textAlignment = .right
         contentView.addSubview(subTitleLabel)

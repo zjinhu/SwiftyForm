@@ -62,12 +62,14 @@ open class InlineDatePickerCell: BaseCell, InlineDatePickerFormableRow {
         }
         
         let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         self.titleLabel = titleLabel
         
         let displayLabel = UILabel()
+        displayLabel.numberOfLines = 0
         displayLabel.textColor = .lightGray
         displayLabel.textAlignment = .right
         displayLabel.translatesAutoresizingMaskIntoConstraints = false
